@@ -1,0 +1,91 @@
+[2023-08-29T09:08:50-0400] [PACMAN] Running 'pacman -Syu'
+[2023-08-29T09:08:50-0400] [PACMAN] synchronizing package lists
+[2023-08-29T09:08:50-0400] [PACMAN] starting full system upgrade
+[2023-08-29T09:09:14-0400] [ALPM] transaction started
+[2023-08-29T09:09:14-0400] [ALPM] upgraded libedit (20221030_3.1-1 -> 20230828_3.1-1)
+[2023-08-29T09:09:14-0400] [ALPM] upgraded bluez (5.68-1 -> 5.69-1)
+[2023-08-29T09:09:14-0400] [ALPM] upgraded libinput (1.23.0-1 -> 1.24.0-1)
+[2023-08-29T09:09:14-0400] [ALPM] upgraded sqlite (3.42.0-1 -> 3.43.0-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded python3 (3.10.12-1 -> 3.10.13-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded freetype2 (2.13.1-1 -> 2.13.2-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded calamares (3.3.0alpha2-29 -> 3.3.0alpha2-30)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded vulkan-loader (1.3.261-1 -> 1.3.262-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded vulkan-headers (1.3.261-1 -> 1.3.262-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded protobuf (24.1-1 -> 24.2-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded zvbi (0.2.41-1 -> 0.2.42-1)
+[2023-08-29T09:09:15-0400] [ALPM] upgraded vlc (1:3.0.18-10 -> 1:3.0.18-11)
+[2023-08-29T09:09:16-0400] [ALPM] upgraded libxss (1.2.3-2 -> 1.2.4-1)
+[2023-08-29T09:09:16-0400] [ALPM] upgraded croeso6 (2.0-1 -> 2.1-1)
+[2023-08-29T09:09:16-0400] [ALPM] upgraded haruna6 (0.11.3-1 -> 0.12.0-1)
+[2023-08-29T09:09:16-0400] [ALPM] upgraded kirigami-addons6 (0.11.0-1 -> 0.11.0-2)
+[2023-08-29T09:09:16-0400] [ALPM] upgraded libxmlb (0.3.13-1 -> 0.3.14-1)
+[2023-08-29T09:09:17-0400] [ALPM] upgraded linux (6.3.12-1 -> 6.4.12-1)
+[2023-08-29T09:09:17-0400] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2023-08-29T09:09:21-0400] [ALPM] upgraded linux-headers (6.3.12-1 -> 6.4.12-1)
+[2023-08-29T09:09:21-0400] [ALPM] upgraded octopi6 (0.14.80-1 -> 0.14.81-1)
+[2023-08-29T09:09:21-0400] [ALPM] upgraded protobuf-c (1.4.1-5 -> 1.4.1-6)
+[2023-08-29T09:09:21-0400] [ALPM] warning: directory permissions differ on /var/lib/sddm/
+[2023-08-29T09:09:21-0400] [ALPM] upgraded sddm (1:0.20.0-3 -> 1:0.20.0-4)
+[2023-08-29T09:09:21-0400] [ALPM] upgraded vulkan-tools (1.3.261-1 -> 1.3.262-1)
+[2023-08-29T09:09:21-0400] [ALPM] upgraded xf86-input-libinput (1.3.0-1 -> 1.4.0-1)
+[2023-08-29T09:09:21-0400] [ALPM] transaction completed
+[2023-08-29T09:09:21-0400] [ALPM] running '99-linux.hook'...
+[2023-08-29T09:09:21-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.4.12-1
+[2023-08-29T09:09:22-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.4.12-1
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-08-29T09:09:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: *** Including module: zfs ***
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut-install: Failed to find module 'zfs'
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.mS1wBI/initramfs -H --kerneldir /lib/modules/6.4.12-1/ -m zfs
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] dracut: installkernel failed in module zfs
+[2023-08-29T09:09:24-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.4.12-1
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-08-29T09:09:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: *** Including module: zfs ***
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut-install: Failed to find module 'zfs'
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.XG0qRp/initramfs --kerneldir /lib/modules/6.4.12-1/ -m zfs
+[2023-08-29T09:09:27-0400] [ALPM-SCRIPTLET] dracut: installkernel failed in module zfs
+[2023-08-29T09:09:27-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-08-29T09:09:27-0400] [ALPM] running 'update-desktop-database.hook'...
