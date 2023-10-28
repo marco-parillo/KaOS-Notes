@@ -16,33 +16,32 @@ Machine:
   Mobo: Dell model: 03P5X2 v: A00 serial: <superuser required> UEFI: Dell v: 1.30.0
     date: 07/10/2023
 Battery:
-  ID-1: BAT0 charge: 63.0 Wh (100.0%) condition: 63.0/63.0 Wh (100.0%) volts: 16.3 min: 15.2
+  ID-1: BAT0 charge: 63.0 Wh (100.0%) condition: 63.0/63.0 Wh (100.0%) volts: 16.6 min: 15.2
     model: BYD DELL M033W14 status: full
 CPU:
   Info: quad core model: 11th Gen Intel Core i7-1185G7 bits: 64 type: MT MCP arch: Tiger Lake
     rev: 1 cache: L1: 320 KiB L2: 5 MiB L3: 12 MiB
-  Speed (MHz): avg: 400 min/max: 400/4800 cores: 1: 400 2: 400 3: 400 4: 400 5: 400 6: 400 7: 400
-    8: 400 bogomips: 28876
+  Speed (MHz): avg: 657 high: 1171 min/max: 400/4800 cores: 1: 747 2: 400 3: 401 4: 1171 5: 597
+    6: 1107 7: 439 8: 400 bogomips: 28876
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
   Device-1: Intel TigerLake-LP GT2 [Iris Xe Graphics] vendor: Dell driver: i915 v: kernel
     arch: Gen-12.1 bus-ID: 00:02.0
-  Device-2: Realtek Cable Matters USB-C Video driver: N/A type: USB bus-ID: 3-1:2
-  Device-3: Sunplus Innovation Integrated_Webcam_HD driver: uvcvideo type: USB bus-ID: 3-6:3
-  Display: wayland server: X.org v: 1.21.1.8 with: Xwayland v: 23.2.1 compositor: kwin_wayland
+  Device-2: Sunplus Innovation [] driver: uvcvideo type: USB bus-ID: 3-6:3
+  Display: wayland server: X.org v: 1.21.1.9 with: Xwayland v: 23.2.2 compositor: kwin_wayland
     driver: X: loaded: modesetting unloaded: vesa dri: iris gpu: i915 resolution: 1: 1920x1080
     2: 1920x1080
   API: EGL v: 1.5 drivers: iris,swrast platforms: active: gbm,wayland,x11,surfaceless,device
     inactive: N/A
   API: OpenGL v: 4.6 compat-v: 4.5 vendor: intel mesa v: 23.2.1 glx-v: 1.4 direct-render: yes
     renderer: Mesa Intel Xe Graphics (TGL GT2)
-  API: Vulkan v: 1.3.266 drivers: intel,llvmpipe surfaces: xcb,xlib,wayland devices: 2
+  API: Vulkan v: 1.3.269 drivers: intel,llvmpipe surfaces: xcb,xlib,wayland devices: 2
 Audio:
   Device-1: Intel Tiger Lake-LP Smart Sound Audio vendor: Dell driver: snd_hda_intel v: kernel
     bus-ID: 00:1f.3
   API: ALSA v: k6.4.16-1 status: kernel-api
   Server-1: JACK v: 1.9.22 status: off
-  Server-2: PipeWire v: 0.3.80 status: active
+  Server-2: PipeWire v: 0.3.83 status: active
   Server-3: PulseAudio v: 16.1 status: off (using pipewire-pulse)
 Network:
   Device-1: Intel Wi-Fi 6 AX201 driver: iwlwifi v: kernel bus-ID: 00:14.3
@@ -54,10 +53,10 @@ Bluetooth:
   Device-1: Intel AX201 Bluetooth driver: btusb v: 0.8 type: USB bus-ID: 3-10:5
   Report: hciconfig ID: hci0 rfk-id: 3 state: up address: <filter> bt-v: 5.2 lmp-v: 11
 Drives:
-  Local Storage: total: 476.94 GiB used: 12.11 GiB (2.5%)
+  Local Storage: total: 476.94 GiB used: 15.25 GiB (3.2%)
   ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 28.9 C
 Partition:
-  ID-1: / size: 451.62 GiB used: 12.04 GiB (2.7%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-1: / size: 451.62 GiB used: 15.17 GiB (3.4%) fs: ext4 dev: /dev/nvme0n1p2
   ID-2: /boot size: 511 MiB used: 77.4 MiB (15.1%) fs: vfat dev: /dev/nvme0n1p1
 Swap:
   ID-1: swap-1 type: partition size: 16.52 GiB used: 0 KiB (0.0%) dev: /dev/nvme0n1p3
@@ -65,8 +64,8 @@ Sensors:
   System Temperatures: cpu: 44.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 204 Uptime: 10m Memory: total: 16 GiB note: est. available: 15.02 GiB
-  used: 2.29 GiB (15.3%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 856
+  Processes: 195 Uptime: 37m Memory: total: 16 GiB note: est. available: 15.02 GiB
+  used: 1.95 GiB (13.0%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 858
   Client: Unknown Client: octopi inxi: 3.3.30
 
 
@@ -74,11 +73,17 @@ Info:
 journalctl -b -p err
 ----------------------------------------------------------------------------------------------------------
 
-Oct 04 05:22:47 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
-Oct 04 05:22:50 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
-Oct 04 05:26:20 marco-latitude5420 systemd[1020]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
-Oct 04 05:26:34 marco-latitude5420 kwin_wayland[1083]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
-Oct 04 05:26:34 marco-latitude5420 kwin_wayland[1083]: libkwinglutils: Can't enable invalid framebuffer object!
+Oct 28 13:58:58 marco-latitude5420 kernel: ACPI Error: Thread 1095517824 cannot release Mutex [ECMX] acquired by thread 1091677952 (20230331/exmutex-378)
+Oct 28 13:58:58 marco-latitude5420 kernel: ACPI Error: Aborting method \_SB.PC00.LPCB.ECDV._Q66 due to previous error (AE_AML_NOT_OWNER) (20230331/psparse-529)
+Oct 28 13:58:58 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
+Oct 28 13:59:01 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
+Oct 28 13:59:08 marco-latitude5420 systemd[858]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
+Oct 28 13:59:20 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Oct 28 13:59:20 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Can't enable invalid framebuffer object!
+Oct 28 14:27:35 marco-latitude5420 kwin_wayland[932]: kwin_libinput: Libinput: event11 - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
+                                                      See https://wayland.freedesktop.org/libinput/doc/1.24.0/touchpad-jumping-cursors.html for details
+Oct 28 14:33:13 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Oct 28 14:33:13 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Can't enable invalid framebuffer object!
 
 
 ----------------------------------------------------------------------------------------------------------
@@ -845,6 +850,1097 @@ filesystem: 0  package: 700
 [2023-10-04T05:20:48-0400] [PACMAN] Running 'pacman -Syu'
 [2023-10-04T05:20:48-0400] [PACMAN] synchronizing package lists
 [2023-10-04T05:20:48-0400] [PACMAN] starting full system upgrade
+[2023-10-04T20:27:07-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-04T20:27:07-0400] [PACMAN] synchronizing package lists
+[2023-10-04T20:27:07-0400] [PACMAN] starting full system upgrade
+[2023-10-04T20:27:09-0400] [ALPM] transaction started
+[2023-10-04T20:27:09-0400] [ALPM] upgraded btrfs-progs (6.5.1-1 -> 6.5.2-1)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded dav1d (1.2.1-1 -> 1.3.0-1)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded dialog (2:1.3_20230209-1 -> 2:1.3_20231002-1)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded glib2 (2.76.5-1 -> 2.76.6-1)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded ffmpeg (5.1.3-1 -> 5.1.3-2)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded poppler (23.09.0-1 -> 23.10.0-1)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded kfilemetadata6 (5.240.5-2 -> 5.240.5-3)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded vlc (1:3.0.18-13 -> 1:3.0.18-14)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded libheif (1.16.2-1 -> 1.16.2-2)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded kio-extras6 (23.08.1-1 -> 23.08.1-2)
+[2023-10-04T20:27:09-0400] [ALPM] upgraded libavif (1.0.1-1 -> 1.0.1-2)
+[2023-10-04T20:27:10-0400] [ALPM] upgraded networkmanager (1.44.0-1 -> 1.44.2-1)
+[2023-10-04T20:27:10-0400] [ALPM] upgraded openssh (9.4p1-2 -> 9.5p1-1)
+[2023-10-04T20:27:10-0400] [ALPM] upgraded qt6-tools (6.6.0rc-1 -> 6.6.0rc-2)
+[2023-10-04T20:27:10-0400] [ALPM] transaction completed
+[2023-10-04T20:27:10-0400] [ALPM] running '99-linux.hook'...
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.4.16-1
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.4.16-1
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-04T20:27:10-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-04T20:27:11-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-04T20:27:11-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-04T20:27:11-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-04T20:27:12-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Files:                    713
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Compared:                 19 files
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.010328 seconds
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-04T20:27:13-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.4.16-1
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-04T20:27:15-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-10-04T20:27:16-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-04T20:27:18-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-04T20:27:19-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Files:                    2165
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Compared:                 478 files
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.021165 seconds
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-04T20:27:20-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-10-04T20:27:22-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-10-04T20:27:22-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2023-10-04T20:27:22-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-04T20:27:22-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-04T20:27:22-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-04T21:45:08-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-04T21:45:08-0400] [PACMAN] synchronizing package lists
+[2023-10-04T21:45:08-0400] [PACMAN] starting full system upgrade
+[2023-10-05T07:26:41-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-05T07:26:41-0400] [PACMAN] synchronizing package lists
+[2023-10-05T07:26:41-0400] [PACMAN] starting full system upgrade
+[2023-10-05T07:26:45-0400] [ALPM] transaction started
+[2023-10-05T07:26:45-0400] [ALPM] upgraded gettext (0.22.2-1 -> 0.22.3-1)
+[2023-10-05T07:26:45-0400] [ALPM] upgraded libxrandr (1.5.3-1 -> 1.5.4-1)
+[2023-10-05T07:26:45-0400] [ALPM] upgraded protobuf (24.3-1 -> 24.4-1)
+[2023-10-05T07:26:45-0400] [ALPM] upgraded protobuf-c (1.4.1-7 -> 1.4.1-8)
+[2023-10-05T07:26:46-0400] [ALPM] upgraded vlc (1:3.0.18-14 -> 1:3.0.18-15)
+[2023-10-05T07:26:46-0400] [ALPM] transaction completed
+[2023-10-05T07:26:46-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-05T07:26:46-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-10-05T07:26:46-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-05T20:14:29-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-05T20:14:29-0400] [PACMAN] synchronizing package lists
+[2023-10-05T20:14:29-0400] [PACMAN] starting full system upgrade
+[2023-10-05T20:14:30-0400] [ALPM] transaction started
+[2023-10-05T20:14:30-0400] [ALPM] upgraded desktop-file-utils (0.26-3 -> 0.27-1)
+[2023-10-05T20:14:30-0400] [ALPM] transaction completed
+[2023-10-06T15:08:13-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-06T15:08:13-0400] [PACMAN] synchronizing package lists
+[2023-10-06T15:08:14-0400] [PACMAN] starting full system upgrade
+[2023-10-06T15:08:16-0400] [ALPM] transaction started
+[2023-10-06T15:08:16-0400] [ALPM] upgraded dhcpcd (10.0.2-1 -> 10.0.3-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded shadow (4.14.0-2 -> 4.14.1-1)
+[2023-10-06T15:08:16-0400] [ALPM] warning: directory permissions differ on /usr/share/polkit-1/rules.d/
+filesystem: 755  package: 700
+[2023-10-06T15:08:16-0400] [ALPM] upgraded fwupd (1.9.5-1 -> 1.9.6-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-base (5.15.10-7 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded pipewire (0.3.80-1 -> 0.3.81-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-declarative (5.15.10-3 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-charts (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-graphicaleffects (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-location (5.15.10-2 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-quickcontrols2 (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-svg (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-virtualkeyboard (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-wayland (5.15.10-3 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-x11extras (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded qt5-xmlpatterns (5.15.10-1 -> 5.15.11-1)
+[2023-10-06T15:08:16-0400] [ALPM] upgraded unrar (6.2.11-1 -> 6.2.12-1)
+[2023-10-06T15:08:16-0400] [ALPM] transaction completed
+[2023-10-06T15:08:16-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-06T15:08:16-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-06T20:33:31-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-06T20:33:31-0400] [PACMAN] synchronizing package lists
+[2023-10-06T20:33:31-0400] [PACMAN] starting full system upgrade
+[2023-10-06T20:33:32-0400] [ALPM] transaction started
+[2023-10-06T20:33:32-0400] [ALPM] upgraded xkeyboard-config (2.39-1 -> 2.40-1)
+[2023-10-06T20:33:32-0400] [ALPM] transaction completed
+[2023-10-06T20:37:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-06T20:37:22-0400] [PACMAN] synchronizing package lists
+[2023-10-06T20:37:22-0400] [PACMAN] starting full system upgrade
+[2023-10-07T07:21:24-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T07:21:24-0400] [PACMAN] synchronizing package lists
+[2023-10-07T07:21:24-0400] [PACMAN] starting full system upgrade
+[2023-10-07T07:21:29-0400] [ALPM] transaction started
+[2023-10-07T07:21:29-0400] [ALPM] upgraded widevine (119.0.6034.6-1 -> 119.0.6045.9-1)
+[2023-10-07T07:21:30-0400] [ALPM] upgraded google-chrome (119.0.6034.6-1 -> 119.0.6045.9-1)
+[2023-10-07T07:21:30-0400] [ALPM] transaction completed
+[2023-10-07T07:21:30-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-07T07:21:30-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-07T12:53:34-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T12:53:34-0400] [PACMAN] synchronizing package lists
+[2023-10-07T12:53:35-0400] [PACMAN] starting full system upgrade
+[2023-10-07T12:53:36-0400] [ALPM] transaction started
+[2023-10-07T12:53:36-0400] [ALPM] upgraded vulkan-headers (1.3.266-1 -> 1.3.267-1)
+[2023-10-07T12:53:36-0400] [ALPM] upgraded vulkan-loader (1.3.266-1 -> 1.3.267-1)
+[2023-10-07T12:53:36-0400] [ALPM] upgraded vulkan-tools (1.3.266-1 -> 1.3.267-1)
+[2023-10-07T12:53:36-0400] [ALPM] upgraded vulkan-validationlayers (1.3.266-1 -> 1.3.267-1)
+[2023-10-07T12:53:36-0400] [ALPM] upgraded yt-dlp (2023.09.24-1 -> 2023.10.07-1)
+[2023-10-07T12:53:36-0400] [ALPM] transaction completed
+[2023-10-07T13:41:46-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T13:41:46-0400] [PACMAN] synchronizing package lists
+[2023-10-07T13:41:46-0400] [PACMAN] starting full system upgrade
+[2023-10-07T14:14:49-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T14:14:49-0400] [PACMAN] synchronizing package lists
+[2023-10-07T14:14:49-0400] [PACMAN] starting full system upgrade
+[2023-10-07T14:45:32-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T14:45:32-0400] [PACMAN] synchronizing package lists
+[2023-10-07T14:45:32-0400] [PACMAN] starting full system upgrade
+[2023-10-07T17:36:14-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T17:36:14-0400] [PACMAN] synchronizing package lists
+[2023-10-07T17:36:14-0400] [PACMAN] starting full system upgrade
+[2023-10-07T17:36:16-0400] [ALPM] transaction started
+[2023-10-07T17:36:16-0400] [ALPM] upgraded shared-mime-info (2.2-1 -> 2.3-1)
+[2023-10-07T17:36:16-0400] [ALPM] transaction completed
+[2023-10-07T17:36:16-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-07T18:53:06-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-07T18:53:06-0400] [PACMAN] synchronizing package lists
+[2023-10-07T18:53:06-0400] [PACMAN] starting full system upgrade
+[2023-10-08T09:32:48-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-08T09:32:48-0400] [PACMAN] synchronizing package lists
+[2023-10-08T09:32:49-0400] [PACMAN] starting full system upgrade
+[2023-10-08T09:32:50-0400] [ALPM] transaction started
+[2023-10-08T09:32:50-0400] [ALPM] upgraded libtirpc (1.3.3-1 -> 1.3.4-1)
+[2023-10-08T09:32:50-0400] [ALPM] upgraded vim (9.0.1959-1 -> 9.0.2001-1)
+[2023-10-08T09:32:50-0400] [ALPM] transaction completed
+[2023-10-08T09:32:50-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-08T09:32:50-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-08T10:20:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-08T10:20:22-0400] [PACMAN] synchronizing package lists
+[2023-10-08T10:20:22-0400] [PACMAN] starting full system upgrade
+[2023-10-08T16:59:12-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-08T16:59:12-0400] [PACMAN] synchronizing package lists
+[2023-10-08T16:59:12-0400] [PACMAN] starting full system upgrade
+[2023-10-08T19:40:12-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-08T19:40:12-0400] [PACMAN] synchronizing package lists
+[2023-10-08T19:40:12-0400] [PACMAN] starting full system upgrade
+[2023-10-08T21:04:26-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-08T21:04:26-0400] [PACMAN] synchronizing package lists
+[2023-10-08T21:04:26-0400] [PACMAN] starting full system upgrade
+[2023-10-09T06:59:47-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-09T06:59:47-0400] [PACMAN] synchronizing package lists
+[2023-10-09T06:59:47-0400] [PACMAN] starting full system upgrade
+[2023-10-09T06:59:49-0400] [ALPM] transaction started
+[2023-10-09T06:59:49-0400] [ALPM] upgraded libxkbcommon (1.5.0-1 -> 1.6.0-1)
+[2023-10-09T06:59:49-0400] [ALPM] upgraded vim (9.0.2001-1 -> 9.0.2004-1)
+[2023-10-09T06:59:49-0400] [ALPM] transaction completed
+[2023-10-09T06:59:49-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-09T06:59:49-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-09T20:47:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-09T20:47:22-0400] [PACMAN] synchronizing package lists
+[2023-10-09T20:47:23-0400] [PACMAN] starting full system upgrade
+[2023-10-09T20:47:31-0400] [ALPM] transaction started
+[2023-10-09T20:47:31-0400] [ALPM] upgraded botan (3.1.1-1 -> 3.2.0-1)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded qt5-base (5.15.11-1 -> 5.15.11-2)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded keepassxc (2.7.6-1 -> 2.7.6-2)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded netctl (1.28-1 -> 1.29-1)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded qca-qt5 (2.3.7-1 -> 2.3.7-2)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded qca-qt6 (2.3.7-1 -> 2.3.7-2)
+[2023-10-09T20:47:32-0400] [ALPM] upgraded zeromq (4.3.4-4 -> 4.3.5-1)
+[2023-10-09T20:47:32-0400] [ALPM] transaction completed
+[2023-10-09T20:47:32-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-09T20:47:32-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-09T20:47:32-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-10T05:30:18-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-10T05:30:18-0400] [PACMAN] synchronizing package lists
+[2023-10-10T05:30:18-0400] [PACMAN] starting full system upgrade
+[2023-10-10T06:37:58-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-10T06:37:58-0400] [PACMAN] synchronizing package lists
+[2023-10-10T06:37:58-0400] [PACMAN] starting full system upgrade
+[2023-10-10T21:38:18-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-10T21:38:18-0400] [PACMAN] synchronizing package lists
+[2023-10-10T21:38:19-0400] [PACMAN] starting full system upgrade
+[2023-10-11T05:25:50-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-11T05:25:50-0400] [PACMAN] synchronizing package lists
+[2023-10-11T05:25:50-0400] [PACMAN] starting full system upgrade
+[2023-10-11T17:16:50-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-11T17:16:50-0400] [PACMAN] synchronizing package lists
+[2023-10-11T17:16:50-0400] [PACMAN] starting full system upgrade
+[2023-10-11T17:17:16-0400] [ALPM] transaction started
+[2023-10-11T17:17:16-0400] [ALPM] upgraded fuse3 (3.16.1-1 -> 3.16.2-1)
+[2023-10-11T17:17:16-0400] [ALPM] upgraded iptables (1.8.9-1 -> 1.8.10-1)
+[2023-10-11T17:17:16-0400] [ALPM] upgraded widevine (119.0.6045.9-1 -> 120.0.6051.2-1)
+[2023-10-11T17:17:16-0400] [ALPM] upgraded libgusb (0.4.6-1 -> 0.4.7-1)
+[2023-10-11T17:17:17-0400] [ALPM] upgraded google-chrome (119.0.6045.9-1 -> 120.0.6051.2-1)
+[2023-10-11T17:17:17-0400] [ALPM] upgraded libnotify (0.8.2-1 -> 0.8.3-1)
+[2023-10-11T17:17:17-0400] [ALPM] transaction completed
+[2023-10-11T17:17:17-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-11T17:17:17-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-12T06:24:41-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-12T06:24:41-0400] [PACMAN] synchronizing package lists
+[2023-10-12T06:24:41-0400] [PACMAN] starting full system upgrade
+[2023-10-12T06:24:42-0400] [ALPM] transaction started
+[2023-10-12T06:24:42-0400] [ALPM] upgraded nghttp2 (1.56.0-1 -> 1.57.0-1)
+[2023-10-12T06:24:42-0400] [ALPM] upgraded curl (8.3.0-1 -> 8.4.0-1)
+[2023-10-12T06:24:42-0400] [ALPM] upgraded libmbim (1.28.4-1 -> 1.30.0-1)
+[2023-10-12T06:24:42-0400] [ALPM] upgraded libqmi (1.32.4-1 -> 1.34.0-1)
+[2023-10-12T06:24:42-0400] [ALPM] upgraded modemmanager (1.20.6-1 -> 1.22.0-1)
+[2023-10-12T06:24:42-0400] [ALPM] upgraded sqlite (3.43.1-1 -> 3.43.2-1)
+[2023-10-12T06:24:43-0400] [ALPM] transaction completed
+[2023-10-12T06:24:43-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-12T21:43:20-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-12T21:43:20-0400] [PACMAN] synchronizing package lists
+[2023-10-12T21:43:21-0400] [PACMAN] starting full system upgrade
+[2023-10-12T21:44:11-0400] [ALPM] transaction started
+[2023-10-12T21:44:11-0400] [ALPM] upgraded qt6-base (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:11-0400] [ALPM] upgraded karchive6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:11-0400] [ALPM] upgraded qt6-shadertools (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:11-0400] [ALPM] upgraded qt6-languageserver (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-declarative (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kconfig6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kcoreaddons6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kwindowsystem6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kcrash6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kdbusaddons6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded ki18n6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kitemmodels6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kservice6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded solid6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-5compat (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kcodecs6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kauth6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-wayland (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded plasma-wayland-protocols (1.10.80-2 -> 1.10.80-3)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kguiaddons6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kwidgetsaddons6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kcolorscheme (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kconfigwidgets6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kitemviews6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-svg (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kiconthemes6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kglobalaccel6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kxmlgui6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kbookmarks6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded kcompletion6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-quicktimeline (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-quick3d (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded samba (4.19.0-1 -> 4.19.1-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-multimedia (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded qt6-speech (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:12-0400] [ALPM] upgraded vlc (1:3.0.18-15 -> 1:3.0.19-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded knotifications6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kjobwidgets6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kwallet6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kded6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded sonnet6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded ktextwidgets6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kio6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kparts6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kpty6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded ark6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded attica (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kidletime6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kfilemetadata6 (5.240.5-3 -> 5.240.6-3)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded baloo6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded baloo-widgets6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded bluez-qt6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kactivities6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kpackage6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kwayland6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kirigami6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kcmutils6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded ksvg (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded plasma-framework6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kdeclarative6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded bluedevil6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded kdecoration6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded syndication6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded knewstuff6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:13-0400] [ALPM] upgraded frameworkintegration6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded breeze-icons6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded breeze6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded breeze-gtk6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kdesu6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded threadweaver6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded krunner6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded knotifyconfig6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kpeople6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kactivities-stats6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded prison6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kunitconversion6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded syntax-highlighting6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded ktexteditor6 (5.240.5-2 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kpipewire6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded networkmanager-qt6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded kquickcharts6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded qt6-serialport (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded qt6-positioning (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded qt6-websockets (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:14-0400] [ALPM] upgraded qt6-webchannel (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qt6-webengine (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded libksysguard6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qt6-virtualkeyboard (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qt6-connectivity (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qt6-sensors (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded layer-shell-qt6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded libkscreen6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kscreenlocker6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kglobalacceld (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kwin6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kholidays6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded milou6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qt6-tools (6.6.0rc-2 -> 6.6.0-2)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded sddm-kcm6 (1:5.27.85-1 -> 1:5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kactivitymanagerd6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kstatusnotifieritem (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded drkonqi6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded plasma5support (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kwayland-integration6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kdnssd6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded libkexiv6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kio-extras6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded ktexttemplate (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded khelpcenter6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded plasma-workspace6 (5.27.85-2 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kde-cli-tools6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kmoretools (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded kio-admin6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded dolphin6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded dolphin-plugins6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded qqc2-desktop-style6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded elisa6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:15-0400] [ALPM] upgraded purpose6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded falkon6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded libkdcraw6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kimageformats6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded gwenview6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kapidox6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kate6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded modemmanager-qt6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kdeconnect-kde6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kdegraphics-thumbnailers6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kdeplasma-addons6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kdialog6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kdoctools6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded systemsettings6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kinfocenter6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kjournald6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kmenuedit6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded libkdegames6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kmines6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded ksanecore6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded libksane6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kolourpaint6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded konsole6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kpat6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kplotting6 (5.240.5-1 -> 5.240.6-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kscreen6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded ksshaskpass6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded ksystemstats6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded kwallet-pam6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded qt6-location (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded qt6-webview (6.6.0rc-1 -> 6.6.0-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded neochat6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded polkit-kde-agent-6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded powerdevil6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:16-0400] [ALPM] upgraded plasma-integration6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded plasma-desktop6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded plasma-nm6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded plasma-pa6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded plasma-systemmonitor6 (5.27.85-1 -> 5.27.86-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded skanpage6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded spectacle6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:17-0400] [ALPM] upgraded yakuake6 (23.08.1-2 -> 23.08.2-1)
+[2023-10-12T21:44:17-0400] [ALPM] transaction completed
+[2023-10-12T21:44:17-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-12T21:44:17-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-10-12T21:44:17-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-12T21:44:17-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-13T08:12:13-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-13T08:12:13-0400] [PACMAN] synchronizing package lists
+[2023-10-13T08:12:13-0400] [PACMAN] starting full system upgrade
+[2023-10-13T08:12:16-0400] [ALPM] transaction started
+[2023-10-13T08:12:16-0400] [ALPM] upgraded libblockdev (3.0.3-1 -> 3.0.4-1)
+[2023-10-13T08:12:16-0400] [ALPM] upgraded wireplumber (0.4.14-1 -> 0.4.15-1)
+[2023-10-13T08:12:16-0400] [ALPM] upgraded xfsprogs (6.4.0-1 -> 6.5.0-1)
+[2023-10-13T08:12:16-0400] [ALPM] transaction completed
+[2023-10-13T14:02:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-13T14:02:22-0400] [PACMAN] synchronizing package lists
+[2023-10-13T14:02:24-0400] [PACMAN] starting full system upgrade
+[2023-10-13T14:02:26-0400] [ALPM] transaction started
+[2023-10-13T14:02:26-0400] [ALPM] upgraded libnsl (2.0.0-2 -> 2.0.1-1)
+[2023-10-13T14:02:26-0400] [ALPM] upgraded pinentry (1.2.1-1 -> 1.2.1-2)
+[2023-10-13T14:02:26-0400] [ALPM] upgraded pipewire (0.3.81-1 -> 0.3.82-1)
+[2023-10-13T14:02:26-0400] [ALPM] transaction completed
+[2023-10-13T14:02:26-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-10-13T20:43:46-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-13T20:43:46-0400] [PACMAN] synchronizing package lists
+[2023-10-13T20:43:47-0400] [PACMAN] starting full system upgrade
+[2023-10-13T20:43:49-0400] [ALPM] transaction started
+[2023-10-13T20:43:49-0400] [ALPM] upgraded ocean-sound-theme (5.27.84-1 -> 5.27.86-1)
+[2023-10-13T20:43:49-0400] [ALPM] transaction completed
+[2023-10-14T07:55:11-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-14T07:55:11-0400] [PACMAN] synchronizing package lists
+[2023-10-14T07:55:12-0400] [PACMAN] starting full system upgrade
+[2023-10-14T07:55:13-0400] [ALPM] transaction started
+[2023-10-14T07:55:13-0400] [ALPM] upgraded openvpn (2.6.6-2 -> 2.6.6-3)
+[2023-10-14T07:55:14-0400] [ALPM] upgraded yt-dlp (2023.10.07-1 -> 2023.10.13-1)
+[2023-10-14T07:55:14-0400] [ALPM] transaction completed
+[2023-10-14T07:55:14-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-10-14T13:53:17-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-14T13:53:17-0400] [PACMAN] synchronizing package lists
+[2023-10-14T13:53:17-0400] [PACMAN] starting full system upgrade
+[2023-10-14T16:36:12-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-14T16:36:12-0400] [PACMAN] synchronizing package lists
+[2023-10-14T16:36:13-0400] [PACMAN] starting full system upgrade
+[2023-10-14T16:36:14-0400] [ALPM] transaction started
+[2023-10-14T16:36:14-0400] [ALPM] upgraded libical (1:3.0.16-4 -> 1:3.0.17-1)
+[2023-10-14T16:36:14-0400] [ALPM] transaction completed
+[2023-10-15T07:53:30-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T07:53:30-0400] [PACMAN] synchronizing package lists
+[2023-10-15T07:53:31-0400] [PACMAN] starting full system upgrade
+[2023-10-15T07:53:32-0400] [ALPM] transaction started
+[2023-10-15T07:53:32-0400] [ALPM] upgraded vulkan-headers (1.3.267-1 -> 1.3.268-1)
+[2023-10-15T07:53:32-0400] [ALPM] upgraded vulkan-loader (1.3.267-1 -> 1.3.268-1)
+[2023-10-15T07:53:32-0400] [ALPM] upgraded vulkan-tools (1.3.267-1 -> 1.3.268-1)
+[2023-10-15T07:53:32-0400] [ALPM] transaction completed
+[2023-10-15T10:26:03-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T10:26:03-0400] [PACMAN] synchronizing package lists
+[2023-10-15T10:26:03-0400] [PACMAN] starting full system upgrade
+[2023-10-15T10:26:04-0400] [ALPM] transaction started
+[2023-10-15T10:26:04-0400] [ALPM] upgraded pyqt6-sip (13.5.2-1 -> 13.6.0-1)
+[2023-10-15T10:26:04-0400] [ALPM] transaction completed
+[2023-10-15T12:17:23-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T12:17:23-0400] [PACMAN] synchronizing package lists
+[2023-10-15T12:17:24-0400] [PACMAN] starting full system upgrade
+[2023-10-15T12:17:25-0400] [ALPM] transaction started
+[2023-10-15T12:17:25-0400] [ALPM] upgraded qt6-sensors (6.6.0-1 -> 6.6.0-2)
+[2023-10-15T12:17:25-0400] [ALPM] upgraded pyqt6-python3 (6.5.2-2 -> 6.5.3-1)
+[2023-10-15T12:17:25-0400] [ALPM] transaction completed
+[2023-10-15T16:12:09-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T16:12:09-0400] [PACMAN] synchronizing package lists
+[2023-10-15T16:12:09-0400] [PACMAN] starting full system upgrade
+[2023-10-15T16:12:39-0400] [ALPM] transaction started
+[2023-10-15T16:12:39-0400] [ALPM] upgraded widevine (120.0.6051.2-1 -> 120.0.6062.2-1)
+[2023-10-15T16:12:39-0400] [ALPM] upgraded google-chrome (120.0.6051.2-1 -> 120.0.6062.2-1)
+[2023-10-15T16:12:39-0400] [ALPM] upgraded python3-psutil (5.9.5-1 -> 5.9.6-1)
+[2023-10-15T16:12:39-0400] [ALPM] upgraded sdl_image (1.2.12-8 -> 1.2.13-1)
+[2023-10-15T16:12:39-0400] [ALPM] transaction completed
+[2023-10-15T16:12:39-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-15T16:12:39-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-15T20:29:16-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T20:29:16-0400] [PACMAN] synchronizing package lists
+[2023-10-15T20:29:16-0400] [PACMAN] starting full system upgrade
+[2023-10-15T20:47:51-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-15T20:47:51-0400] [PACMAN] synchronizing package lists
+[2023-10-15T20:47:52-0400] [PACMAN] starting full system upgrade
+[2023-10-16T07:33:24-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-16T07:33:24-0400] [PACMAN] synchronizing package lists
+[2023-10-16T07:33:24-0400] [PACMAN] starting full system upgrade
+[2023-10-16T17:55:43-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-16T17:55:43-0400] [PACMAN] synchronizing package lists
+[2023-10-16T17:55:43-0400] [PACMAN] starting full system upgrade
+[2023-10-16T17:55:48-0400] [ALPM] transaction started
+[2023-10-16T17:55:48-0400] [ALPM] upgraded samba (4.19.1-1 -> 4.19.2-1)
+[2023-10-16T17:55:48-0400] [ALPM] upgraded libheif (1.16.2-2 -> 1.17.0-1)
+[2023-10-16T17:55:48-0400] [ALPM] upgraded vulkan-validationlayers (1.3.267-1 -> 1.3.268-1)
+[2023-10-16T17:55:48-0400] [ALPM] transaction completed
+[2023-10-16T17:55:48-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2023-10-16T17:55:48-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-10-16T17:58:05-0400] [PACMAN] Running 'pacman -S konversation6 print-manager6'
+[2023-10-16T17:58:07-0400] [ALPM] transaction started
+[2023-10-16T17:58:07-0400] [ALPM] installed konversation6 (23.08.2-1)
+[2023-10-16T17:58:07-0400] [ALPM] installed print-manager6 (23.08.2-1)
+[2023-10-16T17:58:07-0400] [ALPM] transaction completed
+[2023-10-16T17:58:07-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-16T17:58:07-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-17T06:35:13-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-17T06:35:13-0400] [PACMAN] synchronizing package lists
+[2023-10-17T06:35:14-0400] [PACMAN] starting full system upgrade
+[2023-10-18T08:00:13-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-18T08:00:13-0400] [PACMAN] synchronizing package lists
+[2023-10-18T08:00:14-0400] [PACMAN] starting full system upgrade
+[2023-10-18T08:00:17-0400] [ALPM] transaction started
+[2023-10-18T08:00:17-0400] [ALPM] upgraded llvm (17.0.2-1 -> 17.0.3-1)
+[2023-10-18T08:00:17-0400] [ALPM] upgraded harfbuzz (8.2.1-1 -> 8.2.2-1)
+[2023-10-18T08:00:17-0400] [ALPM] upgraded libjpeg-turbo (3.0.0-1 -> 3.0.1-1)
+[2023-10-18T08:00:18-0400] [ALPM] transaction completed
+[2023-10-19T18:09:40-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-19T18:09:40-0400] [PACMAN] synchronizing package lists
+[2023-10-19T18:09:40-0400] [PACMAN] starting full system upgrade
+[2023-10-19T18:09:46-0400] [ALPM] transaction started
+[2023-10-19T18:09:46-0400] [ALPM] upgraded dhcpcd (10.0.3-1 -> 10.0.4-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded texinfo (7.0.3-1 -> 7.1-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kcoreaddons (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kwindowsystem (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kcrash (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded ki18n (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kirigami (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kwidgetsaddons (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded kpmcore (23.08.1-1 -> 23.08.2-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded libbytesize (2.9-1 -> 2.10-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded libheif (1.17.0-1 -> 1.17.1-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded oxygen-icons5 (5.110.0-1 -> 5.111.0-1)
+[2023-10-19T18:09:46-0400] [ALPM] upgraded pipewire (0.3.82-1 -> 0.3.83-1)
+[2023-10-19T18:09:46-0400] [ALPM] transaction completed
+[2023-10-19T18:09:46-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2023-10-19T18:09:46-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-19T18:09:46-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-10-19T18:09:46-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-19T20:56:46-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-19T20:56:46-0400] [PACMAN] synchronizing package lists
+[2023-10-19T20:56:46-0400] [PACMAN] starting full system upgrade
+[2023-10-20T06:31:44-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-20T06:31:44-0400] [PACMAN] synchronizing package lists
+[2023-10-20T06:31:44-0400] [PACMAN] starting full system upgrade
+[2023-10-20T06:31:45-0400] [ALPM] transaction started
+[2023-10-20T06:31:45-0400] [ALPM] upgraded iana-etc (20230912-1 -> 20231019-1)
+[2023-10-20T06:31:45-0400] [ALPM] upgraded inxi (3.3.30-1 -> 3.3.30-2)
+[2023-10-20T06:31:45-0400] [ALPM] upgraded vim (9.0.2004-1 -> 9.0.2053-1)
+[2023-10-20T06:31:45-0400] [ALPM] transaction completed
+[2023-10-20T06:31:45-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-20T06:31:45-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-20T16:28:10-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-20T16:28:10-0400] [PACMAN] synchronizing package lists
+[2023-10-20T16:28:10-0400] [PACMAN] starting full system upgrade
+[2023-10-20T16:28:13-0400] [ALPM] transaction started
+[2023-10-20T16:28:13-0400] [ALPM] upgraded libdrm (2.4.116-1 -> 2.4.117-1)
+[2023-10-20T16:28:13-0400] [ALPM] warning: directory permissions differ on /usr/lib/mysql/plugin/auth_pam_tool_dir/
+filesystem: 700  package: 755
+[2023-10-20T16:28:13-0400] [ALPM] upgraded mariadb (11.0.3-1 -> 11.1.2-1)
+[2023-10-20T16:28:13-0400] [ALPM-SCRIPTLET] [1;31m ==> This is a major MariaDB update
+[2023-10-20T16:28:13-0400] [ALPM-SCRIPTLET] [1;34m ==> make sure to restart mariadb.service: 
+[2023-10-20T16:28:13-0400] [ALPM-SCRIPTLET] [1;34m ==> sudo systemctl restart mariadb.service 
+[2023-10-20T16:28:13-0400] [ALPM-SCRIPTLET] [1;34m ==> and you might consider running: 
+[2023-10-20T16:28:13-0400] [ALPM-SCRIPTLET] [1;34m ==> sudo mariadb-upgrade -u root -p afterwards. [0m
+[2023-10-20T16:28:13-0400] [ALPM] upgraded xcb-util-cursor (0.1.4-1 -> 0.1.5-1)
+[2023-10-20T16:28:13-0400] [ALPM] transaction completed
+[2023-10-20T16:28:13-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-10-20T18:22:43-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-20T18:22:43-0400] [PACMAN] synchronizing package lists
+[2023-10-20T18:22:43-0400] [PACMAN] starting full system upgrade
+[2023-10-21T09:42:36-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T09:42:36-0400] [PACMAN] synchronizing package lists
+[2023-10-21T09:42:37-0400] [PACMAN] starting full system upgrade
+[2023-10-21T11:40:57-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T11:40:57-0400] [PACMAN] synchronizing package lists
+[2023-10-21T11:40:57-0400] [PACMAN] starting full system upgrade
+[2023-10-21T11:41:01-0400] [ALPM] transaction started
+[2023-10-21T11:41:01-0400] [ALPM] upgraded widevine (120.0.6062.2-1 -> 120.0.6073.0-1)
+[2023-10-21T11:41:01-0400] [ALPM] upgraded vulkan-loader (1.3.268-1 -> 1.3.269-1)
+[2023-10-21T11:41:01-0400] [ALPM] upgraded google-chrome (120.0.6062.2-1 -> 120.0.6073.0-1)
+[2023-10-21T11:41:01-0400] [ALPM] upgraded vulkan-headers (1.3.268-1 -> 1.3.269-1)
+[2023-10-21T11:41:01-0400] [ALPM] upgraded vulkan-tools (1.3.268-1 -> 1.3.269-1)
+[2023-10-21T11:41:01-0400] [ALPM] transaction completed
+[2023-10-21T11:41:01-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-21T11:41:01-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-21T13:16:30-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T13:16:30-0400] [PACMAN] synchronizing package lists
+[2023-10-21T13:16:31-0400] [PACMAN] starting full system upgrade
+[2023-10-21T14:00:55-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T14:00:55-0400] [PACMAN] synchronizing package lists
+[2023-10-21T14:00:56-0400] [PACMAN] starting full system upgrade
+[2023-10-21T19:19:41-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T19:19:41-0400] [PACMAN] synchronizing package lists
+[2023-10-21T19:19:41-0400] [PACMAN] starting full system upgrade
+[2023-10-21T19:19:42-0400] [ALPM] transaction started
+[2023-10-21T19:19:42-0400] [ALPM] upgraded btrfs-progs (6.5.2-1 -> 6.5.3-1)
+[2023-10-21T19:19:42-0400] [ALPM] upgraded python3-cairo (1.25.0-1 -> 1.25.1-1)
+[2023-10-21T19:19:42-0400] [ALPM] transaction completed
+[2023-10-21T19:19:42-0400] [ALPM] running '99-linux.hook'...
+[2023-10-21T19:19:42-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.4.16-1
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.4.16-1
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-21T19:19:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-21T19:19:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-21T19:19:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-21T19:19:45-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Files:                    713
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Compared:                 20 files
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.009771 seconds
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-21T19:19:46-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.4.16-1
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-21T19:19:48-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-10-21T19:19:49-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-21T19:19:51-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-21T19:19:52-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Files:                    2165
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Compared:                 478 files
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.020736 seconds
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-21T19:19:53-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-10-21T19:19:55-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-10-21T19:57:32-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T19:57:32-0400] [PACMAN] synchronizing package lists
+[2023-10-21T19:57:32-0400] [PACMAN] starting full system upgrade
+[2023-10-21T21:35:16-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-21T21:35:16-0400] [PACMAN] synchronizing package lists
+[2023-10-21T21:35:17-0400] [PACMAN] starting full system upgrade
+[2023-10-22T11:45:51-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-22T11:45:51-0400] [PACMAN] synchronizing package lists
+[2023-10-22T11:45:51-0400] [PACMAN] starting full system upgrade
+[2023-10-22T11:45:53-0400] [ALPM] transaction started
+[2023-10-22T11:45:53-0400] [ALPM] upgraded imagemagick (7.1.1.19-1 -> 7.1.1.21-1)
+[2023-10-22T11:45:53-0400] [ALPM] upgraded micro (2.0.12-1 -> 2.0.13-1)
+[2023-10-22T11:45:53-0400] [ALPM] transaction completed
+[2023-10-22T14:03:20-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-22T14:03:20-0400] [PACMAN] synchronizing package lists
+[2023-10-22T14:03:22-0400] [PACMAN] starting full system upgrade
+[2023-10-22T17:55:23-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-22T17:55:23-0400] [PACMAN] synchronizing package lists
+[2023-10-22T17:55:23-0400] [PACMAN] starting full system upgrade
+[2023-10-22T17:55:25-0400] [ALPM] transaction started
+[2023-10-22T17:55:25-0400] [ALPM] upgraded usbutils (015-1 -> 016-1)
+[2023-10-22T17:55:25-0400] [ALPM] transaction completed
+[2023-10-23T06:35:37-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-23T06:35:37-0400] [PACMAN] synchronizing package lists
+[2023-10-23T06:35:48-0400] [PACMAN] starting full system upgrade
+[2023-10-23T07:04:41-0400] [ALPM] transaction started
+[2023-10-23T07:04:41-0400] [ALPM] upgraded serd (0.30.16-1 -> 0.32.0-1)
+[2023-10-23T07:04:41-0400] [ALPM] installed zix (0.4.2-1)
+[2023-10-23T07:04:41-0400] [ALPM] upgraded sord (0.16.14-1 -> 0.16.16-1)
+[2023-10-23T07:04:41-0400] [ALPM] upgraded sratom (0.6.14-1 -> 0.6.16-1)
+[2023-10-23T07:04:41-0400] [ALPM] upgraded lilv (0.24.20-2 -> 0.24.22-1)
+[2023-10-23T07:04:41-0400] [ALPM] transaction completed
+[2023-10-24T06:50:52-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-24T06:50:52-0400] [PACMAN] synchronizing package lists
+[2023-10-24T06:50:52-0400] [PACMAN] starting full system upgrade
+[2023-10-24T06:50:54-0400] [ALPM] transaction started
+[2023-10-24T06:50:54-0400] [ALPM] upgraded vulkan-validationlayers (1.3.268-1 -> 1.3.269-1)
+[2023-10-24T06:50:54-0400] [ALPM] transaction completed
+[2023-10-24T20:22:08-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-24T20:22:08-0400] [PACMAN] synchronizing package lists
+[2023-10-24T20:22:08-0400] [PACMAN] starting full system upgrade
+[2023-10-25T07:47:35-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-25T07:47:35-0400] [PACMAN] synchronizing package lists
+[2023-10-25T07:47:36-0400] [PACMAN] starting full system upgrade
+[2023-10-25T07:47:49-0400] [ALPM] transaction started
+[2023-10-25T07:47:50-0400] [ALPM] upgraded openssl (3.1.3-1 -> 3.1.4-1)
+[2023-10-25T07:47:50-0400] [ALPM] upgraded xorg-server (21.1.8-1 -> 21.1.9-1)
+[2023-10-25T07:47:50-0400] [ALPM] upgraded xwayland (23.2.1-1 -> 23.2.2-1)
+[2023-10-25T07:47:50-0400] [ALPM] transaction completed
+[2023-10-25T07:47:50-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-25T19:32:01-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-25T19:32:01-0400] [PACMAN] synchronizing package lists
+[2023-10-25T19:32:02-0400] [PACMAN] starting full system upgrade
+[2023-10-25T19:32:20-0400] [ALPM] transaction started
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libffi (3.4.4-2 -> 3.4.4-3)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded glib2 (2.76.6-1 -> 2.78.1-1)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded at-spi2-core (2.50.0-1 -> 2.50.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded b43-fwcutter (019-6 -> 019-7)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded efivar (38-1 -> 38-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded findutils (4.9.0-1 -> 4.9.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gdbm (1.23-1 -> 1.23-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gdk-pixbuf2 (2.42.10-3 -> 2.42.10-4)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded glib-networking (2.78.0-1 -> 2.78.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libsigc++ (2.12.1-1 -> 2.12.1-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded glibmm (2.66.6-2 -> 2.66.6-3)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gobject-introspection (1.76.1-1 -> 1.78.1-1)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gpgme (1.22.0-1 -> 1.23.0-1)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded lzo2 (2.10-3 -> 2.10-4)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded wayland (1.22.0-1 -> 1.22.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libdrm (2.4.117-1 -> 2.4.117-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libseccomp (2.5.4-1 -> 2.5.4-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libgudev (238-1 -> 238-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libxfontcache (1.0.5-8 -> 1.0.5-9)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded qt6-base (6.6.0-1 -> 6.6.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gpgme-qt6 (1.22.0-1 -> 1.23.0-1)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gtk-update-icon-cache (3.24.38-1 -> 3.24.38-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded pango (1.50.14-2 -> 1.50.14-3)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libusb (1.0.26-1 -> 1.0.26-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded python3-gobject3 (3.46.0-1 -> 3.46.0-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libcroco (0.6.13-10 -> 0.6.13-11)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded gtk3 (3.24.38-1 -> 3.24.38-2)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libusbmuxd (2.0.2-2 -> 2.0.2-3)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libimobiledevice (1.3.0-4 -> 1.3.0-5)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded liblqr (0.4.2-21 -> 0.4.2-22)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libmms (0.6.4-18 -> 0.6.4-19)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded libsoup (2.74.3-3 -> 2.74.3-4)
+[2023-10-25T19:32:20-0400] [ALPM] upgraded lohit-fonts (2.5.4-2 -> 2.5.4-3)
+[2023-10-25T19:32:23-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2023-10-25T19:32:23-0400] [ALPM] upgraded networkmanager-vpnc (1.2.6-2 -> 1.2.6-3)
+[2023-10-25T19:32:23-0400] [ALPM] transaction completed
+[2023-10-25T19:32:23-0400] [ALPM] running 'fc-cache-install.hook'...
+[2023-10-25T19:32:23-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2023-10-25T19:32:23-0400] [ALPM] running 'gio-querymodules.hook'...
+[2023-10-25T19:32:23-0400] [ALPM] running 'glib-compile-schemes.hook'...
+[2023-10-25T19:32:23-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-10-26T06:41:33-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-26T06:41:33-0400] [PACMAN] synchronizing package lists
+[2023-10-26T06:41:33-0400] [PACMAN] starting full system upgrade
+[2023-10-26T20:06:42-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-26T20:06:42-0400] [PACMAN] synchronizing package lists
+[2023-10-26T20:06:45-0400] [PACMAN] starting full system upgrade
+[2023-10-26T20:06:53-0400] [ALPM] transaction started
+[2023-10-26T20:06:53-0400] [ALPM] upgraded p11-kit (0.25.0-1 -> 0.25.1-1)
+[2023-10-26T20:06:53-0400] [ALPM] transaction completed
+[2023-10-27T06:55:00-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T06:55:00-0400] [PACMAN] synchronizing package lists
+[2023-10-27T06:55:00-0400] [PACMAN] starting full system upgrade
+[2023-10-27T14:07:26-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T14:07:26-0400] [PACMAN] synchronizing package lists
+[2023-10-27T14:07:28-0400] [PACMAN] starting full system upgrade
+[2023-10-27T14:08:47-0400] [ALPM] transaction started
+[2023-10-27T14:08:47-0400] [ALPM] removed kwayland-integration6 (5.27.86-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded iana-etc (20231019-1 -> 20231026-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded attica (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcoreaddons6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kconfig6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kdbusaddons6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded ki18n6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded plasma-wayland-protocols (1.10.80-3 -> 1.10.80-4)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kidletime6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded gpgme (1.23.0-1 -> 1.23.1-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded solid6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded karchive6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kfilemetadata6 (5.240.6-3 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kwayland6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kwindowsystem6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcrash6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kservice6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcodecs6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kauth6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kguiaddons6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kwidgetsaddons6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcolorscheme (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kconfigwidgets6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kitemviews6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kiconthemes6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kglobalaccel6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kxmlgui6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kbookmarks6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcompletion6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded knotifications6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kjobwidgets6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kwallet6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kded6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded sonnet6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded ktextwidgets6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kio6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded baloo6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded bluez-qt6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kactivities6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kpackage6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kirigami6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kcmutils6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded ksvg (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded plasma-framework6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kdeclarative6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded bluedevil6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded kdecoration6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded syndication6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded knewstuff6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:47-0400] [ALPM] upgraded frameworkintegration6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:48-0400] [ALPM] upgraded breeze-icons6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded breeze6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded breeze-gtk6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded syntax-highlighting6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kstatusnotifieritem (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kitemmodels6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded drkonqi6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded gpgme-qt6 (1.23.0-1 -> 1.23.1-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kactivities-stats6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kactivitymanagerd6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kapidox6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kpty6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kdesu6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kdnssd6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kdoctools6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kglobalacceld (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kholidays6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kimageformats6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kmoretools (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded knotifyconfig6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kparts6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kpeople6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kpipewire6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kplotting6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kquickcharts6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded threadweaver6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded krunner6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded libkscreen6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded layer-shell-qt6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kscreen6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kscreenlocker6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded ksshaskpass6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded libksysguard6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded networkmanager-qt6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded ksystemstats6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded ktexteditor6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded ktexttemplate (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kunitconversion6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded kwin6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded milou6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded modemmanager-qt6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded prison6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded plasma-nm6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded sddm-kcm6 (1:5.27.86-1 -> 1:5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded plasma5support (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded plasma-workspace6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:49-0400] [ALPM] upgraded polkit-kde-agent-6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T14:08:50-0400] [ALPM] upgraded purpose6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:50-0400] [ALPM] upgraded qqc2-desktop-style6 (5.240.6-1 -> 5.240.7-1)
+[2023-10-27T14:08:50-0400] [ALPM] transaction completed
+[2023-10-27T14:08:50-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-27T14:08:50-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-10-27T14:08:50-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-27T14:08:50-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-27T18:11:49-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T18:11:49-0400] [PACMAN] synchronizing package lists
+[2023-10-27T18:11:50-0400] [PACMAN] starting full system upgrade
+[2023-10-27T18:12:09-0400] [ALPM] transaction started
+[2023-10-27T18:12:09-0400] [ALPM] upgraded ark6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded baloo-widgets6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded libkexiv6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded khelpcenter6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded kio-extras6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded kde-cli-tools6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded kio-admin6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded dolphin6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded dolphin-plugins6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:09-0400] [ALPM] upgraded elisa6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded falkon6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded widevine (120.0.6073.0-1 -> 120.0.6090.0-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded google-chrome (120.0.6073.0-1 -> 120.0.6090.0-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded libkdcraw6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded gwenview6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kate6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kdeconnect-kde6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kdegraphics-thumbnailers6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kdeplasma-addons6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kdialog6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded systemsettings6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kinfocenter6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kjournald6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kmenuedit6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded libkdegames6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kmines6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded ksanecore6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded libksane6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kolourpaint6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded konsole6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kpat6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded kwallet-pam6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded neochat6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded ocean-sound-theme (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded powerdevil6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:10-0400] [ALPM] upgraded plasma-integration6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded plasma-desktop6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded plasma-pa6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded plasma-systemmonitor6 (5.27.86-1 -> 5.27.87-1)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded print-manager6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded skanpage6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded spectacle6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:11-0400] [ALPM] upgraded yakuake6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-27T18:12:11-0400] [ALPM] transaction completed
+[2023-10-27T18:12:11-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-27T18:12:11-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-27T18:12:11-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-10-27T18:21:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T18:21:22-0400] [PACMAN] synchronizing package lists
+[2023-10-27T18:21:22-0400] [PACMAN] starting full system upgrade
+[2023-10-27T21:00:06-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T21:00:06-0400] [PACMAN] synchronizing package lists
+[2023-10-27T21:00:09-0400] [PACMAN] starting full system upgrade
+[2023-10-27T21:13:35-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-27T21:13:35-0400] [PACMAN] synchronizing package lists
+[2023-10-27T21:13:36-0400] [PACMAN] starting full system upgrade
+[2023-10-28T07:51:11-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T07:51:11-0400] [PACMAN] synchronizing package lists
+[2023-10-28T07:51:12-0400] [PACMAN] starting full system upgrade
+[2023-10-28T07:51:13-0400] [ALPM] transaction started
+[2023-10-28T07:51:13-0400] [ALPM] upgraded nghttp2 (1.57.0-1 -> 1.58.0-1)
+[2023-10-28T07:51:13-0400] [ALPM] transaction completed
+[2023-10-28T08:26:28-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T08:26:28-0400] [PACMAN] synchronizing package lists
+[2023-10-28T08:26:28-0400] [PACMAN] starting full system upgrade
+[2023-10-28T09:45:41-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T09:45:41-0400] [PACMAN] synchronizing package lists
+[2023-10-28T09:45:41-0400] [PACMAN] starting full system upgrade
+[2023-10-28T12:38:52-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T12:38:52-0400] [PACMAN] synchronizing package lists
+[2023-10-28T12:38:52-0400] [PACMAN] starting full system upgrade
+[2023-10-28T14:34:26-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T14:34:26-0400] [PACMAN] synchronizing package lists
+[2023-10-28T14:34:27-0400] [PACMAN] starting full system upgrade
 
 
 ----------------------------------------------------------------------------------------------------------
