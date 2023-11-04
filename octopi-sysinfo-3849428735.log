@@ -9,25 +9,26 @@ inxi -Fxz
 ----------------------------------------------------------------------------------------------------------
 
 System:
-  Kernel: 6.4.16-1 arch: x86_64 bits: 64 compiler: gcc v: 12.3.0 Desktop: KDE Plasma v: 5.27.80
+  Kernel: 6.5.10-1 arch: x86_64 bits: 64 compiler: gcc v: 12.3.0 Desktop: KDE Plasma v: 5.27.80
     Distro: KaOS 2023
 Machine:
   Type: Laptop System: Dell product: Latitude 5420 v: N/A serial: <superuser required>
   Mobo: Dell model: 03P5X2 v: A00 serial: <superuser required> UEFI: Dell v: 1.30.0
     date: 07/10/2023
 Battery:
-  ID-1: BAT0 charge: 63.0 Wh (100.0%) condition: 63.0/63.0 Wh (100.0%) volts: 16.6 min: 15.2
+  ID-1: BAT0 charge: 63.0 Wh (100.0%) condition: 63.0/63.0 Wh (100.0%) volts: 16.7 min: 15.2
     model: BYD DELL M033W14 status: full
 CPU:
   Info: quad core model: 11th Gen Intel Core i7-1185G7 bits: 64 type: MT MCP arch: Tiger Lake
     rev: 1 cache: L1: 320 KiB L2: 5 MiB L3: 12 MiB
-  Speed (MHz): avg: 657 high: 1171 min/max: 400/4800 cores: 1: 747 2: 400 3: 401 4: 1171 5: 597
-    6: 1107 7: 439 8: 400 bogomips: 28876
+  Speed (MHz): avg: 693 high: 1258 min/max: 400/4800 cores: 1: 401 2: 401 3: 687 4: 1258 5: 400
+    6: 907 7: 400 8: 1095 bogomips: 28876
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
   Device-1: Intel TigerLake-LP GT2 [Iris Xe Graphics] vendor: Dell driver: i915 v: kernel
     arch: Gen-12.1 bus-ID: 00:02.0
-  Device-2: Sunplus Innovation [] driver: uvcvideo type: USB bus-ID: 3-6:3
+  Device-2: Realtek Cable Matters USB-C Video driver: N/A type: USB bus-ID: 3-1:2
+  Device-3: Sunplus Innovation Integrated_Webcam_HD driver: uvcvideo type: USB bus-ID: 3-6:3
   Display: wayland server: X.org v: 1.21.1.9 with: Xwayland v: 23.2.2 compositor: kwin_wayland
     driver: X: loaded: modesetting unloaded: vesa dri: iris gpu: i915 resolution: 1: 1920x1080
     2: 1920x1080
@@ -39,9 +40,9 @@ Graphics:
 Audio:
   Device-1: Intel Tiger Lake-LP Smart Sound Audio vendor: Dell driver: snd_hda_intel v: kernel
     bus-ID: 00:1f.3
-  API: ALSA v: k6.4.16-1 status: kernel-api
+  API: ALSA v: k6.5.10-1 status: kernel-api
   Server-1: JACK v: 1.9.22 status: off
-  Server-2: PipeWire v: 0.3.83 status: active
+  Server-2: PipeWire v: 0.3.84 status: active
   Server-3: PulseAudio v: 16.1 status: off (using pipewire-pulse)
 Network:
   Device-1: Intel Wi-Fi 6 AX201 driver: iwlwifi v: kernel bus-ID: 00:14.3
@@ -53,37 +54,31 @@ Bluetooth:
   Device-1: Intel AX201 Bluetooth driver: btusb v: 0.8 type: USB bus-ID: 3-10:5
   Report: hciconfig ID: hci0 rfk-id: 3 state: up address: <filter> bt-v: 5.2 lmp-v: 11
 Drives:
-  Local Storage: total: 476.94 GiB used: 15.25 GiB (3.2%)
-  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 28.9 C
+  Local Storage: total: 476.94 GiB used: 15.87 GiB (3.3%)
+  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 19.9 C
 Partition:
-  ID-1: / size: 451.62 GiB used: 15.17 GiB (3.4%) fs: ext4 dev: /dev/nvme0n1p2
-  ID-2: /boot size: 511 MiB used: 77.4 MiB (15.1%) fs: vfat dev: /dev/nvme0n1p1
+  ID-1: / size: 451.62 GiB used: 15.79 GiB (3.5%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-2: /boot size: 511 MiB used: 77.8 MiB (15.2%) fs: vfat dev: /dev/nvme0n1p1
 Swap:
   ID-1: swap-1 type: partition size: 16.52 GiB used: 0 KiB (0.0%) dev: /dev/nvme0n1p3
 Sensors:
-  System Temperatures: cpu: 44.0 C mobo: N/A
+  System Temperatures: cpu: 33.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 195 Uptime: 37m Memory: total: 16 GiB note: est. available: 15.02 GiB
-  used: 1.95 GiB (13.0%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 858
-  Client: Unknown Client: octopi inxi: 3.3.30
+  Processes: 204 Uptime: 35m Memory: total: 16 GiB note: est. available: 15.02 GiB
+  used: 2.4 GiB (16.0%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 879
+  Client: Unknown Client: octopi inxi: 3.3.31
 
 
 ----------------------------------------------------------------------------------------------------------
 journalctl -b -p err
 ----------------------------------------------------------------------------------------------------------
 
-Oct 28 13:58:58 marco-latitude5420 kernel: ACPI Error: Thread 1095517824 cannot release Mutex [ECMX] acquired by thread 1091677952 (20230331/exmutex-378)
-Oct 28 13:58:58 marco-latitude5420 kernel: ACPI Error: Aborting method \_SB.PC00.LPCB.ECDV._Q66 due to previous error (AE_AML_NOT_OWNER) (20230331/psparse-529)
-Oct 28 13:58:58 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
-Oct 28 13:59:01 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
-Oct 28 13:59:08 marco-latitude5420 systemd[858]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
-Oct 28 13:59:20 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
-Oct 28 13:59:20 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Can't enable invalid framebuffer object!
-Oct 28 14:27:35 marco-latitude5420 kwin_wayland[932]: kwin_libinput: Libinput: event11 - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
-                                                      See https://wayland.freedesktop.org/libinput/doc/1.24.0/touchpad-jumping-cursors.html for details
-Oct 28 14:33:13 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
-Oct 28 14:33:13 marco-latitude5420 kwin_wayland[932]: libkwinglutils: Can't enable invalid framebuffer object!
+Nov 04 06:40:47 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
+Nov 04 06:40:50 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
+Nov 04 06:40:58 marco-latitude5420 systemd[928]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
+Nov 04 06:41:08 marco-latitude5420 kwin_wayland[1001]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Nov 04 06:41:08 marco-latitude5420 kwin_wayland[1001]: libkwinglutils: Can't enable invalid framebuffer object!
 
 
 ----------------------------------------------------------------------------------------------------------
@@ -179,7 +174,7 @@ Include = /etc/pacman.d/mirrorlist
 pacman -Qm
 ----------------------------------------------------------------------------------------------------------
 
-qutebrowser 3.0.0-1
+qutebrowser 3.0.2-1
 
 
 ----------------------------------------------------------------------------------------------------------
@@ -1941,6 +1936,585 @@ filesystem: 700  package: 755
 [2023-10-28T14:34:26-0400] [PACMAN] Running 'pacman -Syu'
 [2023-10-28T14:34:26-0400] [PACMAN] synchronizing package lists
 [2023-10-28T14:34:27-0400] [PACMAN] starting full system upgrade
+[2023-10-28T14:42:10-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T14:42:10-0400] [PACMAN] synchronizing package lists
+[2023-10-28T14:42:10-0400] [PACMAN] starting full system upgrade
+[2023-10-28T19:35:38-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T19:35:38-0400] [PACMAN] synchronizing package lists
+[2023-10-28T19:35:38-0400] [PACMAN] starting full system upgrade
+[2023-10-28T19:39:09-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-28T19:39:09-0400] [PACMAN] synchronizing package lists
+[2023-10-28T19:39:11-0400] [PACMAN] starting full system upgrade
+[2023-10-29T09:47:21-0400] [PACMAN] Running '/usr/bin/pacman -U /home/mparillo/qutebrowser602/qutebrowser-3.0.2-1-x86_64.pkg.tar.zst'
+[2023-10-29T09:47:22-0400] [ALPM] transaction started
+[2023-10-29T09:47:23-0400] [ALPM] upgraded qutebrowser (3.0.0-1 -> 3.0.2-1)
+[2023-10-29T09:47:23-0400] [ALPM] transaction completed
+[2023-10-29T09:47:23-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-29T09:47:23-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-29T10:29:10-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-29T10:29:10-0400] [PACMAN] synchronizing package lists
+[2023-10-29T10:29:10-0400] [PACMAN] starting full system upgrade
+[2023-10-29T11:17:15-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-29T11:17:15-0400] [PACMAN] synchronizing package lists
+[2023-10-29T11:17:15-0400] [PACMAN] starting full system upgrade
+[2023-10-29T18:26:38-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-29T18:26:38-0400] [PACMAN] synchronizing package lists
+[2023-10-29T18:26:41-0400] [PACMAN] starting full system upgrade
+[2023-10-29T18:26:45-0400] [ALPM] transaction started
+[2023-10-29T18:26:45-0400] [ALPM] upgraded midna-themes6 (7.0.9-1 -> 7.0.10-1)
+[2023-10-29T18:26:45-0400] [ALPM] transaction completed
+[2023-10-29T18:26:45-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-29T19:06:41-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-29T19:06:41-0400] [PACMAN] synchronizing package lists
+[2023-10-29T19:06:44-0400] [PACMAN] starting full system upgrade
+[2023-10-30T06:01:15-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-30T06:01:15-0400] [PACMAN] synchronizing package lists
+[2023-10-30T06:01:17-0400] [PACMAN] starting full system upgrade
+[2023-10-30T07:34:43-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-30T07:34:43-0400] [PACMAN] synchronizing package lists
+[2023-10-30T07:34:43-0400] [PACMAN] starting full system upgrade
+[2023-10-30T18:03:39-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-30T18:03:39-0400] [PACMAN] synchronizing package lists
+[2023-10-30T18:03:42-0400] [PACMAN] starting full system upgrade
+[2023-10-30T18:04:00-0400] [ALPM] transaction started
+[2023-10-30T18:04:00-0400] [ALPM] upgraded shadow (4.14.1-1 -> 4.14.2-1)
+[2023-10-30T18:04:00-0400] [ALPM] upgraded gpgme-qt6 (1.23.1-1 -> 1.23.1-2)
+[2023-10-30T18:04:00-0400] [ALPM] upgraded live-media (2023.07.24-1 -> 2023.10.30-1)
+[2023-10-30T18:04:00-0400] [ALPM] upgraded konversation6 (23.08.2-1 -> 23.08.2-2)
+[2023-10-30T18:04:01-0400] [ALPM] upgraded linux-firmware (20230919-1 -> 20231030-1)
+[2023-10-30T18:04:01-0400] [ALPM] upgraded pyqt6-python3 (6.5.3-1 -> 6.6.0-1)
+[2023-10-30T18:04:01-0400] [ALPM] upgraded pyqt6-webengine (6.5.0-1 -> 6.6.0-1)
+[2023-10-30T18:04:01-0400] [ALPM] transaction completed
+[2023-10-30T18:04:01-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-30T18:04:01-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-30T18:09:14-0400] [PACMAN] Running 'pacman -S kompare6'
+[2023-10-30T18:09:18-0400] [ALPM] transaction started
+[2023-10-30T18:09:18-0400] [ALPM] installed libkomparediff6 (23.08.2-1)
+[2023-10-30T18:09:18-0400] [ALPM] installed kompare6 (23.08.2-1)
+[2023-10-30T18:09:18-0400] [ALPM] transaction completed
+[2023-10-30T18:09:18-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-30T18:09:18-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-30T21:04:26-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-30T21:04:26-0400] [PACMAN] synchronizing package lists
+[2023-10-30T21:04:27-0400] [PACMAN] starting full system upgrade
+[2023-10-31T06:11:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-31T06:11:22-0400] [PACMAN] synchronizing package lists
+[2023-10-31T06:11:23-0400] [PACMAN] starting full system upgrade
+[2023-10-31T06:11:26-0400] [ALPM] transaction started
+[2023-10-31T06:11:26-0400] [ALPM] upgraded usbutils (016-1 -> 017-1)
+[2023-10-31T06:11:26-0400] [ALPM] upgraded vlc (1:3.0.19-1 -> 1:3.0.20-1)
+[2023-10-31T06:11:26-0400] [ALPM] transaction completed
+[2023-10-31T06:11:26-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-10-31T06:11:26-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-10-31T07:42:22-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-31T07:42:22-0400] [PACMAN] synchronizing package lists
+[2023-10-31T07:42:23-0400] [PACMAN] starting full system upgrade
+[2023-10-31T19:49:04-0400] [PACMAN] Running 'pacman -Syu'
+[2023-10-31T19:49:04-0400] [PACMAN] synchronizing package lists
+[2023-10-31T19:49:05-0400] [PACMAN] starting full system upgrade
+[2023-10-31T19:49:13-0400] [ALPM] transaction started
+[2023-10-31T19:49:14-0400] [ALPM] upgraded linux (6.4.16-1 -> 6.5.9-1)
+[2023-10-31T19:49:14-0400] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2023-10-31T19:49:15-0400] [ALPM] upgraded linux-headers (6.4.16-1 -> 6.5.9-1)
+[2023-10-31T19:49:16-0400] [ALPM] upgraded llvm (17.0.3-1 -> 17.0.4-1)
+[2023-10-31T19:49:16-0400] [ALPM] upgraded p11-kit (0.25.1-1 -> 0.25.2-1)
+[2023-10-31T19:49:16-0400] [ALPM] upgraded midna-themes6 (7.0.10-1 -> 7.0.11-1)
+[2023-10-31T19:49:16-0400] [ALPM] transaction completed
+[2023-10-31T19:49:17-0400] [ALPM] running '99-linux.hook'...
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.5.9-1
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.5.9-1
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-31T19:49:17-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-31T19:49:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-31T19:49:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-31T19:49:18-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-31T19:49:19-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Files:                    712
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Compared:                 20 files
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.009823 seconds
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-31T19:49:20-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.5.9-1
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-10-31T19:49:22-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-10-31T19:49:23-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-10-31T19:49:25-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Files:                    2164
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Compared:                 482 files
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.020988 seconds
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-10-31T19:49:26-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-10-31T19:49:29-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-10-31T19:49:29-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-01T07:40:46-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-01T07:40:46-0400] [PACMAN] synchronizing package lists
+[2023-11-01T07:40:46-0400] [PACMAN] starting full system upgrade
+[2023-11-01T18:31:11-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-01T18:31:11-0400] [PACMAN] synchronizing package lists
+[2023-11-01T18:31:12-0400] [PACMAN] starting full system upgrade
+[2023-11-01T18:31:33-0400] [ALPM] transaction started
+[2023-11-01T18:31:33-0400] [ALPM] upgraded sqlite (3.43.2-1 -> 3.44.0-1)
+[2023-11-01T18:31:33-0400] [ALPM] upgraded xz (5.4.4-1 -> 5.4.5-1)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded breeze-icons6 (5.240.7-1 -> 5.240.7-2)
+[2023-11-01T18:31:34-0400] [ALPM] warning: directory permissions differ on /usr/share/polkit-1/rules.d/
+filesystem: 755  package: 700
+[2023-11-01T18:31:34-0400] [ALPM] upgraded fwupd (1.9.6-1 -> 1.9.7-1)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded ghostscript (1:10.02.0-1 -> 1:10.02.1-1)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded groff (1.23.0-2 -> 1.23.0-3)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded inxi (3.3.30-2 -> 3.3.31-1)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded kapidox6 (5.240.7-1 -> 5.240.7-2)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded kguiaddons6 (5.240.7-1 -> 5.240.7-2)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded kservice6 (5.240.7-1 -> 5.240.7-3)
+[2023-11-01T18:31:34-0400] [ALPM] upgraded noto-fonts (1:23.10.1-1 -> 1:23.11.1-1)
+[2023-11-01T18:31:34-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2023-11-01T18:31:34-0400] [ALPM] upgraded phonon-qt6 (4.11.1-1 -> 4.11.1-2)
+[2023-11-01T18:31:34-0400] [ALPM] transaction completed
+[2023-11-01T18:31:34-0400] [ALPM] running 'fc-cache-install.hook'...
+[2023-11-01T18:31:34-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-01T18:31:34-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-11-01T18:31:34-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-01T20:06:44-0400] [PACMAN] Running 'pacman -S cups'
+[2023-11-01T20:06:51-0400] [ALPM] transaction started
+[2023-11-01T20:06:51-0400] [ALPM] installed qpdf (11.6.3-1)
+[2023-11-01T20:06:51-0400] [ALPM] installed libcupsfilters (2.0.0-4)
+[2023-11-01T20:06:51-0400] [ALPM] installed libppd (2.0.0-1)
+[2023-11-01T20:06:51-0400] [ALPM] installed cups-filters (2.0.0-1)
+[2023-11-01T20:06:51-0400] [ALPM] installed cups (1:2.4.7-2)
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] Enabling systemd service
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/printer.target.wants/cups.service → /usr/lib/systemd/system/cups.service.
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/multi-user.target.wants/cups.service → /usr/lib/systemd/system/cups.service.
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/sockets.target.wants/cups.socket → /usr/lib/systemd/system/cups.socket.
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/multi-user.target.wants/cups.path → /usr/lib/systemd/system/cups.path.
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] >> If you use an HTTPS connection to CUPS, the first time you access
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] >> the interface it may take a very long time before the site comes up.
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] >> This is because the first request triggers the generation of the CUPS
+[2023-11-01T20:06:51-0400] [ALPM-SCRIPTLET] >> SSL certificates which can be a very time-consuming job.
+[2023-11-01T20:06:51-0400] [ALPM] transaction completed
+[2023-11-01T20:06:51-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-01T20:06:51-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-01T20:09:06-0400] [PACMAN] Running 'pacman -S hplip'
+[2023-11-01T20:09:22-0400] [ALPM] transaction started
+[2023-11-01T20:09:23-0400] [ALPM] installed foomatic-db (2:20230901-2)
+[2023-11-01T20:09:23-0400] [ALPM] installed foomatic-db-engine (2:20230901-2)
+[2023-11-01T20:09:23-0400] [ALPM] installed python3-toml (0.10.2-3)
+[2023-11-01T20:09:23-0400] [ALPM] installed python3-ply (3.11-5)
+[2023-11-01T20:09:23-0400] [ALPM] installed python3-tomli (2.0.1-2)
+[2023-11-01T20:09:23-0400] [ALPM] installed sip (6.7.12-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed pyqt5-sip (12.13.0-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed qt5-multimedia (5.15.11-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed qt5-serialport (5.15.11-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed qt5-webchannel (5.15.11-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed qt5-speech (5.15.11-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed pyqt5-python3 (5.15.10-1)
+[2023-11-01T20:09:23-0400] [ALPM] installed python3-distro (1.8.0-3)
+[2023-11-01T20:09:23-0400] [ALPM] installed hplip (3.23.8-1)
+[2023-11-01T20:09:23-0400] [ALPM] transaction completed
+[2023-11-01T20:09:23-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-01T20:37:57-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-01T20:37:57-0400] [PACMAN] synchronizing package lists
+[2023-11-01T20:37:58-0400] [PACMAN] starting full system upgrade
+[2023-11-02T06:33:38-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-02T06:33:38-0400] [PACMAN] synchronizing package lists
+[2023-11-02T06:33:38-0400] [PACMAN] starting full system upgrade
+[2023-11-02T15:18:09-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-02T15:18:09-0400] [PACMAN] synchronizing package lists
+[2023-11-02T15:18:13-0400] [PACMAN] starting full system upgrade
+[2023-11-02T15:18:34-0400] [ALPM] transaction started
+[2023-11-02T15:18:34-0400] [ALPM] upgraded gawk (5.2.2-1 -> 5.3.0-1)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded poppler (23.10.0-1 -> 23.11.0-1)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded kfilemetadata6 (5.240.7-1 -> 5.240.7-2)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded kuserfeedback6 (1.2.1-1 -> 1.3.0-1)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded libcupsfilters (2.0.0-4 -> 2.0.0-5)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded libqaccessibilityclient6 (0.4.2-1 -> 0.5.0-1)
+[2023-11-02T15:18:35-0400] [ALPM] upgraded linux (6.5.9-1 -> 6.5.10-1)
+[2023-11-02T15:18:35-0400] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2023-11-02T15:18:37-0400] [ALPM] upgraded linux-headers (6.5.9-1 -> 6.5.10-1)
+[2023-11-02T15:18:37-0400] [ALPM] upgraded pipewire (0.3.83-1 -> 0.3.84-1)
+[2023-11-02T15:18:37-0400] [ALPM] upgraded phonon-qt6 (4.11.1-2 -> 4.12.0-1)
+[2023-11-02T15:18:37-0400] [ALPM] transaction completed
+[2023-11-02T15:18:37-0400] [ALPM] running '99-linux.hook'...
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.5.10-1
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.5.10-1
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-02T15:18:37-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-02T15:18:38-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-02T15:18:38-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-02T15:18:38-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-02T15:18:39-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Files:                    712
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Compared:                 21 files
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.009587 seconds
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-02T15:18:40-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.5.10-1
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-02T15:18:42-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-11-02T15:18:43-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-02T15:18:45-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Files:                    2164
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Compared:                 480 files
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.017787 seconds
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-02T15:18:46-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-11-02T15:18:49-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-11-02T15:18:49-0400] [ALPM] running 'texinfo-install.hook'...
+[2023-11-02T19:44:17-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-02T19:44:17-0400] [PACMAN] synchronizing package lists
+[2023-11-02T19:44:18-0400] [PACMAN] starting full system upgrade
+[2023-11-02T19:44:21-0400] [ALPM] transaction started
+[2023-11-02T19:44:21-0400] [ALPM] upgraded git (2.42.0-1 -> 2.42.1-1)
+[2023-11-02T19:44:21-0400] [ALPM] upgraded phonon-vlc (0.11.3-1 -> 0.12.0-1)
+[2023-11-02T19:44:21-0400] [ALPM] upgraded haruna6 (0.12.1-1 -> 0.12.2-1)
+[2023-11-02T19:44:21-0400] [ALPM] upgraded kirigami-addons6 (0.11.0-2 -> 0.11.75-1)
+[2023-11-02T19:44:21-0400] [ALPM] upgraded kquickimageeditor6 (0.2.0-2 -> 0.3.0-1)
+[2023-11-02T19:44:21-0400] [ALPM] transaction completed
+[2023-11-02T19:44:21-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-02T19:44:22-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-02T21:22:18-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-02T21:22:18-0400] [PACMAN] synchronizing package lists
+[2023-11-02T21:22:19-0400] [PACMAN] starting full system upgrade
+[2023-11-03T07:23:25-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-03T07:23:25-0400] [PACMAN] synchronizing package lists
+[2023-11-03T07:23:25-0400] [PACMAN] starting full system upgrade
+[2023-11-03T07:23:27-0400] [ALPM] transaction started
+[2023-11-03T07:23:27-0400] [ALPM] upgraded protobuf (24.4-1 -> 25.0-1)
+[2023-11-03T07:23:27-0400] [ALPM] upgraded sdl2 (2.28.4-1 -> 2.28.5-1)
+[2023-11-03T07:23:27-0400] [ALPM] upgraded vlc (1:3.0.20-1 -> 1:3.0.20-2)
+[2023-11-03T07:23:27-0400] [ALPM] upgraded kio-extras6 (23.08.2-2 -> 23.08.2-3)
+[2023-11-03T07:23:27-0400] [ALPM] upgraded protobuf-c (1.4.1-8 -> 1.4.1-9)
+[2023-11-03T07:23:27-0400] [ALPM] transaction completed
+[2023-11-03T07:23:27-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-03T07:23:27-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-03T07:23:27-0400] [ALPM] running 'update-mime-database.hook'...
+[2023-11-03T09:08:33-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-03T09:08:33-0400] [PACMAN] synchronizing package lists
+[2023-11-03T09:08:33-0400] [PACMAN] starting full system upgrade
+[2023-11-03T16:00:27-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-03T16:00:27-0400] [PACMAN] synchronizing package lists
+[2023-11-03T16:00:28-0400] [PACMAN] starting full system upgrade
+[2023-11-03T16:00:29-0400] [ALPM] transaction started
+[2023-11-03T16:00:29-0400] [ALPM] upgraded inxi (3.3.31-1 -> 3.3.31.2-1)
+[2023-11-03T16:00:29-0400] [ALPM] transaction completed
+[2023-11-03T18:02:36-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-03T18:02:36-0400] [PACMAN] synchronizing package lists
+[2023-11-03T18:02:37-0400] [PACMAN] starting full system upgrade
+[2023-11-03T18:02:38-0400] [ALPM] transaction started
+[2023-11-03T18:02:38-0400] [ALPM] upgraded btrfs-progs (6.5.3-1 -> 6.6-1)
+[2023-11-03T18:02:38-0400] [ALPM] upgraded elfutils (0.189-1 -> 0.190-1)
+[2023-11-03T18:02:38-0400] [ALPM] upgraded hwdata (0.375-1 -> 0.376-1)
+[2023-11-03T18:02:38-0400] [ALPM] upgraded libheif (1.17.1-1 -> 1.17.3-1)
+[2023-11-03T18:02:38-0400] [ALPM] transaction completed
+[2023-11-03T18:02:38-0400] [ALPM] running '99-linux.hook'...
+[2023-11-03T18:02:38-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.5.10-1
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.5.10-1
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-03T18:02:39-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-03T18:02:40-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-03T18:02:41-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Files:                    712
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Compared:                 21 files
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.007930 seconds
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-03T18:02:42-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.5.10-1
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-11-03T18:02:44-0400] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-11-03T18:02:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-11-03T18:02:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-03T18:02:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-11-03T18:02:45-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-11-03T18:02:45-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-03T18:02:47-0400] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-03T18:02:48-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Files:                    2164
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Compared:                 480 files
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: Duration:                 0.021120 seconds
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-11-03T18:02:51-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-11-03T18:02:51-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
 
 
 ----------------------------------------------------------------------------------------------------------
