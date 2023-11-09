@@ -21,8 +21,8 @@ Battery:
 CPU:
   Info: quad core model: 11th Gen Intel Core i7-1185G7 bits: 64 type: MT MCP arch: Tiger Lake
     rev: 1 cache: L1: 320 KiB L2: 5 MiB L3: 12 MiB
-  Speed (MHz): avg: 693 high: 1258 min/max: 400/4800 cores: 1: 401 2: 401 3: 687 4: 1258 5: 400
-    6: 907 7: 400 8: 1095 bogomips: 28876
+  Speed (MHz): avg: 771 high: 1095 min/max: 400/4800 cores: 1: 400 2: 957 3: 940 4: 1095 5: 400
+    6: 923 7: 1054 8: 400 bogomips: 28876
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
   Device-1: Intel TigerLake-LP GT2 [Iris Xe Graphics] vendor: Dell driver: i915 v: kernel
@@ -54,19 +54,19 @@ Bluetooth:
   Device-1: Intel AX201 Bluetooth driver: btusb v: 0.8 type: USB bus-ID: 3-10:5
   Report: hciconfig ID: hci0 rfk-id: 3 state: up address: <filter> bt-v: 5.2 lmp-v: 11
 Drives:
-  Local Storage: total: 476.94 GiB used: 15.87 GiB (3.3%)
-  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 19.9 C
+  Local Storage: total: 476.94 GiB used: 15.85 GiB (3.3%)
+  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 23.9 C
 Partition:
-  ID-1: / size: 451.62 GiB used: 15.79 GiB (3.5%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-1: / size: 451.62 GiB used: 15.77 GiB (3.5%) fs: ext4 dev: /dev/nvme0n1p2
   ID-2: /boot size: 511 MiB used: 77.8 MiB (15.2%) fs: vfat dev: /dev/nvme0n1p1
 Swap:
   ID-1: swap-1 type: partition size: 16.52 GiB used: 0 KiB (0.0%) dev: /dev/nvme0n1p3
 Sensors:
-  System Temperatures: cpu: 33.0 C mobo: N/A
+  System Temperatures: cpu: 44.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 204 Uptime: 35m Memory: total: 16 GiB note: est. available: 15.02 GiB
-  used: 2.4 GiB (16.0%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 879
+  Processes: 202 Uptime: 2h 16m Memory: total: 16 GiB note: est. available: 15.02 GiB
+  used: 1.95 GiB (13.0%) Init: systemd target: graphical (5) Compilers: gcc: 12.3.0 Packages: 879
   Client: Unknown Client: octopi inxi: 3.3.31
 
 
@@ -74,11 +74,256 @@ Info:
 journalctl -b -p err
 ----------------------------------------------------------------------------------------------------------
 
-Nov 04 06:40:47 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
-Nov 04 06:40:50 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
-Nov 04 06:40:58 marco-latitude5420 systemd[928]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
-Nov 04 06:41:08 marco-latitude5420 kwin_wayland[1001]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
-Nov 04 06:41:08 marco-latitude5420 kwin_wayland[1001]: libkwinglutils: Can't enable invalid framebuffer object!
+Nov 08 18:38:18 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
+Nov 08 18:38:20 marco-latitude5420 kernel: Bluetooth: hci0: Malformed MSFT vendor event: 0x02
+Nov 08 18:41:04 marco-latitude5420 systemd[900]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
+Nov 08 18:41:15 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Nov 08 18:41:15 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Can't enable invalid framebuffer object!
+Nov 08 18:48:16 marco-latitude5420 systemd-coredump[2245]: Process 2076 (neochat) of user 1000 dumped core.
+                                                           
+                                                           Stack trace of thread 2076:
+                                                           #0  0x00007f92038adb8c __pthread_kill_implementation (libc.so.6 + 0x83b8c)
+                                                           #1  0x00007f9203861b32 raise (libc.so.6 + 0x37b32)
+                                                           #2  0x00007f920535487c _ZN6KCrash19defaultCrashHandlerEi (libKF6Crash.so.6 + 0x587c)
+                                                           #3  0x00007f9203861bd0 __restore_rt (libc.so.6 + 0x37bd0)
+                                                           #4  0x00007f9203c001dc _ZNK11QJsonObject5valueE13QLatin1String (libQt6Core.so.6 + 0x2001dc)
+                                                           #5  0x00007f9205b8608c _ZNK8Quotient9RoomEvent2idEv (libQuotientQt6.so.0.8 + 0x18608c)
+                                                           #6  0x000000000076d8d9 n/a (neochat + 0x36d8d9)
+                                                           #7  0x000000000076f523 n/a (neochat + 0x36f523)
+                                                           #8  0x00007f9203bbcb8c n/a (libQt6Core.so.6 + 0x1bcb8c)
+                                                           #9  0x00007f9205b2ae44 _ZN8Quotient4Room21aboutToAddNewMessagesENS_5RangeISt6vectorISt10unique_ptrINS_9RoomEventESt14default_deleteIS4_EESaIS7_EEEE (libQuotientQt6.so.0.8 + 0x12ae44)
+                                                           #10 0x00007f9205b4b304 n/a (libQuotientQt6.so.0.8 + 0x14b304)
+                                                           #11 0x00007f9205b4cdc5 _ZN8Quotient4Room10updateDataEONS_12SyncRoomDataEb (libQuotientQt6.so.0.8 + 0x14cdc5)
+                                                           #12 0x00007f9203bba344 _ZN7QObject5eventEP6QEvent (libQt6Core.so.6 + 0x1ba344)
+                                                           #13 0x00007f9204d79481 _ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent (libQt6Widgets.so.6 + 0x179481)
+                                                           #14 0x00007f9203b5d748 _ZN16QCoreApplication15notifyInternal2EP7QObjectP6QEvent (libQt6Core.so.6 + 0x15d748)
+                                                           #15 0x00007f9203b6148c _ZN23QCoreApplicationPrivate16sendPostedEventsEP7QObjectiP11QThreadData (libQt6Core.so.6 + 0x16148c)
+                                                           #16 0x00007f9203e1ad63 n/a (libQt6Core.so.6 + 0x41ad63)
+                                                           #17 0x00007f9200879817 n/a (libglib-2.0.so.0 + 0x55817)
+                                                           #18 0x00007f920087c547 n/a (libglib-2.0.so.0 + 0x58547)
+                                                           #19 0x00007f920087cb1c g_main_context_iteration (libglib-2.0.so.0 + 0x58b1c)
+                                                           #20 0x00007f9203e1aebc _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt6Core.so.6 + 0x41aebc)
+                                                           #21 0x00007f9203b69c66 _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt6Core.so.6 + 0x169c66)
+                                                           #22 0x00007f9203b661b8 _ZN16QCoreApplication4execEv (libQt6Core.so.6 + 0x1661b8)
+                                                           #23 0x000000000044efe2 n/a (neochat + 0x4efe2)
+                                                           #24 0x00007f920384d677 __libc_start_call_main (libc.so.6 + 0x23677)
+                                                           #25 0x00007f920384d735 __libc_start_main@@GLIBC_2.34 (libc.so.6 + 0x23735)
+                                                           #26 0x0000000000577541 n/a (neochat + 0x177541)
+                                                           
+                                                           Stack trace of thread 2077:
+                                                           #0  0x00007f920087ac6d n/a (libglib-2.0.so.0 + 0x56c6d)
+                                                           #1  0x00007f920087c13b n/a (libglib-2.0.so.0 + 0x5813b)
+                                                           #2  0x00007f920087c42e n/a (libglib-2.0.so.0 + 0x5842e)
+                                                           #3  0x00007f920087cb1c g_main_context_iteration (libglib-2.0.so.0 + 0x58b1c)
+                                                           #4  0x00007f9203e1aee1 _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt6Core.so.6 + 0x41aee1)
+                                                           #5  0x00007f9203b69c66 _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt6Core.so.6 + 0x169c66)
+                                                           #6  0x00007f9203c690bc _ZN7QThread4execEv (libQt6Core.so.6 + 0x2690bc)
+                                                           #7  0x00007f92053db97a n/a (libQt6DBus.so.6 + 0x3397a)
+                                                           #8  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #9  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #10 0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2079:
+                                                           #0  0x00007f920391cfbf __poll (libc.so.6 + 0xf2fbf)
+                                                           #1  0x00007f91fff7b22e n/a (libQt6WaylandClient.so.6 + 0x7a22e)
+                                                           #2  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #3  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #4  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2078:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f9203d1352b _ZN14QWaitCondition4waitEP6QMutex14QDeadlineTimer (libQt6Core.so.6 + 0x31352b)
+                                                           #3  0x00007f91fff7b1c7 n/a (libQt6WaylandClient.so.6 + 0x7a1c7)
+                                                           #4  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2095:
+                                                           #0  0x00007f920087abf5 g_source_ref (libglib-2.0.so.0 + 0x56bf5)
+                                                           #1  0x00007f920087acd0 n/a (libglib-2.0.so.0 + 0x56cd0)
+                                                           #2  0x00007f920087c13b n/a (libglib-2.0.so.0 + 0x5813b)
+                                                           #3  0x00007f920087c42e n/a (libglib-2.0.so.0 + 0x5842e)
+                                                           #4  0x00007f920087cb1c g_main_context_iteration (libglib-2.0.so.0 + 0x58b1c)
+                                                           #5  0x00007f9203e1aee1 _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt6Core.so.6 + 0x41aee1)
+                                                           #6  0x00007f9203b69c66 _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt6Core.so.6 + 0x169c66)
+                                                           #7  0x00007f9203c690bc _ZN7QThread4execEv (libQt6Core.so.6 + 0x2690bc)
+                                                           #8  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #9  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #10 0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2110:
+                                                           #0  0x00007f920087c1f0 n/a (libglib-2.0.so.0 + 0x581f0)
+                                                           #1  0x00007f920087c42e n/a (libglib-2.0.so.0 + 0x5842e)
+                                                           #2  0x00007f920087cb1c g_main_context_iteration (libglib-2.0.so.0 + 0x58b1c)
+                                                           #3  0x00007f9203e1aee1 _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt6Core.so.6 + 0x41aee1)
+                                                           #4  0x00007f9203b69c66 _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt6Core.so.6 + 0x169c66)
+                                                           #5  0x00007f9203c690bc _ZN7QThread4execEv (libQt6Core.so.6 + 0x2690bc)
+                                                           #6  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #7  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #8  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2112:
+                                                           #0  0x00007f920391cfbf __poll (libc.so.6 + 0xf2fbf)
+                                                           #1  0x00007f920087c4e7 n/a (libglib-2.0.so.0 + 0x584e7)
+                                                           #2  0x00007f920087cb1c g_main_context_iteration (libglib-2.0.so.0 + 0x58b1c)
+                                                           #3  0x00007f9203e1aee1 _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt6Core.so.6 + 0x41aee1)
+                                                           #4  0x00007f9203b69c66 _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt6Core.so.6 + 0x169c66)
+                                                           #5  0x00007f9203c690bc _ZN7QThread4execEv (libQt6Core.so.6 + 0x2690bc)
+                                                           #6  0x00007f9206768bf8 n/a (libQt6Quick.so.6 + 0x368bf8)
+                                                           #7  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #8  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #9  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2081:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2082:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2093:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2091:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2083:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2080:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2108:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2085:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2084:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2086:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2092:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2105:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f9203d1352b _ZN14QWaitCondition4waitEP6QMutex14QDeadlineTimer (libQt6Core.so.6 + 0x31352b)
+                                                           #3  0x00007f920682e967 n/a (libQt6Quick.so.6 + 0x42e967)
+                                                           #4  0x00007f920682ebc2 n/a (libQt6Quick.so.6 + 0x42ebc2)
+                                                           #5  0x00007f9203d0ab37 n/a (libQt6Core.so.6 + 0x30ab37)
+                                                           #6  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #7  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2094:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2106:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2107:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           
+                                                           Stack trace of thread 2109:
+                                                           #0  0x00007f92038a8d86 __futex_abstimed_wait_common (libc.so.6 + 0x7ed86)
+                                                           #1  0x00007f92038ab3c8 pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x813c8)
+                                                           #2  0x00007f91edf11da9 n/a (iris_dri.so + 0x111da9)
+                                                           #3  0x00007f91edec5b9b n/a (iris_dri.so + 0xc5b9b)
+                                                           #4  0x00007f91edf11ce7 n/a (iris_dri.so + 0x111ce7)
+                                                           #5  0x00007f92038abf2c start_thread (libc.so.6 + 0x81f2c)
+                                                           #6  0x00007f920392969c __clone3 (libc.so.6 + 0xff69c)
+                                                           ELF object binary architecture: AMD x86-64
+Nov 08 20:16:45 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Nov 08 20:16:45 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Can't enable invalid framebuffer object!
+Nov 08 20:51:28 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Invalid framebuffer status:  "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT"
+Nov 08 20:51:28 marco-latitude5420 kwin_wayland[973]: libkwinglutils: Can't enable invalid framebuffer object!
 
 
 ----------------------------------------------------------------------------------------------------------
@@ -2515,6 +2760,241 @@ filesystem: 755  package: 700
 [2023-11-03T18:02:49-0400] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
 [2023-11-03T18:02:51-0400] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
 [2023-11-03T18:02:51-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2023-11-04T07:28:14-0400] [PACMAN] Running 'pacman -Syy'
+[2023-11-04T07:28:14-0400] [PACMAN] synchronizing package lists
+[2023-11-04T07:31:03-0400] [PACMAN] Running 'pacman -Syyu'
+[2023-11-04T07:31:03-0400] [PACMAN] synchronizing package lists
+[2023-11-04T07:31:08-0400] [PACMAN] starting full system upgrade
+[2023-11-04T07:31:28-0400] [ALPM] transaction started
+[2023-11-04T07:31:28-0400] [ALPM] removed octopi6 (0.15.0-1)
+[2023-11-04T07:31:28-0400] [ALPM] removed kompare6 (23.08.2-1)
+[2023-11-04T07:31:28-0400] [ALPM] removed libkomparediff6 (23.08.2-1)
+[2023-11-04T07:31:28-0400] [ALPM] removed kapidox6 (5.240.7-2)
+[2023-11-04T07:31:28-0400] [ALPM] removed falkon6 (23.08.2-2)
+[2023-11-04T07:31:28-0400] [ALPM] installed falkon (23.08.2-2)
+[2023-11-04T07:31:28-0400] [ALPM] installed kapidox (5.240.7-2)
+[2023-11-04T07:31:28-0400] [ALPM] installed libkomparediff2 (23.08.2-2)
+[2023-11-04T07:31:28-0400] [ALPM] installed kompare (23.08.2-2)
+[2023-11-04T07:31:28-0400] [ALPM] installed octopi (0.15.0-2)
+[2023-11-04T07:31:28-0400] [ALPM] transaction completed
+[2023-11-04T07:31:28-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-04T07:31:28-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-04T11:19:24-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-04T11:19:24-0400] [PACMAN] synchronizing package lists
+[2023-11-04T11:19:26-0400] [PACMAN] starting full system upgrade
+[2023-11-04T11:19:31-0400] [ALPM] transaction started
+[2023-11-04T11:19:31-0400] [ALPM] upgraded iproute2 (6.5.0-1 -> 6.6.0-1)
+[2023-11-04T11:19:31-0400] [ALPM] upgraded sof-firmware (2023.09-1 -> 2023.09.1-1)
+[2023-11-04T11:19:31-0400] [ALPM] transaction completed
+[2023-11-04T17:24:17-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-04T17:24:17-0400] [PACMAN] synchronizing package lists
+[2023-11-04T17:24:19-0400] [PACMAN] starting full system upgrade
+[2023-11-04T17:24:43-0400] [ALPM] transaction started
+[2023-11-04T17:24:43-0400] [ALPM] removed breeze-icons6 (5.240.7-2)
+[2023-11-04T17:24:44-0400] [ALPM] installed breeze-icons (5.240.7-2)
+[2023-11-04T17:24:44-0400] [ALPM] upgraded breeze6 (5.27.87-1 -> 5.27.87-2)
+[2023-11-04T17:24:44-0400] [ALPM] transaction completed
+[2023-11-04T17:24:44-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-04T17:24:44-0400] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-04T21:26:36-0400] [PACMAN] Running 'pacman -Syu'
+[2023-11-04T21:26:36-0400] [PACMAN] synchronizing package lists
+[2023-11-04T21:26:40-0400] [PACMAN] starting full system upgrade
+[2023-11-05T07:24:55-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T07:24:55-0500] [PACMAN] synchronizing package lists
+[2023-11-05T07:24:56-0500] [PACMAN] starting full system upgrade
+[2023-11-05T10:36:19-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T10:36:19-0500] [PACMAN] synchronizing package lists
+[2023-11-05T10:36:23-0500] [PACMAN] starting full system upgrade
+[2023-11-05T10:36:27-0500] [ALPM] transaction started
+[2023-11-05T10:36:27-0500] [ALPM] upgraded iproute2 (6.6.0-1 -> 6.6.0-2)
+[2023-11-05T10:36:27-0500] [ALPM] upgraded vim (9.0.2053-1 -> 9.0.2091-1)
+[2023-11-05T10:36:27-0500] [ALPM] transaction completed
+[2023-11-05T10:36:27-0500] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-05T10:36:27-0500] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-05T14:20:50-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T14:20:50-0500] [PACMAN] synchronizing package lists
+[2023-11-05T14:20:56-0500] [PACMAN] starting full system upgrade
+[2023-11-05T16:23:31-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T16:23:31-0500] [PACMAN] synchronizing package lists
+[2023-11-05T16:23:35-0500] [PACMAN] starting full system upgrade
+[2023-11-05T17:53:36-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T17:53:36-0500] [PACMAN] synchronizing package lists
+[2023-11-05T17:53:40-0500] [PACMAN] starting full system upgrade
+[2023-11-05T19:16:13-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-05T19:16:13-0500] [PACMAN] synchronizing package lists
+[2023-11-05T19:16:15-0500] [PACMAN] starting full system upgrade
+[2023-11-06T06:39:42-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-06T06:39:42-0500] [PACMAN] synchronizing package lists
+[2023-11-06T06:39:46-0500] [PACMAN] starting full system upgrade
+[2023-11-06T18:19:05-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-06T18:19:05-0500] [PACMAN] synchronizing package lists
+[2023-11-06T18:19:09-0500] [PACMAN] starting full system upgrade
+[2023-11-06T18:19:12-0500] [ALPM] transaction started
+[2023-11-06T18:19:12-0500] [ALPM] upgraded btrfs-progs (6.6-1 -> 6.6.1-1)
+[2023-11-06T18:19:12-0500] [ALPM] upgraded fakeroot (1.32.1-1 -> 1.32.2-1)
+[2023-11-06T18:19:12-0500] [ALPM] upgraded sudo (1.9.14.p3-1 -> 1.9.15-1)
+[2023-11-06T18:19:12-0500] [ALPM] transaction completed
+[2023-11-06T18:19:12-0500] [ALPM] running '99-linux.hook'...
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.5.10-1
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly-cmdline /boot/initramfs-linux.img --kver 6.5.10-1
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-06T18:19:12-0500] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-06T18:19:13-0500] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-06T18:19:14-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 70-persistent-net.rules
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Files:                    712
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Linked:                   2 files
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Compared:                 21 files
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Saved:                    327.6 KiB
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: Duration:                 0.010195 seconds
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-06T18:19:15-0500] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux.img' ***
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] dracut: Executing: /usr/bin/dracut -f --no-hostonly --no-hostonly-cmdline /boot/initramfs-linux-fallback.img --kver 6.5.10-1
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand' could not be found!
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmanctl' could not be found!
+[2023-11-06T18:19:17-0500] [ALPM-SCRIPTLET] dracut: dracut module 'connman' will not be installed, because command 'connmand-wait-online' could not be found!
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: dracut module 'tpm2-tss' will not be installed, because command 'tpm2' could not be found!
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: dracut module 'memstrack' will not be installed, because command 'memstrack' could not be found!
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: memstrack is not available
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: If you need to use rd.memdebug>=4, please install memstrack and procps-ng
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: systemd ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: systemd-initrd ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: modsign ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: i18n ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: btrfs ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: crypt ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: dm ***
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-dm.rules
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 55-dm.rules
+[2023-11-06T18:19:18-0500] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules ***
+[2023-11-06T18:19:20-0500] [ALPM-SCRIPTLET] dracut: *** Including module: kernel-modules-extra ***
+[2023-11-06T18:19:20-0500] [ALPM-SCRIPTLET] dracut: *** Including module: lvm ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 64-device-mapper.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 56-lvm.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 60-persistent-storage-lvm.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: nvdimm ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: qemu ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: qemu-net ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: lunmask ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: resume ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: rootfs-block ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: terminfo ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: udev-rules ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 40-redhat.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-firmware.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 50-udev.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 91-permissions.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: Skipping udev rule: 80-drivers-modprobe.rules
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: virtiofs ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: dracut-systemd ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: usrmount ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: base ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: fs-lib ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including module: shutdown ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Including modules done ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Installing kernel module dependencies done ***
+[2023-11-06T18:19:21-0500] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Resolving executable dependencies done ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Hardlinking files ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Mode:                     real
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Method:                   sha256
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Files:                    2164
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Linked:                   8 files
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Compared:                 0 xattrs
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Compared:                 480 files
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Saved:                    1.37 MiB
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: Duration:                 0.022498 seconds
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Hardlinking files done ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Store current command line parameters ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Stripping files ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Stripping files done ***
+[2023-11-06T18:19:22-0500] [ALPM-SCRIPTLET] dracut: *** Creating image file '/boot/initramfs-linux-fallback.img' ***
+[2023-11-06T18:19:25-0500] [ALPM-SCRIPTLET] dracut: *** Creating initramfs image file '/boot/initramfs-linux-fallback.img' done ***
+[2023-11-06T18:19:25-0500] [ALPM] running 'systemd-tmpfiles.hook'...
+[2023-11-06T21:53:22-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-06T21:53:22-0500] [PACMAN] synchronizing package lists
+[2023-11-06T21:53:25-0500] [PACMAN] starting full system upgrade
+[2023-11-07T06:45:30-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-07T06:45:30-0500] [PACMAN] synchronizing package lists
+[2023-11-07T06:45:33-0500] [PACMAN] starting full system upgrade
+[2023-11-07T06:45:36-0500] [ALPM] transaction started
+[2023-11-07T06:45:36-0500] [ALPM] upgraded libuv (1.46.0-1 -> 1.47.0-1)
+[2023-11-07T06:45:36-0500] [ALPM] upgraded live-media (2023.10.30-1 -> 2023.11.07-1)
+[2023-11-07T06:45:36-0500] [ALPM] transaction completed
+[2023-11-07T06:55:48-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-07T06:55:48-0500] [PACMAN] synchronizing package lists
+[2023-11-07T06:55:50-0500] [PACMAN] starting full system upgrade
+[2023-11-07T18:45:33-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-07T18:45:33-0500] [PACMAN] synchronizing package lists
+[2023-11-07T18:45:35-0500] [PACMAN] starting full system upgrade
+[2023-11-07T18:45:54-0500] [ALPM] transaction started
+[2023-11-07T18:45:54-0500] [ALPM] upgraded faad2 (2.10.1-1 -> 2.11.0-1)
+[2023-11-07T18:45:54-0500] [ALPM] upgraded widevine (120.0.6090.0-1 -> 121.0.6103.3-1)
+[2023-11-07T18:45:55-0500] [ALPM] upgraded google-chrome (120.0.6090.0-1 -> 121.0.6103.3-1)
+[2023-11-07T18:45:55-0500] [ALPM] upgraded kdsoap-ws-discovery-client (0.2-2 -> 0.3.0-1)
+[2023-11-07T18:45:55-0500] [ALPM] upgraded plasma-wayland-protocols (1.10.80-4 -> 1.11.0-1)
+[2023-11-07T18:45:55-0500] [ALPM] transaction completed
+[2023-11-07T18:45:55-0500] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2023-11-07T18:45:55-0500] [ALPM] running 'update-desktop-database.hook'...
+[2023-11-07T20:45:41-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-07T20:45:41-0500] [PACMAN] synchronizing package lists
+[2023-11-07T20:45:43-0500] [PACMAN] starting full system upgrade
+[2023-11-08T05:58:22-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-08T05:58:22-0500] [PACMAN] synchronizing package lists
+[2023-11-08T05:58:24-0500] [PACMAN] starting full system upgrade
+[2023-11-08T05:58:27-0500] [ALPM] transaction started
+[2023-11-08T05:58:27-0500] [ALPM] upgraded libgusb (0.4.7-1 -> 0.4.8-1)
+[2023-11-08T05:58:27-0500] [ALPM] upgraded polkit-qt5 (0.114.0-1 -> 0.175.0-1)
+[2023-11-08T05:58:27-0500] [ALPM] upgraded polkit-qt6 (0.114.0-1 -> 0.175.0-1)
+[2023-11-08T05:58:27-0500] [ALPM] upgraded xapian-core (1.4.23-1 -> 1.4.24-1)
+[2023-11-08T05:58:27-0500] [ALPM] transaction completed
+[2023-11-08T20:53:30-0500] [PACMAN] Running 'pacman -Syu'
+[2023-11-08T20:53:30-0500] [PACMAN] synchronizing package lists
+[2023-11-08T20:53:34-0500] [PACMAN] starting full system upgrade
 
 
 ----------------------------------------------------------------------------------------------------------
