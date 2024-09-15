@@ -1,0 +1,185 @@
+Sep 11 17:19:16 marco-latitude5420 kaccess[1195]: Xlib XKB extension major= 1  minor= 0
+Sep 11 17:19:17 marco-latitude5420 kaccess[1195]: X server XKB extension major= 1  minor= 0
+Sep 11 17:19:17 marco-latitude5420 kaccess[1244]: No such schema “org.gnome.desktop.a11y.applications”
+Sep 12 06:43:48 marco-latitude5420 kaccess[1200]: Xlib XKB extension major= 1  minor= 0
+Sep 12 06:43:49 marco-latitude5420 kaccess[1200]: X server XKB extension major= 1  minor= 0
+Sep 12 06:43:49 marco-latitude5420 kaccess[1249]: No such schema “org.gnome.desktop.a11y.applications”
+Sep 12 17:46:24 marco-latitude5420 kaccess[1210]: Xlib XKB extension major= 1  minor= 0
+Sep 12 17:46:24 marco-latitude5420 kaccess[1210]: X server XKB extension major= 1  minor= 0
+Sep 12 17:46:24 marco-latitude5420 kaccess[1261]: No such schema “org.gnome.desktop.a11y.applications”
+Sep 12 18:12:17 marco-latitude5420 kaccess[896]: Xlib XKB extension major= 1  minor= 0
+Sep 12 18:12:17 marco-latitude5420 dbus-daemon[861]: [session uid=1000 pid=861] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=896 comm="/usr/bin/kaccess")
+Sep 12 18:12:17 marco-latitude5420 kaccess[896]: qt.qpa.xcb: could not connect to display
+Sep 12 18:12:17 marco-latitude5420 kaccess[896]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 12 18:12:17 marco-latitude5420 kaccess[896]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 12 18:12:17 marco-latitude5420 kaccess[896]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 12 18:12:17 marco-latitude5420 systemd-coredump[914]: Process 896 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 12 18:12:17 marco-latitude5420 drkonqi-coredump-processor[915]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 12 18:12:17 marco-latitude5420 systemd[848]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 12 18:12:17 marco-latitude5420 systemd[848]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 12 18:12:17 marco-latitude5420 drkonqi-coredump-launcher[942]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 12 18:13:18 marco-latitude5420 drkonqi-coredump-processor[1085]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 12 18:13:18 marco-latitude5420 drkonqi-coredump-launcher[1395]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 05:35:37 marco-latitude5420 kaccess[927]: Xlib XKB extension major= 1  minor= 0
+Sep 13 05:35:37 marco-latitude5420 dbus-daemon[892]: [session uid=1000 pid=892] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=927 comm="/usr/bin/kaccess")
+Sep 13 05:35:37 marco-latitude5420 kaccess[927]: qt.qpa.xcb: could not connect to display
+Sep 13 05:35:37 marco-latitude5420 kaccess[927]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 13 05:35:37 marco-latitude5420 kaccess[927]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 13 05:35:37 marco-latitude5420 kaccess[927]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 13 05:35:37 marco-latitude5420 systemd-coredump[946]: Process 927 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 13 05:35:37 marco-latitude5420 systemd[880]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 13 05:35:37 marco-latitude5420 systemd[880]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 13 05:35:38 marco-latitude5420 drkonqi-coredump-processor[949]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 05:35:38 marco-latitude5420 drkonqi-coredump-launcher[988]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 05:36:38 marco-latitude5420 drkonqi-coredump-processor[1119]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 13 05:36:38 marco-latitude5420 drkonqi-coredump-processor[1119]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 05:36:39 marco-latitude5420 drkonqi-coredump-launcher[2869]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 05:36:39 marco-latitude5420 drkonqi-coredump-launcher[2870]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 15:40:24 marco-latitude5420 kaccess[902]: Xlib XKB extension major= 1  minor= 0
+Sep 13 15:40:24 marco-latitude5420 dbus-daemon[867]: [session uid=1000 pid=867] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=902 comm="/usr/bin/kaccess")
+Sep 13 15:40:24 marco-latitude5420 kaccess[902]: qt.qpa.xcb: could not connect to display
+Sep 13 15:40:24 marco-latitude5420 kaccess[902]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 13 15:40:24 marco-latitude5420 kaccess[902]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 13 15:40:24 marco-latitude5420 kaccess[902]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 13 15:40:24 marco-latitude5420 systemd-coredump[920]: Process 902 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 13 15:40:24 marco-latitude5420 systemd[855]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 13 15:40:24 marco-latitude5420 systemd[855]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 13 15:40:24 marco-latitude5420 drkonqi-coredump-processor[924]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 13 15:40:24 marco-latitude5420 drkonqi-coredump-launcher[962]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-launcher[1730]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-launcher[1731]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 15:41:25 marco-latitude5420 drkonqi-coredump-launcher[1732]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 13 16:53:56 marco-latitude5420 kaccess[891]: Xlib XKB extension major= 1  minor= 0
+Sep 13 16:53:56 marco-latitude5420 dbus-daemon[856]: [session uid=1000 pid=856] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=891 comm="/usr/bin/kaccess")
+Sep 13 16:53:56 marco-latitude5420 kaccess[891]: qt.qpa.xcb: could not connect to display
+Sep 13 16:53:56 marco-latitude5420 kaccess[891]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 13 16:53:56 marco-latitude5420 kaccess[891]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 13 16:53:56 marco-latitude5420 kaccess[891]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 13 16:53:56 marco-latitude5420 systemd-coredump[909]: Process 891 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 13 16:53:56 marco-latitude5420 systemd[843]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 13 16:53:56 marco-latitude5420 systemd[843]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 13 16:53:57 marco-latitude5420 drkonqi-coredump-processor[910]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 13 16:53:57 marco-latitude5420 drkonqi-coredump-launcher[951]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-processor[1082]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-processor[1082]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-processor[1082]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-processor[1082]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-launcher[1381]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-launcher[1382]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-launcher[1383]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 13 16:54:57 marco-latitude5420 drkonqi-coredump-launcher[1384]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 13 18:38:19 marco-latitude5420 kaccess[904]: Xlib XKB extension major= 1  minor= 0
+Sep 13 18:38:19 marco-latitude5420 dbus-daemon[869]: [session uid=1000 pid=869] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=904 comm="/usr/bin/kaccess")
+Sep 13 18:38:19 marco-latitude5420 kaccess[904]: qt.qpa.xcb: could not connect to display
+Sep 13 18:38:19 marco-latitude5420 kaccess[904]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 13 18:38:19 marco-latitude5420 kaccess[904]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 13 18:38:19 marco-latitude5420 kaccess[904]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 13 18:38:19 marco-latitude5420 systemd-coredump[922]: Process 904 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 13 18:38:19 marco-latitude5420 systemd[857]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 13 18:38:19 marco-latitude5420 systemd[857]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 13 18:38:19 marco-latitude5420 drkonqi-coredump-processor[923]: "/usr/bin/kaccess" 904 "/var/lib/systemd/coredump/core.kaccess.1000.20d41d70e09742f796a7364a9b6b1abf.904.1726267099000000.zst"
+Sep 13 18:38:19 marco-latitude5420 drkonqi-coredump-launcher[964]: Unable to find file for pid 904 expected at "kcrash-metadata/kaccess.20d41d70e09742f796a7364a9b6b1abf.904.ini"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-processor[1097]: "/usr/bin/kaccess" 904 "/var/lib/systemd/coredump/core.kaccess.1000.20d41d70e09742f796a7364a9b6b1abf.904.1726267099000000.zst"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-launcher[2001]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-launcher[2002]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-launcher[2003]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-launcher[2004]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 13 18:39:20 marco-latitude5420 drkonqi-coredump-launcher[2005]: Unable to find file for pid 904 expected at "kcrash-metadata/kaccess.20d41d70e09742f796a7364a9b6b1abf.904.ini"
+Sep 13 20:52:12 marco-latitude5420 kaccess[894]: Xlib XKB extension major= 1  minor= 0
+Sep 13 20:52:12 marco-latitude5420 dbus-daemon[859]: [session uid=1000 pid=859] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=894 comm="/usr/bin/kaccess")
+Sep 13 20:52:12 marco-latitude5420 kaccess[894]: qt.qpa.xcb: could not connect to display
+Sep 13 20:52:12 marco-latitude5420 kaccess[894]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 13 20:52:12 marco-latitude5420 kaccess[894]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 13 20:52:12 marco-latitude5420 kaccess[894]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 13 20:52:12 marco-latitude5420 systemd-coredump[912]: Process 894 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 13 20:52:12 marco-latitude5420 systemd[845]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 13 20:52:12 marco-latitude5420 systemd[845]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 13 20:52:12 marco-latitude5420 drkonqi-coredump-processor[913]: "/usr/bin/kaccess" 894 "/var/lib/systemd/coredump/core.kaccess.1000.6cedd2071d1c4fe3ba8feda0b6cf1537.894.1726275132000000.zst"
+Sep 13 20:52:12 marco-latitude5420 drkonqi-coredump-launcher[956]: Unable to find file for pid 894 expected at "kcrash-metadata/kaccess.6cedd2071d1c4fe3ba8feda0b6cf1537.894.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 904 "/var/lib/systemd/coredump/core.kaccess.1000.20d41d70e09742f796a7364a9b6b1abf.904.1726267099000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-processor[1088]: "/usr/bin/kaccess" 894 "/var/lib/systemd/coredump/core.kaccess.1000.6cedd2071d1c4fe3ba8feda0b6cf1537.894.1726275132000000.zst"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1382]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1381]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1383]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1384]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1385]: Unable to find file for pid 904 expected at "kcrash-metadata/kaccess.20d41d70e09742f796a7364a9b6b1abf.904.ini"
+Sep 13 20:53:13 marco-latitude5420 drkonqi-coredump-launcher[1386]: Unable to find file for pid 894 expected at "kcrash-metadata/kaccess.6cedd2071d1c4fe3ba8feda0b6cf1537.894.ini"
+Sep 14 06:25:04 marco-latitude5420 kaccess[940]: Xlib XKB extension major= 1  minor= 0
+Sep 14 06:25:04 marco-latitude5420 dbus-daemon[903]: [session uid=1000 pid=903] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=940 comm="/usr/bin/kaccess")
+Sep 14 06:25:04 marco-latitude5420 kaccess[940]: qt.qpa.xcb: could not connect to display
+Sep 14 06:25:04 marco-latitude5420 kaccess[940]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 14 06:25:04 marco-latitude5420 kaccess[940]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 14 06:25:04 marco-latitude5420 kaccess[940]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 14 06:25:05 marco-latitude5420 systemd-coredump[958]: Process 940 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 14 06:25:05 marco-latitude5420 systemd[889]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 14 06:25:05 marco-latitude5420 systemd[889]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 14 06:25:05 marco-latitude5420 drkonqi-coredump-processor[960]: "/usr/bin/kaccess" 940 "/var/lib/systemd/coredump/core.kaccess.1000.23fa0d152bb14bc89b4a9965584bac79.940.1726309504000000.zst"
+Sep 14 06:25:05 marco-latitude5420 drkonqi-coredump-launcher[1002]: Unable to find file for pid 940 expected at "kcrash-metadata/kaccess.23fa0d152bb14bc89b4a9965584bac79.940.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 904 "/var/lib/systemd/coredump/core.kaccess.1000.20d41d70e09742f796a7364a9b6b1abf.904.1726267099000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 894 "/var/lib/systemd/coredump/core.kaccess.1000.6cedd2071d1c4fe3ba8feda0b6cf1537.894.1726275132000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-processor[1134]: "/usr/bin/kaccess" 940 "/var/lib/systemd/coredump/core.kaccess.1000.23fa0d152bb14bc89b4a9965584bac79.940.1726309504000000.zst"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2890]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2891]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2892]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2893]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2894]: Unable to find file for pid 904 expected at "kcrash-metadata/kaccess.20d41d70e09742f796a7364a9b6b1abf.904.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2895]: Unable to find file for pid 894 expected at "kcrash-metadata/kaccess.6cedd2071d1c4fe3ba8feda0b6cf1537.894.ini"
+Sep 14 06:26:06 marco-latitude5420 drkonqi-coredump-launcher[2896]: Unable to find file for pid 940 expected at "kcrash-metadata/kaccess.23fa0d152bb14bc89b4a9965584bac79.940.ini"
+Sep 15 06:30:26 marco-latitude5420 kaccess[936]: Xlib XKB extension major= 1  minor= 0
+Sep 15 06:30:26 marco-latitude5420 dbus-daemon[901]: [session uid=1000 pid=901] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.11' (uid=1000 pid=936 comm="/usr/bin/kaccess")
+Sep 15 06:30:26 marco-latitude5420 kaccess[936]: qt.qpa.xcb: could not connect to display
+Sep 15 06:30:26 marco-latitude5420 kaccess[936]: qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+Sep 15 06:30:26 marco-latitude5420 kaccess[936]: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Sep 15 06:30:26 marco-latitude5420 kaccess[936]: This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Sep 15 06:30:26 marco-latitude5420 systemd-coredump[955]: Process 936 (kaccess) of user 1000 dumped core.
+                                                          #12 0x000000000040a047 n/a (kaccess + 0xa047)
+                                                          #15 0x000000000040a3f1 n/a (kaccess + 0xa3f1)
+Sep 15 06:30:26 marco-latitude5420 systemd[888]: plasma-kaccess.service: Main process exited, code=dumped, status=6/ABRT
+Sep 15 06:30:26 marco-latitude5420 systemd[888]: plasma-kaccess.service: Failed with result 'core-dump'.
+Sep 15 06:30:27 marco-latitude5420 drkonqi-coredump-processor[957]: "/usr/bin/kaccess" 936 "/var/lib/systemd/coredump/core.kaccess.1000.b08340e1905d4663804f37ac1f2cbb13.936.1726396226000000.zst"
+Sep 15 06:30:27 marco-latitude5420 drkonqi-coredump-launcher[999]: Unable to find file for pid 936 expected at "kcrash-metadata/kaccess.b08340e1905d4663804f37ac1f2cbb13.936.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 896 "/var/lib/systemd/coredump/core.kaccess.1000.3376622e5ad44c37a7cb3565c959a75b.896.1726179137000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 927 "/var/lib/systemd/coredump/core.kaccess.1000.74d381722c824a9f9498ac64465782e7.927.1726220137000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 902 "/var/lib/systemd/coredump/core.kaccess.1000.7b015aee154c487b923f17d69e6f09bb.902.1726256424000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 891 "/var/lib/systemd/coredump/core.kaccess.1000.359b095a6460498490425cd4cb0dc795.891.1726260836000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 904 "/var/lib/systemd/coredump/core.kaccess.1000.20d41d70e09742f796a7364a9b6b1abf.904.1726267099000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 894 "/var/lib/systemd/coredump/core.kaccess.1000.6cedd2071d1c4fe3ba8feda0b6cf1537.894.1726275132000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 940 "/var/lib/systemd/coredump/core.kaccess.1000.23fa0d152bb14bc89b4a9965584bac79.940.1726309504000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-processor[1138]: "/usr/bin/kaccess" 936 "/var/lib/systemd/coredump/core.kaccess.1000.b08340e1905d4663804f37ac1f2cbb13.936.1726396226000000.zst"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3000]: Unable to find file for pid 896 expected at "kcrash-metadata/kaccess.3376622e5ad44c37a7cb3565c959a75b.896.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3001]: Unable to find file for pid 927 expected at "kcrash-metadata/kaccess.74d381722c824a9f9498ac64465782e7.927.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3002]: Unable to find file for pid 902 expected at "kcrash-metadata/kaccess.7b015aee154c487b923f17d69e6f09bb.902.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3003]: Unable to find file for pid 891 expected at "kcrash-metadata/kaccess.359b095a6460498490425cd4cb0dc795.891.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3004]: Unable to find file for pid 904 expected at "kcrash-metadata/kaccess.20d41d70e09742f796a7364a9b6b1abf.904.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3005]: Unable to find file for pid 894 expected at "kcrash-metadata/kaccess.6cedd2071d1c4fe3ba8feda0b6cf1537.894.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3006]: Unable to find file for pid 940 expected at "kcrash-metadata/kaccess.23fa0d152bb14bc89b4a9965584bac79.940.ini"
+Sep 15 06:31:27 marco-latitude5420 drkonqi-coredump-launcher[3008]: Unable to find file for pid 936 expected at "kcrash-metadata/kaccess.b08340e1905d4663804f37ac1f2cbb13.936.ini"
