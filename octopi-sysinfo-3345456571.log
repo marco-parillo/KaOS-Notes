@@ -16,13 +16,13 @@ Machine:
   Mobo: Dell model: 03P5X2 v: A00 serial: <superuser required> UEFI: Dell v: 1.30.0
     date: 07/10/2023
 Battery:
-  ID-1: BAT0 charge: 63 Wh (100%) condition: 63/63 Wh (100%) volts: 15.94 min: 15.2
+  ID-1: BAT0 charge: 63 Wh (100%) condition: 63/63 Wh (100%) volts: 15.88 min: 15.2
     model: BYD DELL M033W14 status: full
 CPU:
   Info: quad core model: 11th Gen Intel Core i7-1185G7 bits: 64 type: MT MCP arch: Tiger Lake
     rev: 1 cache: L1: 320 KiB L2: 5 MiB L3: 12 MiB
-  Speed (MHz): avg: 400 min/max: 400/4800 cores: 1: 400 2: 400 3: 400 4: 400 5: 400 6: 400 7: 400
-    8: 400 bogomips: 28876
+  Speed (MHz): avg: 1075 min/max: 400/4800 cores: 1: 1075 2: 1075 3: 1075 4: 1075 5: 1075 6: 1075
+    7: 1075 8: 1075 bogomips: 28876
   Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
   Device-1: Intel TigerLake-LP GT2 [Iris Xe Graphics] vendor: Dell driver: i915 v: kernel arch: Xe
@@ -36,7 +36,7 @@ Graphics:
     inactive: N/A
   API: OpenGL v: 4.6 compat-v: 4.5 vendor: intel mesa v: 25.2.4 glx-v: 1.4 direct-render: yes
     renderer: Mesa Intel Iris Xe Graphics (TGL GT2)
-  API: Vulkan v: 1.4.328 drivers: intel,llvmpipe surfaces: N/A devices: 2
+  API: Vulkan v: 1.4.329 drivers: intel,llvmpipe surfaces: N/A devices: 2
   Info: Tools: api: eglinfo, glxinfo, vulkaninfo de: kscreen-console,kscreen-doctor
     wl: wayland-info x11: xdriinfo, xdpyinfo, xprop, xrandr
 Audio:
@@ -44,7 +44,7 @@ Audio:
     bus-ID: 00:1f.3
   API: ALSA v: k6.16.9-1 status: kernel-api
   Server-1: JACK v: 1.9.22 status: off
-  Server-2: PipeWire v: 1.4.8 status: active
+  Server-2: PipeWire v: 1.4.9 status: active
   Server-3: PulseAudio v: 17.0 status: off (using pipewire-pulse)
 Network:
   Device-1: Intel Wi-Fi 6 AX201 driver: iwlwifi v: kernel bus-ID: 00:14.3
@@ -56,33 +56,35 @@ Bluetooth:
   Device-1: Intel AX201 Bluetooth driver: btusb v: 0.8 type: USB bus-ID: 3-10:5
   Report: hciconfig ID: hci0 rfk-id: 2 state: up address: <filter> bt-v: 5.2 lmp-v: 11
 Drives:
-  Local Storage: total: 476.94 GiB used: 151.06 GiB (31.7%)
-  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 27.9 C
+  Local Storage: total: 476.94 GiB used: 145.88 GiB (30.6%)
+  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 23.9 C
 Partition:
-  ID-1: / size: 451.62 GiB used: 150.96 GiB (33.4%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-1: / size: 451.62 GiB used: 145.77 GiB (32.3%) fs: ext4 dev: /dev/nvme0n1p2
   ID-2: /boot size: 511 MiB used: 105.2 MiB (20.6%) fs: vfat dev: /dev/nvme0n1p1
 Swap:
   ID-1: swap-1 type: partition size: 16.52 GiB used: 0 KiB (0.0%) dev: /dev/nvme0n1p3
 Sensors:
-  System Temperatures: cpu: 48.0 C mobo: 45.0 C
+  System Temperatures: cpu: 49.0 C mobo: 45.0 C
   Fan Speeds (rpm): cpu: 0
 Info:
-  Memory: total: 16 GiB note: est. available: 15.02 GiB used: 2.9 GiB (19.3%)
-  Processes: 218 Uptime: 12m Init: systemd target: graphical (5)
-  Packages: 966 Compilers: gcc: 14.2.1 Client: Unknown Client: octopi inxi: 3.3.39
+  Memory: total: 16 GiB note: est. available: 15.02 GiB used: 3.7 GiB (24.7%)
+  Processes: 226 Uptime: 1h 46m Init: systemd target: graphical (5)
+  Packages: 968 Compilers: gcc: 14.2.1 Client: Unknown Client: octopi inxi: 3.3.39
 
 
 ----------------------------------------------------------------------------------------------------------
 journalctl -b -p err
 ----------------------------------------------------------------------------------------------------------
 
-Oct 02 18:24:55 marco-latitude5420 systemd-tmpfiles[356]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:2: Failed to resolve user 'tss': No such process
-Oct 02 18:24:55 marco-latitude5420 systemd-tmpfiles[356]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:4: Failed to resolve user 'tss': No such process
-Oct 02 18:24:55 marco-latitude5420 systemd-tmpfiles[356]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:6: Failed to resolve group 'tss': No such process
-Oct 02 18:24:55 marco-latitude5420 systemd-tmpfiles[356]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:7: Failed to resolve group 'tss': No such process
-Oct 02 18:24:55 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
-Oct 02 18:25:50 marco-latitude5420 systemd[1085]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
-Oct 02 18:30:18 marco-latitude5420 kwin_wayland[1154]: kwin_libinput: Libinput: event2  - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
+Oct 15 17:20:52 marco-latitude5420 systemd-tmpfiles[361]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:2: Failed to resolve user 'tss': No such process
+Oct 15 17:20:52 marco-latitude5420 systemd-tmpfiles[361]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:4: Failed to resolve user 'tss': No such process
+Oct 15 17:20:52 marco-latitude5420 systemd-tmpfiles[361]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:6: Failed to resolve group 'tss': No such process
+Oct 15 17:20:52 marco-latitude5420 systemd-tmpfiles[361]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:7: Failed to resolve group 'tss': No such process
+Oct 15 17:20:52 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
+Oct 15 17:22:25 marco-latitude5420 systemd[1100]: /run/user/1000/systemd/generator.late/app-xdg\x2duser\x2ddirs\x2dupdate@autostart.service:18: WorkingDirectory= path is not absolute, ignoring: 
+Oct 15 17:27:07 marco-latitude5420 kwin_wayland[1169]: Libinput: event2  - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
+                                                       See https://wayland.freedesktop.org/libinput/doc/1.29.1/touchpad-jumping-cursors.html for details
+Oct 15 17:31:53 marco-latitude5420 kwin_wayland[1169]: Libinput: event2  - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
                                                        See https://wayland.freedesktop.org/libinput/doc/1.29.1/touchpad-jumping-cursors.html for details
 
 
@@ -179,7 +181,7 @@ Include = /etc/pacman.d/mirrorlist
 pacman -Qm
 ----------------------------------------------------------------------------------------------------------
 
-pdfjs 5.4.149-1
+pdfjs 5.4.296-1
 qutebrowser 3.5.1-1
 zsync 0.6.2-1
 
@@ -29875,6 +29877,379 @@ filesystem: 0  package: 700
 [2025-10-02T18:24:03-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
 [2025-10-02T18:24:03-0400] [ALPM] running 'update-desktop-database.hook'...
 [2025-10-02T18:24:03-0400] [ALPM] running 'update-mime-database.hook'...
+[2025-10-03T06:21:44-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-03T06:21:44-0400] [PACMAN] synchronizing package lists
+[2025-10-03T06:21:45-0400] [PACMAN] starting full system upgrade
+[2025-10-03T06:21:56-0400] [ALPM] transaction started
+[2025-10-03T06:21:56-0400] [ALPM] upgraded widevine (142.0.7432.5-1 -> 143.0.7445.3-1)
+[2025-10-03T06:21:57-0400] [ALPM] upgraded google-chrome (142.0.7432.5-1 -> 143.0.7445.3-1)
+[2025-10-03T06:21:57-0400] [ALPM] upgraded gwenview (25.08.1-2 -> 25.08.1-3)
+[2025-10-03T06:21:57-0400] [ALPM] upgraded kio-extras (25.08.1-1 -> 25.08.1-2)
+[2025-10-03T06:21:57-0400] [ALPM] upgraded konqueror (25.08.1-1 -> 25.08.1-2)
+[2025-10-03T06:21:57-0400] [ALPM] upgraded okular (25.08.1-1 -> 25.08.1-2)
+[2025-10-03T06:21:57-0400] [ALPM] transaction completed
+[2025-10-03T06:21:57-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-03T06:21:57-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-03T06:21:57-0400] [ALPM] running 'update-mime-database.hook'...
+[2025-10-03T08:46:43-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-03T08:46:43-0400] [PACMAN] synchronizing package lists
+[2025-10-03T08:46:44-0400] [PACMAN] starting full system upgrade
+[2025-10-03T08:46:48-0400] [ALPM] transaction started
+[2025-10-03T08:46:49-0400] [ALPM] upgraded qt6-webengine (6.9.3-1 -> 6.9.3-2)
+[2025-10-03T08:46:49-0400] [ALPM] transaction completed
+[2025-10-04T06:40:53-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-04T06:40:53-0400] [PACMAN] synchronizing package lists
+[2025-10-04T06:40:53-0400] [PACMAN] starting full system upgrade
+[2025-10-04T06:40:56-0400] [ALPM] transaction started
+[2025-10-04T06:40:56-0400] [ALPM] upgraded nss (3.116-1 -> 3.117-1)
+[2025-10-04T06:40:56-0400] [ALPM] upgraded hwdata (0.399-1 -> 0.400-1)
+[2025-10-04T06:40:56-0400] [ALPM] upgraded xkeyboard-config (2.45-1 -> 2.46-1)
+[2025-10-04T06:40:57-0400] [ALPM] upgraded firefox (143.0.3-1 -> 143.0.4-1)
+[2025-10-04T06:40:57-0400] [ALPM] upgraded translate-toolkit (3.16.1-1 -> 3.16.2-1)
+[2025-10-04T06:40:57-0400] [ALPM] transaction completed
+[2025-10-04T06:40:57-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-05T21:01:12-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-05T21:01:12-0400] [PACMAN] synchronizing package lists
+[2025-10-05T21:01:12-0400] [PACMAN] starting full system upgrade
+[2025-10-05T21:01:15-0400] [ALPM] transaction started
+[2025-10-05T21:01:15-0400] [ALPM] upgraded editorconfig-core-c (0.12.9-1 -> 0.12.10-1)
+[2025-10-05T21:01:15-0400] [ALPM] upgraded fluidsynth (2.4.8-1 -> 2.5.0-1)
+[2025-10-05T21:01:15-0400] [ALPM] upgraded poppler (25.09.1-1 -> 25.10.0-1)
+[2025-10-05T21:01:15-0400] [ALPM] upgraded kfilemetadata6 (6.18.0-2 -> 6.18.0-3)
+[2025-10-05T21:01:15-0400] [ALPM] upgraded libcupsfilters (2.1.1-11 -> 2.1.1-12)
+[2025-10-05T21:01:16-0400] [ALPM] upgraded python3-astroid (3.3.11-1 -> 4.0.0-1)
+[2025-10-05T21:01:16-0400] [ALPM] upgraded python3-certifi (2025.8.3-1 -> 2025.10.5-1)
+[2025-10-05T21:01:16-0400] [ALPM] upgraded python3-pylint (3.3.8-1 -> 3.3.9-1)
+[2025-10-05T21:01:16-0400] [ALPM] upgraded zen-browser (1.16.2b-1 -> 1.16.3b-1)
+[2025-10-05T21:01:16-0400] [ALPM] transaction completed
+[2025-10-05T21:01:16-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-05T21:01:16-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-06T06:34:52-0400] [PACMAN] Running '/usr/bin/pacman -U /home/mparillo/pdfjs-legacy/pdfjs-legacy-5.4.296-1-x86_64.pkg.tar.zst'
+[2025-10-06T06:35:26-0400] [PACMAN] Running '/usr/bin/pacman -U /home/mparillo/pdfjs/pdfjs-5.4.296-1-x86_64.pkg.tar.zst'
+[2025-10-06T06:35:27-0400] [ALPM] transaction started
+[2025-10-06T06:35:27-0400] [ALPM] upgraded pdfjs (5.4.149-1 -> 5.4.296-1)
+[2025-10-06T06:35:27-0400] [ALPM] transaction completed
+[2025-10-06T06:44:39-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-06T06:44:39-0400] [PACMAN] synchronizing package lists
+[2025-10-06T06:44:39-0400] [PACMAN] starting full system upgrade
+[2025-10-06T06:44:42-0400] [ALPM] transaction started
+[2025-10-06T06:44:42-0400] [ALPM] upgraded mpg123 (1.33.2-1 -> 1.33.3-1)
+[2025-10-06T06:44:42-0400] [ALPM] upgraded openssh (10.0p2-3 -> 10.1p1-1)
+[2025-10-06T06:44:42-0400] [ALPM] upgraded v4l-utils (1.30.1-1 -> 1.32.0-1)
+[2025-10-06T06:44:42-0400] [ALPM] transaction completed
+[2025-10-06T06:44:42-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-06T06:44:43-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-07T06:13:56-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-07T06:13:56-0400] [PACMAN] synchronizing package lists
+[2025-10-07T06:13:57-0400] [PACMAN] starting full system upgrade
+[2025-10-07T06:13:58-0400] [ALPM] transaction started
+[2025-10-07T06:13:58-0400] [ALPM] upgraded dialog (2:1.3_20250817-1 -> 2:1.3_20251001-1)
+[2025-10-07T06:13:58-0400] [ALPM] upgraded libunistring (1.4-1 -> 1.4.1-1)
+[2025-10-07T06:13:58-0400] [ALPM] upgraded imagemagick (7.1.2.3-2 -> 7.1.2.5-1)
+[2025-10-07T06:13:58-0400] [ALPM] upgraded openssh (10.1p1-1 -> 10.1p1-2)
+[2025-10-07T06:13:58-0400] [ALPM] transaction completed
+[2025-10-07T06:13:58-0400] [ALPM] running 'texinfo-install.hook'...
+[2025-10-07T20:22:58-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-07T20:22:58-0400] [PACMAN] synchronizing package lists
+[2025-10-07T20:22:58-0400] [PACMAN] starting full system upgrade
+[2025-10-07T20:22:59-0400] [ALPM] transaction started
+[2025-10-07T20:22:59-0400] [ALPM] upgraded libgpg-error (1.55-1 -> 1.56-1)
+[2025-10-07T20:22:59-0400] [ALPM] upgraded sip (6.12.0-1 -> 6.13.0-1)
+[2025-10-07T20:22:59-0400] [ALPM] upgraded unixodbc (2.3.13-1 -> 2.3.14-1)
+[2025-10-07T20:22:59-0400] [ALPM] transaction completed
+[2025-10-07T20:22:59-0400] [ALPM] running 'texinfo-install.hook'...
+[2025-10-08T18:28:54-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-08T18:28:54-0400] [PACMAN] synchronizing package lists
+[2025-10-08T18:28:54-0400] [PACMAN] starting full system upgrade
+[2025-10-08T18:28:55-0400] [ALPM] transaction started
+[2025-10-08T18:28:55-0400] [ALPM] upgraded pyqt5-sip (12.17.0-1 -> 12.17.1-1)
+[2025-10-08T18:28:55-0400] [ALPM] transaction completed
+[2025-10-09T06:18:43-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-09T06:18:43-0400] [PACMAN] synchronizing package lists
+[2025-10-09T06:18:44-0400] [PACMAN] starting full system upgrade
+[2025-10-09T06:18:47-0400] [ALPM] transaction started
+[2025-10-09T06:18:47-0400] [ALPM] upgraded openexr (3.4.0-1 -> 3.4.1-1)
+[2025-10-09T06:18:47-0400] [ALPM] upgraded python3-tomli (2.2.1-1 -> 2.3.0-1)
+[2025-10-09T06:18:48-0400] [ALPM] upgraded zen-browser (1.16.3b-1 -> 1.16.4b-1)
+[2025-10-09T06:18:48-0400] [ALPM] transaction completed
+[2025-10-09T06:18:48-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-09T06:18:48-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-09T22:32:30-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-09T22:32:30-0400] [PACMAN] synchronizing package lists
+[2025-10-09T22:32:31-0400] [PACMAN] starting full system upgrade
+[2025-10-09T22:32:32-0400] [ALPM] transaction started
+[2025-10-09T22:32:33-0400] [ALPM] upgraded pipewire (1.4.8-1 -> 1.4.9-1)
+[2025-10-09T22:32:33-0400] [ALPM] transaction completed
+[2025-10-11T08:31:40-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-11T08:31:40-0400] [PACMAN] synchronizing package lists
+[2025-10-11T08:31:41-0400] [PACMAN] starting full system upgrade
+[2025-10-11T08:31:48-0400] [ALPM] transaction started
+[2025-10-11T08:31:48-0400] [ALPM] upgraded widevine (143.0.7445.3-1 -> 143.0.7461.3-1)
+[2025-10-11T08:31:49-0400] [ALPM] upgraded google-chrome (143.0.7445.3-1 -> 143.0.7461.3-1)
+[2025-10-11T08:31:50-0400] [ALPM] upgraded libreoffice (25.8.1.1-2 -> 25.8.2.2-1)
+[2025-10-11T08:31:50-0400] [ALPM] transaction completed
+[2025-10-11T08:31:50-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-11T08:31:50-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-11T08:31:50-0400] [ALPM] running 'update-mime-database.hook'...
+[2025-10-12T08:43:03-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-12T08:43:03-0400] [PACMAN] synchronizing package lists
+[2025-10-12T08:43:04-0400] [PACMAN] starting full system upgrade
+[2025-10-12T08:43:32-0400] [ALPM] transaction started
+[2025-10-12T08:43:33-0400] [ALPM] upgraded llvm (20.1.8-2 -> 21.1.3-1)
+[2025-10-12T08:43:33-0400] [ALPM] upgraded spirv-tools (1:2025.1-1 -> 1:2025.4-1)
+[2025-10-12T08:43:33-0400] [ALPM] upgraded mesa (25.2.4-1 -> 25.2.4-2)
+[2025-10-12T08:43:33-0400] [ALPM] upgraded libxkbcommon (1.11.0-2 -> 1.12.0-1)
+[2025-10-12T08:43:33-0400] [ALPM] upgraded vulkan-headers (1.4.328-1 -> 1.4.329-1)
+[2025-10-12T08:43:33-0400] [ALPM] upgraded vulkan-loader (1.4.328-1 -> 1.4.329-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded vulkan-validationlayers (1.4.328-1 -> 1.4.329-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded python3 (3.11.13-1 -> 3.11.14-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded qt6-base (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded qt6-shadertools (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded qt6-languageserver (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:34-0400] [ALPM] upgraded qt6-svg (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-declarative (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-serialport (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-positioning (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-websockets (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-webchannel (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-5compat (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-webengine (6.9.3-2 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded kcoreaddons6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded kconfig6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded ki18n6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded karchive6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded qt6-wayland (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded kwindowsystem6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded kcrash6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:35-0400] [ALPM] upgraded kdbusaddons6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kservice6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded solid6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kcodecs6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kwidgetsaddons6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kitemviews6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kauth6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kguiaddons6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kcolorscheme (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:36-0400] [ALPM] upgraded kconfigwidgets6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded breeze-icons (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kiconthemes6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kglobalaccel6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kxmlgui6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kbookmarks6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kcompletion6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded qt6-quicktimeline (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded qt6-quick3d (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded qt6-multimedia (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded qt6-speech (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded kwallet6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded vlc (1:3.0.22-2 -> 1:3.0.22-3)
+[2025-10-12T08:43:37-0400] [ALPM] upgraded knotifications6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kjobwidgets6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kded6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded sonnet6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded ktextwidgets6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kio6 (6.18.0-2 -> 6.19.0-2)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kirigami6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kpackage6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kdeclarative6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded prison6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded plasma-activities (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kcmutils6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kcontacts6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kpeople6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kwayland (1:6.4.91-1 -> 1:6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded qqc2-desktop-style6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kitemmodels6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded modemmanager-qt6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kstatusnotifieritem (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded qt6-connectivity (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded openssh (10.1p1-2 -> 10.2p1-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kdeconnect-kde (1:25.08.1-1 -> 1:25.08.2-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kaccounts-integration (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded purpose6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded angelfish (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kfilemetadata6 (6.18.0-3 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kparts6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kpty6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded ark (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded at-spi2-core (2.56.5-1 -> 2.56.6-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded attica (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded syndication6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded knewstuff6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded ksvg (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kdecoration (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded aurorae (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded kidletime6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded baloo6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded baloo-widgets (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded bluez-qt6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded libplasma (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM-SCRIPTLET] QThreadStorage: entry 7 destroyed before end of thread 0x2214a580
+[2025-10-12T08:43:38-0400] [ALPM-SCRIPTLET] QThreadStorage: entry 2 destroyed before end of thread 0x2214a580
+[2025-10-12T08:43:38-0400] [ALPM-SCRIPTLET] QThreadStorage: entry 1 destroyed before end of thread 0x2214a580
+[2025-10-12T08:43:38-0400] [ALPM] upgraded bluedevil (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:38-0400] [ALPM] upgraded frameworkintegration6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded breeze (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded breeze-gtk (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kuserfeedback6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kdesu6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kde-cli-tools (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kio-admin (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded dolphin (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded syntax-highlighting6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded ktexteditor6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded dolphin-plugins (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded drkonqi (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded elisa (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded qt6-tools (6.9.3-1 -> 6.10.0-2)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded extra-cmake-modules (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded falkon (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded libkdcraw6 (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kimageformats6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded gwenview (25.08.1-3 -> 25.08.2-2)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded isoimagewriter (25.08.1-2 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kactivitymanagerd (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kapidox (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kate (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kcalc (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kde-gtk-config (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kdegraphics-mobipocket (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded libkexiv6 (25.08.1-2 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kdegraphics-thumbnailers (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kholidays6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kunitconversion6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded libksysguard (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded plasma5support (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded threadweaver6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded krunner6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded knotifyconfig6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded plasma-activities-stats (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kpipewire (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded networkmanager-qt6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded kquickcharts6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:39-0400] [ALPM] upgraded qt6-virtualkeyboard (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded qt6-sensors (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded layer-shell-qt (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded libkscreen (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kscreenlocker (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kglobalacceld (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded wireplumber (0.5.11-1 -> 0.5.12-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded knighttime (6.4.91-1 -> 6.4.91-2)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kwin (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kwin-x11 (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded milou (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded qt6-location (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded sddm-kcm (1:6.4.91-1 -> 1:6.4.91-3)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kdnssd6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kio-extras (25.08.1-2 -> 25.08.2-2)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded ktexttemplate (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded kdoctools6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded khelpcenter (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:40-0400] [ALPM] upgraded plasma-workspace (6.4.91-1 -> 6.4.91-4)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kdeplasma-addons (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kdialog (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kfind (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded systemsettings (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded vulkan-tools (1.4.328-1 -> 1.4.329-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kinfocenter (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kjournald (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kmenuedit (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded libkdegames (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kmines (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded ksanecore (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded libksane (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kolourpaint (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded libkomparediff2 (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kompare (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded konqueror (25.08.1-2 -> 25.08.2-2)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded konsole (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded konversation (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kpat (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kplotting6 (6.18.0-2 -> 6.19.0-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kpmcore (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kscreen (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded ksshaskpass (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded ksystemstats (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kteatime (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kunifiedpush (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:41-0400] [ALPM] upgraded kwallet-pam (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded linux-firmware (20250917-1 -> 20251011-1)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded qt6-webview (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded neochat (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded ocean-sound-theme (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded okular (25.08.1-2 -> 25.08.2-2)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded oxygen (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded plasma-browser-integration (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:43-0400] [ALPM] upgraded polkit-kde-agent-1 (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded powerdevil (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded xdg-desktop-portal-kde (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded plasma-integration (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded plasma-desktop (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded plasma-nm (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded plasma-pa (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded plasma-systemmonitor (6.4.91-1 -> 6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded print-manager (1:6.4.91-1 -> 1:6.4.91-3)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded pyqt6-python3 (6.9.1-3 -> 6.9.1-4)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded python3-astroid (4.0.0-1 -> 4.0.1-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded qt6-charts (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded qt6-scxml (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded qt6-translations (6.9.3-1 -> 6.10.0-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded sip (6.13.0-1 -> 6.13.1-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded skanpage (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:44-0400] [ALPM] upgraded spectacle (2:6.4.91-1 -> 2:6.4.91-3)
+[2025-10-12T08:43:45-0400] [ALPM] upgraded vim (9.1.1797-1 -> 9.1.1846-1)
+[2025-10-12T08:43:45-0400] [ALPM] upgraded yakuake (25.08.1-1 -> 25.08.2-1)
+[2025-10-12T08:43:45-0400] [ALPM] transaction completed
+[2025-10-12T08:43:45-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-12T08:43:46-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-12T08:43:46-0400] [ALPM] running 'update-mime-database.hook'...
+[2025-10-13T06:40:22-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-13T06:40:22-0400] [PACMAN] synchronizing package lists
+[2025-10-13T06:40:23-0400] [PACMAN] starting full system upgrade
+[2025-10-13T06:40:24-0400] [ALPM] transaction started
+[2025-10-13T06:40:24-0400] [ALPM] installed libtatsu (1.0.5-1)
+[2025-10-13T06:40:24-0400] [ALPM] upgraded libimobiledevice (1.3.0-7 -> 1.4.0-1)
+[2025-10-13T06:40:24-0400] [ALPM] upgraded python3-idna (3.10-1 -> 3.11-1)
+[2025-10-13T06:40:24-0400] [ALPM] upgraded python3-pylint (3.3.9-1 -> 4.0.0-1)
+[2025-10-13T06:40:24-0400] [ALPM] transaction completed
+[2025-10-13T22:06:47-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-13T22:06:47-0400] [PACMAN] synchronizing package lists
+[2025-10-13T22:06:47-0400] [PACMAN] starting full system upgrade
+[2025-10-13T22:06:51-0400] [ALPM] transaction started
+[2025-10-13T22:06:51-0400] [ALPM] upgraded firefox (143.0.4-1 -> 144.0-1)
+[2025-10-13T22:06:51-0400] [ALPM] upgraded kio-fuse (5.1.0-4 -> 5.1.1-1)
+[2025-10-13T22:06:51-0400] [ALPM] upgraded libqalculate (5.7.0-2 -> 5.8.0-1)
+[2025-10-13T22:06:52-0400] [ALPM] transaction completed
+[2025-10-13T22:06:52-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2025-10-13T22:06:52-0400] [ALPM] running 'update-desktop-database.hook'...
+[2025-10-14T06:43:22-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-14T06:43:22-0400] [PACMAN] synchronizing package lists
+[2025-10-14T06:43:22-0400] [PACMAN] starting full system upgrade
+[2025-10-14T06:43:23-0400] [ALPM] transaction started
+[2025-10-14T06:43:23-0400] [ALPM] upgraded gsettings-desktop-schemas (49.0-1 -> 49.1-1)
+[2025-10-14T06:43:23-0400] [ALPM] upgraded live-media (2025.09.17-1 -> 2025.10.13-1)
+[2025-10-14T06:43:23-0400] [ALPM] transaction completed
+[2025-10-14T06:43:23-0400] [ALPM] running 'glib-compile-schemes.hook'...
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.locale” has path “/system/locale/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy” has path “/system/proxy/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.http” has path “/system/proxy/http/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.https” has path “/system/proxy/https/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.ftp” has path “/system/proxy/ftp/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-14T06:43:23-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.socks” has path “/system/proxy/socks/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2025-10-15T05:45:07-0400] [PACMAN] Running 'pacman -Syu'
+[2025-10-15T05:45:07-0400] [PACMAN] synchronizing package lists
+[2025-10-15T05:45:08-0400] [PACMAN] starting full system upgrade
+[2025-10-15T05:45:10-0400] [ALPM] transaction started
+[2025-10-15T05:45:10-0400] [ALPM] installed startup-notification (0.12-7)
+[2025-10-15T05:45:10-0400] [ALPM] upgraded libdrm (2.4.126-1 -> 2.4.127-1)
+[2025-10-15T05:45:11-0400] [ALPM] upgraded firefox (144.0-1 -> 144.0-2)
+[2025-10-15T05:45:11-0400] [ALPM] upgraded less (679-1 -> 685-1)
+[2025-10-15T05:45:11-0400] [ALPM] upgraded python3-pylint (4.0.0-1 -> 4.0.1-1)
+[2025-10-15T05:45:11-0400] [ALPM] upgraded translate-toolkit (3.16.2-1 -> 3.16.3-1)
+[2025-10-15T05:45:11-0400] [ALPM] upgraded yt-dlp (2025.09.26-1 -> 2025.10.14-1)
+[2025-10-15T05:45:11-0400] [ALPM] transaction completed
+[2025-10-15T05:45:11-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2025-10-15T05:45:11-0400] [ALPM] running 'update-desktop-database.hook'...
 
 
 ----------------------------------------------------------------------------------------------------------
