@@ -10,3 +10,9 @@
 ```
 sudo modprobe -r kvm_intel
 ```
+
+## KCP Notes
+```
+pckcp
+updpkgsums
+```
