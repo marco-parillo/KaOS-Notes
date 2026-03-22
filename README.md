@@ -16,3 +16,8 @@ sudo modprobe -r kvm_intel
 pckcp
 updpkgsums
 ```
+
+## Boot Immediately
+```
+sudo bootctl set-timeout 0
+```
