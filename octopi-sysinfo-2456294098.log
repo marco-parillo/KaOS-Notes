@@ -1,0 +1,2437 @@
+----------------------------------------------------------------------------------------------------------
+cat /etc/KaOS-release
+----------------------------------------------------------------------------------------------------------
+
+KAOS_20251127
+
+----------------------------------------------------------------------------------------------------------
+inxi -Fxz
+----------------------------------------------------------------------------------------------------------
+
+System:
+  Kernel: 6.18.10-1 arch: x86_64 bits: 64 compiler: gcc v: 15.2.1
+  Desktop: KDE Plasma v: 6.6.3 Distro: KaOS 2026
+Machine:
+  Type: Laptop System: Dell product: Latitude 5420 v: N/A serial: <superuser required>
+  Mobo: Dell model: 03P5X2 v: A00 serial: <superuser required> Firmware: UEFI vendor: Dell
+    v: 1.30.0 date: 07/10/2023
+Battery:
+  ID-1: BAT0 charge: 63 Wh (100%) condition: 63/63 Wh (100%) volts: 15.51 min: 15.2
+    model: BYD DELL M033W14 status: full
+CPU:
+  Info: quad core model: 11th Gen Intel Core i7-1185G7 bits: 64 type: MT MCP arch: Tiger Lake
+    rev: 1 cache: L1: 320 KiB L2: 5 MiB L3: 12 MiB
+  Speed (MHz): avg: 1042 min/max: 400/4800 cores: 1: 1042 2: 1042 3: 1042 4: 1042 5: 1042 6: 1042
+    7: 1042 8: 1042 bogomips: 28876
+  Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+Graphics:
+  Device-1: Intel TigerLake-LP GT2 [Iris Xe Graphics] vendor: Dell driver: i915 v: kernel arch: Xe
+    bus-ID: 00:02.0
+  Device-2: Realtek Cable Matters USB-C Video driver: N/A type: USB bus-ID: 3-1:2
+  Device-3: Sunplus Innovation Integrated_Webcam_HD driver: uvcvideo type: USB bus-ID: 3-6:3
+  Display: wayland server: X.org v: 1.21.1.21 with: Xwayland v: 24.1.9 compositor: kwin_wayland
+    driver: gpu: i915 resolution: 1: 1920x1080~60Hz 2: 1920x1080~60Hz
+  API: EGL v: 1.5 drivers: iris,swrast platforms: active: gbm,wayland,x11,surfaceless,device
+    inactive: N/A
+  API: OpenGL v: 4.6 compat-v: 4.5 vendor: intel mesa v: 26.0.2 glx-v: 1.4 direct-render: yes
+    renderer: Mesa Intel Iris Xe Graphics (TGL GT2)
+  API: Vulkan v: 1.4.346 drivers: intel,llvmpipe surfaces: N/A devices: 2
+  Info: Tools: api: eglinfo, glxinfo, vulkaninfo de: kscreen-console,kscreen-doctor
+    wl: wayland-info x11: xdriinfo, xdpyinfo, xprop, xrandr
+Audio:
+  Device-1: Intel Tiger Lake-LP Smart Sound Audio vendor: Dell driver: snd_hda_intel v: kernel
+    bus-ID: 00:1f.3
+  API: ALSA v: k6.18.10-1 status: kernel-api
+  Server-1: JACK v: 1.9.22 status: off
+  Server-2: PipeWire v: 1.6.2 status: active
+  Server-3: PulseAudio v: 17.0 status: off (using pipewire-pulse)
+Network:
+  Device-1: Intel Wi-Fi 6 AX201 driver: iwlwifi v: kernel bus-ID: 00:14.3
+  IF: wlan0 state: up mac: <filter>
+  Device-2: Intel Ethernet I219-LM vendor: Dell driver: e1000e v: kernel port: N/A
+    bus-ID: 00:1f.6
+  IF: enp0s31f6 state: down mac: <filter>
+Bluetooth:
+  Device-1: Intel AX201 Bluetooth driver: btusb v: 0.8 type: USB bus-ID: 3-10:5
+  Report: hciconfig ID: hci0 rfk-id: 3 state: up address: <filter> bt-v: 5.2 lmp-v: 11
+Drives:
+  Local Storage: total: 476.94 GiB used: 21.92 GiB (4.6%)
+  ID-1: /dev/nvme0n1 vendor: SK Hynix model: BC711 NVMe 512GB size: 476.94 GiB temp: 24.9 C
+Partition:
+  ID-1: / size: 451.63 GiB used: 21.79 GiB (4.8%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-2: /boot size: 511 MiB used: 133.3 MiB (26.1%) fs: vfat dev: /dev/nvme0n1p1
+Swap:
+  ID-1: swap-1 type: partition size: 16.52 GiB used: 0 KiB (0.0%) dev: /dev/nvme0n1p3
+Sensors:
+  System Temperatures: cpu: 47.0 C mobo: 43.0 C
+  Fan Speeds (rpm): cpu: 0
+Info:
+  Memory: total: 16 GiB note: est. available: 15.02 GiB used: 3.63 GiB (24.1%)
+  Processes: 238 Uptime: 43m Init: systemd target: graphical (5)
+  Packages: 966 Compilers: gcc: 15.2.1 Client: Unknown Client: octopi inxi: 3.3.40
+
+
+----------------------------------------------------------------------------------------------------------
+journalctl -b -p err
+----------------------------------------------------------------------------------------------------------
+
+Mar 22 06:58:16 marco-latitude5420 systemd-tmpfiles[281]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:2: Failed to resolve user 'tss': No such process
+Mar 22 06:58:16 marco-latitude5420 systemd-tmpfiles[281]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:4: Failed to resolve user 'tss': No such process
+Mar 22 06:58:16 marco-latitude5420 systemd-tmpfiles[281]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:6: Failed to resolve group 'tss': No such process
+Mar 22 06:58:16 marco-latitude5420 systemd-tmpfiles[281]: /etc/tmpfiles.d/tpm2-tss-fapi.conf:7: Failed to resolve group 'tss': No such process
+Mar 22 06:58:17 marco-latitude5420 kernel: i2c_hid_acpi i2c-MELF0410:00: device returned incorrect report (209 vs 4 expected)
+Mar 22 06:58:20 marco-latitude5420 bluetoothd[517]: Failed to set default system config for hci0
+Mar 22 07:30:27 marco-latitude5420 kwin_wayland[1008]: Libinput: event3  - DELL0A20:00 0488:101A Touchpad: kernel bug: Touch jump detected and discarded.
+                                                       See https://wayland.freedesktop.org/libinput/doc/1.31.0/touchpad-jumping-cursors.html for details
+
+
+----------------------------------------------------------------------------------------------------------
+cat /etc/pacman.conf
+----------------------------------------------------------------------------------------------------------
+
+#
+# /etc/pacman.conf
+#
+# See the pacman.conf(5) manpage for option and repository directives
+
+#
+# GENERAL OPTIONS
+#
+[options]
+# The following paths are commented out with their default values listed.
+# If you wish to use different paths, uncomment and update the paths.
+#RootDir     = /
+#DBPath      = /var/lib/pacman/
+#CacheDir    = /var/cache/pacman/pkg/
+#LogFile     = /var/log/pacman.log
+#HookDir     = /etc/pacman.d/hooks/
+HoldPkg     = pacman glibc
+#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+#XferCommand = /usr/bin/curl -L -C - -f -o %o %u
+#CleanMethod = KeepInstalled
+Architecture = auto
+
+# Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
+#IgnorePkg   =
+#IgnoreGroup =
+
+#NoUpgrade   =
+#NoExtract   =
+
+# Misc options (all disabled by default)
+#UseSyslog
+#ShowSize
+Color
+#NoProgressBar
+CheckSpace
+VerbosePkgLists
+ILoveCandy
+ParallelDownloads = 5
+#DownloadUser = alpm
+DisableSandbox
+
+# By default, pacman accepts packages signed by keys that its local keyring
+# trusts (see pacman-key and its man page), as well as unsigned packages.
+SigLevel = Never
+LocalFileSigLevel = Never
+#RemoteFileSigLevel = Required
+
+#
+# REPOSITORIES
+#   - can be defined here or included from another file
+#   - pacman will search repositories in the order defined here
+#   - local/custom mirrors can be added here or in separate files
+#   - repositories listed first will take precedence when packages
+#     have identical names, regardless of version number
+#   - URLs will have $repo replaced by the name of the current repo
+#   - URLs will have $arch replaced by the name of the architecture
+#
+# Repository entries are of the format:
+#       [repo-name]
+#       Server = ServerName
+#       Include = IncludePath
+#
+# The header [repo-name] is crucial - it must be present and
+# uncommented to enable the repo.
+#
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[main]
+Include = /etc/pacman.d/mirrorlist
+
+[apps]
+Include = /etc/pacman.d/mirrorlist
+
+# An example of a custom package repository.  See the pacman manpage for
+# tips on creating your own repositories.
+#[custom]
+#Server = file:///home/custompkgs
+
+
+----------------------------------------------------------------------------------------------------------
+pacman -Qm
+----------------------------------------------------------------------------------------------------------
+
+pdfjs-legacy 5.5.207-1
+qutebrowser 3.6.3-1
+
+
+----------------------------------------------------------------------------------------------------------
+cat /var/log/pacman.log
+----------------------------------------------------------------------------------------------------------
+
+[2025-11-27T12:54:49+0000] [PACMAN] Running 'pacman -r work-x86_64/root-image -Syu --config pacman.conf -v'
+[2025-11-27T12:54:49+0000] [PACMAN] synchronizing package lists
+[2025-11-27T12:54:49+0000] [PACMAN] starting full system upgrade
+[2025-11-27T12:54:52+0000] [ALPM] transaction started
+[2025-11-27T12:54:52+0000] [ALPM] upgraded calamares (3.4.0-9 -> 3.4.0-10)
+[2025-11-27T12:54:53+0000] [ALPM] upgraded calamares-debug (3.4.0-9 -> 3.4.0-10)
+[2025-11-27T12:54:53+0000] [ALPM] transaction completed
+[2025-11-27T12:54:53+0000] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:20:16-0400] [PACMAN] Running 'pacman -R --noconfirm xf86-video-nouveau'
+[2026-03-14T14:20:16-0400] [PACMAN] Running 'pacman -R --noconfirm xf86-video-amdgpu'
+[2026-03-14T14:20:16-0400] [ALPM] transaction started
+[2026-03-14T14:20:16-0400] [ALPM] removed xf86-video-amdgpu (25.0.0-1)
+[2026-03-14T14:20:16-0400] [ALPM] transaction completed
+[2026-03-14T14:20:16-0400] [PACMAN] Running 'pacman -R --noconfirm xf86-video-ati'
+[2026-03-14T14:20:16-0400] [ALPM] transaction started
+[2026-03-14T14:20:16-0400] [ALPM] removed xf86-video-ati (22.0.0-3)
+[2026-03-14T14:20:16-0400] [ALPM] transaction completed
+[2026-03-14T14:20:16-0400] [PACMAN] Running 'pacman -R --noconfirm xf86-video-vmware'
+[2026-03-14T14:20:16-0400] [PACMAN] Running 'pacman -Rncs --noconfirm xf86-input-wacom'
+[2026-03-14T14:20:16-0400] [ALPM] transaction started
+[2026-03-14T14:20:16-0400] [ALPM] removed wacomtablet (6.5.3-2)
+[2026-03-14T14:20:16-0400] [ALPM] removed xf86-input-wacom (1.2.4-1)
+[2026-03-14T14:20:16-0400] [ALPM] transaction completed
+[2026-03-14T14:20:16-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -Rns --noconfirm calamares calamares-debug console-setup'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed console-setup (1.244-1)
+[2026-03-14T14:20:17-0400] [ALPM] removed calamares-debug (3.4.0-10)
+[2026-03-14T14:20:17-0400] [ALPM] removed calamares (3.4.0-10)
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -Rns --noconfirm welcome'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed welcome (8.2-1)
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -Rns --noconfirm hardware-detection'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed hardware-detection (20250813-1)
+[2026-03-14T14:20:17-0400] [ALPM] removed khd-nvidia-470xx (470.256.02-24)
+[2026-03-14T14:20:17-0400] [ALPM] removed khd-nvidia-390xx (390.157-46)
+[2026-03-14T14:20:17-0400] [ALPM] removed khd-nvidia (2:580.105.08-3)
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -R --noconfirm init-live'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM-SCRIPTLET] Disabling systemd service
+[2026-03-14T14:20:17-0400] [ALPM-SCRIPTLET] Removed "/etc/systemd/system/multi-user.target.wants/live.service".
+[2026-03-14T14:20:17-0400] [ALPM] removed init-live (2024.07-1)
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -Rncs --noconfirm grub'
+[2026-03-14T14:20:17-0400] [ALPM] running 'texinfo-remove.hook'...
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed grub-theme-midna (3.2-4)
+[2026-03-14T14:20:17-0400] [ALPM] removed grub (2.12-1)
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -R --noconfirm virtualbox-guest-utils'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed virtualbox-guest-utils (7.2.4-1)
+[2026-03-14T14:20:17-0400] [ALPM-SCRIPTLET] Failed to disable unit, unit vmsvga.service does not exist.
+[2026-03-14T14:20:17-0400] [ALPM-SCRIPTLET] Failed to disable unit, unit vmsvga.service does not exist.
+[2026-03-14T14:20:17-0400] [ALPM-SCRIPTLET] Removed "/etc/systemd/system/multi-user.target.wants/vmsvga.service".
+[2026-03-14T14:20:17-0400] [ALPM] transaction completed
+[2026-03-14T14:20:17-0400] [PACMAN] Running 'pacman -Rns --noconfirm zfs-kmod'
+[2026-03-14T14:20:17-0400] [ALPM] transaction started
+[2026-03-14T14:20:17-0400] [ALPM] removed zfs-kmod (2.3.5-2)
+[2026-03-14T14:20:19-0400] [ALPM] removed zfs-headers (2.3.5-1)
+[2026-03-14T14:20:19-0400] [ALPM] removed zfs (2.3.5-1)
+[2026-03-14T14:20:19-0400] [ALPM] transaction completed
+[2026-03-14T14:20:19-0400] [PACMAN] Running 'pacman -Rns --noconfirm calligra'
+[2026-03-14T14:20:19-0400] [ALPM] running 'texinfo-remove.hook'...
+[2026-03-14T14:20:19-0400] [ALPM] transaction started
+[2026-03-14T14:20:19-0400] [ALPM] removed calligra (25.08.3-1)
+[2026-03-14T14:20:19-0400] [ALPM] removed vc (1.4.5-1)
+[2026-03-14T14:20:19-0400] [ALPM] removed kdiagram (3.0.1-1)
+[2026-03-14T14:20:19-0400] [ALPM] removed gsl (2.8-1)
+[2026-03-14T14:20:19-0400] [ALPM] removed freetds (1.5.9-1)
+[2026-03-14T14:20:19-0400] [ALPM] transaction completed
+[2026-03-14T14:20:19-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:20:19-0400] [ALPM] running 'update-mime-database.hook'...
+[2026-03-14T14:53:22-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-14T14:53:22-0400] [PACMAN] synchronizing package lists
+[2026-03-14T14:53:48-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-14T14:53:48-0400] [PACMAN] synchronizing package lists
+[2026-03-14T14:53:48-0400] [PACMAN] starting full system upgrade
+[2026-03-14T14:54:42-0400] [ALPM] transaction started
+[2026-03-14T14:54:42-0400] [ALPM] removed mkinitcpio (26-8)
+[2026-03-14T14:54:42-0400] [ALPM] upgraded linux-api-headers (6.14-1 -> 6.18.2-1)
+[2026-03-14T14:54:42-0400] [ALPM] upgraded tzdata (2025b-1 -> 2026a-1)
+[2026-03-14T14:54:42-0400] [ALPM] upgraded glibc (2.41-1 -> 2.42-1)
+[2026-03-14T14:54:42-0400] [ALPM-SCRIPTLET] Generating locales...
+[2026-03-14T14:54:43-0400] [ALPM-SCRIPTLET]   en_US.UTF-8... done
+[2026-03-14T14:54:43-0400] [ALPM-SCRIPTLET] Generation complete.
+[2026-03-14T14:54:43-0400] [ALPM] upgraded libxcrypt (4.5.2-1 -> 4.5.2-2)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded gcc-libs (14.2.1-1 -> 15.2.1-1)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded ncurses (6.5-1 -> 6.6-1)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded readline (8.3.001-2 -> 8.3.003-1)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded bash (5.3.008-1 -> 5.3.009-1)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded gmp (6.3.0-4 -> 6.3.0-5)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded zlib (1.3.1-1 -> 1.3.2-1)
+[2026-03-14T14:54:43-0400] [ALPM] upgraded pam (1.7.1-1 -> 1.7.2-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded coreutils (9.9-1 -> 9.10-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded texinfo (7.2-2 -> 7.3-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded groff (1.23.0-12 -> 1.24.0-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded jansson (2.14.1-1 -> 2.15.0-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded binutils (2.44-1 -> 2.45.1-1)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded mpfr (4.2.2-2 -> 4.2.2-3)
+[2026-03-14T14:54:44-0400] [ALPM] upgraded libmpc (1.3.1-5 -> 1.3.1-6)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded gcc (14.2.1-1 -> 15.2.1-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libtool (2.5.4-2 -> 2.5.4-3)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libjpeg-turbo (3.1.2-1 -> 3.1.3-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded xz (5.8.1-1 -> 5.8.2-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded lcms2 (2.17-1 -> 2.18-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libpng (1.6.51-1 -> 1.6.55-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded freetype2 (2.14.1-1 -> 2.14.2-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded xorgproto (2024.1-1 -> 2025.1-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libx11 (1.8.12-1 -> 1.8.13-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libxext (1.3.6-1 -> 1.3.7-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libraw (0.21.4-1 -> 0.22.0-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded dav1d (1.5.2-1 -> 1.5.3-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded glib2 (2.86.2-1 -> 2.86.4-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded gdk-pixbuf2 (2.44.4-1 -> 2.44.5-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libxml2 (2.14.6-1 -> 2.15.2-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded expat (2.7.3-1 -> 2.7.4-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libdrm (2.4.129-1 -> 2.4.131-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded elfutils (0.194-2 -> 0.194-3)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libxxf86vm (1.1.6-1 -> 1.1.7-1)
+[2026-03-14T14:54:45-0400] [ALPM] upgraded libxdamage (1.1.6-2 -> 1.1.7-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded llvm (21.1.6-1 -> 21.1.8-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded libxvmc (1.0.14-1 -> 1.0.15-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded libxrandr (1.5.4-1 -> 1.5.5-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded spirv-tools (1:2025.4-1 -> 1:2026.1-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded shadow (4.18.0-1 -> 4.19.4-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded util-linux (2.41.2-1 -> 2.41.3-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded hwdata (0.401-1 -> 0.405-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded mesa (25.2.7-1 -> 26.0.1-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded harfbuzz (12.2.0-1 -> 13.0.1-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded libthai (0.1.29-3 -> 0.1.30-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded librsvg (2.61.3-1 -> 2.62.0-1)
+[2026-03-14T14:54:46-0400] [ALPM] upgraded openssl (3.5.4-1 -> 3.6.1-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded python3 (3.11.14-1 -> 3.11.15-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded openexr (3.4.4-1 -> 3.4.6-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded xvidcore (1.3.7-3 -> 1.3.7-4)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded alsa-lib (1.2.14-1 -> 1.2.15.3-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libvpx (1.15.2-1 -> 1.16.0-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libva (2.22.0-1 -> 2.23.0-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded gsm (1.0.23-1 -> 1.0.24-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libtasn1 (4.20.0-1 -> 4.21.0-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded p11-kit (0.25.10-2 -> 0.26.2-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libunistring (1.4.1-1 -> 1.4.2-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded gnutls (3.8.11-2 -> 3.8.12-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded dcadec (0.2.0-4 -> 0.2.0-5)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded opus (1.5.2-1 -> 1.6.1-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded e2fsprogs (1.47.3-1 -> 1.47.4-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libldap (2.6.10-2 -> 2.6.12-2)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded krb5 (1.22.1-1 -> 1.22.2-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded tdb (1.4.14-1 -> 1.4.15-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded talloc (2.4.3-1 -> 2.4.4-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libcap-ng (0.8.5-1 -> 0.9.1-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded cifs-utils (7.4-1 -> 7.5-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded python3-gobject3 (3.54.5-1 -> 3.56.0-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded iana-etc (20251120-1 -> 20260310-1)
+[2026-03-14T14:54:47-0400] [ALPM] warning: directory permissions differ on /boot/, filesystem: 700  package: 755
+[2026-03-14T14:54:47-0400] [ALPM] upgraded filesystem (2025.07-1 -> 2026.01-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded avahi (0.9rc2-1 -> 0.9rc3-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libcups (1:2.4.14-1 -> 1:2.4.16-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libgpg-error (1.56-1 -> 1.59-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libgcrypt (1.11.2-1 -> 1.12.1-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded libarchive (3.8.3-1 -> 3.8.5-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded lmdb (0.9.33-1 -> 0.9.35-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded sqlite (3.51.0-1 -> 3.52.0-1)
+[2026-03-14T14:54:47-0400] [ALPM] upgraded ca-certificates (1:20250419-1 -> 1:20250419-2)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded curl (8.17.0-1 -> 8.18.0-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libksba (1.6.7-1 -> 1.6.8-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded gnupg (2.4.8-1 -> 2.5.18-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded samba (4.23.3-1 -> 4.23.6-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxkbfile (1.1.3-1 -> 1.2.0-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxmu (1.2.1-1 -> 1.3.1-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxpm (3.5.17-1 -> 3.5.18-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxinerama (1.1.5-2 -> 1.1.6-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded mcpp (2.7.2.2-1 -> 2.7.2.3-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded xorg-xkb-utils (7.13-1 -> 7.13-2)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded xkeyboard-config (2.46-1 -> 2.47-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded wayland-protocols (1.46-1 -> 1.47-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxkbcommon (1.13.0-1 -> 1.13.1-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded vulkan-loader (1.4.334-1 -> 1.4.345-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded libxslt (1.1.43-2 -> 1.1.45-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded iptables (1.8.11-1 -> 1.8.13-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded quota (4.10-1 -> 4.11-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded device-mapper (2.03.37-1 -> 2.03.38-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded cryptsetup (2.8.1-1 -> 2.8.4-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded systemd (2:255.22-1 -> 2:257.11-1)
+[2026-03-14T14:54:49-0400] [ALPM-SCRIPTLET] :: Updating bootctl
+[2026-03-14T14:54:49-0400] [ALPM-SCRIPTLET] Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
+[2026-03-14T14:54:49-0400] [ALPM-SCRIPTLET] Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
+[2026-03-14T14:54:49-0400] [ALPM-SCRIPTLET] Skipping "/boot/EFI/BOOT/BOOTX64.EFI", same boot loader version in place already.
+[2026-03-14T14:54:49-0400] [ALPM] upgraded iso-codes (4.19.0-1 -> 4.20.1-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded gstreamer (1.26.8-1 -> 1.28.1-1)
+[2026-03-14T14:54:49-0400] [ALPM] upgraded orc (0.4.41-1 -> 0.4.42-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded gst-plugins-base (1.26.8-1 -> 1.28.1-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded sbc (2.1-1 -> 2.2-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded polkit (126-1 -> 127-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded rtkit (0.13-3 -> 0.14-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded bluez (5.85-1 -> 5.86-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded mariadb (12.0.2-1 -> 12.2.2-2)
+[2026-03-14T14:54:50-0400] [ALPM-SCRIPTLET] [1;31m ==> This is a major MariaDB update
+[2026-03-14T14:54:50-0400] [ALPM-SCRIPTLET] [1;34m ==> make sure to restart mariadb.service: 
+[2026-03-14T14:54:50-0400] [ALPM-SCRIPTLET] [1;34m ==> sudo systemctl restart mariadb.service 
+[2026-03-14T14:54:50-0400] [ALPM-SCRIPTLET] [1;34m ==> and you might consider running: 
+[2026-03-14T14:54:50-0400] [ALPM-SCRIPTLET] [1;34m ==> sudo mariadb-upgrade -u root -p afterwards. [0m
+[2026-03-14T14:54:50-0400] [ALPM] upgraded libevdev (1.13.5-1 -> 1.13.6-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded libwacom (2.17.0-1 -> 2.18.0-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded libinput (1.30.0-1 -> 1.31.0-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded double-conversion (3.3.1-1 -> 3.4.0-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded vulkan-headers (1.4.334-1 -> 1.4.345-1)
+[2026-03-14T14:54:50-0400] [ALPM] upgraded vulkan-validationlayers (1.4.334-1 -> 1.4.345-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-base (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-shadertools (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-languageserver (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-svg (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-declarative (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-5compat (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded ffmpeg (7.1.3-1 -> 7.1.3-2)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded libheif (1.20.2-2 -> 1.21.2-2)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded jpeg-xl (0.11.1-2 -> 0.11.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded libpaper (2.2.6-1 -> 2.2.7-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded imagemagick (7.1.2.8-1 -> 7.1.2.16-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded a2ps (4.15.7-1 -> 4.15.8-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded abseil-cpp (20250814.1-1 -> 20260107.1-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded accountsservice (23.13.9-2 -> 25.34.76-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kconfig6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded karchive6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kcoreaddons6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded plasma-wayland-protocols (1.19.0-1 -> 1.20.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded libxcomposite (0.4.6-2 -> 0.4.7-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded qt6-wayland (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kwindowsystem6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kauth6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kcodecs6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kguiaddons6 (6.20.0-2 -> 6.23.1-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded ki18n6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kwidgetsaddons6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kcolorscheme (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kconfigwidgets6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:51-0400] [ALPM] upgraded kitemviews6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded breeze-icons (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded kiconthemes6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded kitemmodels6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded kcrash6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded kdbusaddons6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded kservice6 (6.20.0-2 -> 6.23.1-2)
+[2026-03-14T14:54:52-0400] [ALPM] upgraded upower (1.91.0-1 -> 1.91.1-1)
+[2026-03-14T14:54:53-0400] [ALPM-SCRIPTLET] Enabling systemd service
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libatasmart (0.19-6 -> 0.19-7)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded lsof (4.99.5-1 -> 4.99.6-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded lvm2 (2.03.37-1 -> 2.03.38-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded btrfs-progs (6.17.1-1 -> 6.19-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libbytesize (2.11-1 -> 2.12-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded nss (3.118.1-1 -> 3.121-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libtraceevent (1.8.6-1 -> 1.9.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libtracefs (1.8.2-1 -> 1.8.3-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libblockdev (3.4.0-1 -> 3.4.0-2)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded udisks2 (2.11.0-1 -> 2.11.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded solid6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded kglobalaccel6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded kxmlgui6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded kbookmarks6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded kcompletion6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libconfig (1.8.1-1 -> 1.8.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libffado (2.4.9-4 -> 2.5.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded jack2 (1.9.22-1 -> 1.9.22-2)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded lv2 (1.18.10-2 -> 1.18.10-3)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded serd (0.32.6-1 -> 0.32.8-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded sord (0.16.20-1 -> 0.16.22-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded sratom (0.6.20-1 -> 0.6.22-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded lilv (0.26.0-1 -> 0.26.4-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded neon (0.36.0-1 -> 0.37.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded webrtc-audio-processing (1.3-6 -> 1.3-7)
+[2026-03-14T14:54:53-0400] [ALPM] installed libebur128 (1.2.6-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded pipewire (1.4.9-1 -> 1.6.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] installed sdl3 (3.4.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded fluidsynth (2.5.1-1 -> 2.5.3-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded openal (1.24.3-1 -> 1.25.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded wavpack (5.8.1-1 -> 5.9.0-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded taglib (2.1.1-1 -> 2.2.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded mpg123 (1.33.3-1 -> 1.33.4-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libid3tag (0.16.3-1 -> 0.16.4-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded imlib2 (1.12.5-1 -> 1.12.6-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded gst-plugins-good (1.26.8-1 -> 1.28.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded gst-plugins-bad (1.26.8-1 -> 1.28.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded qt6-quicktimeline (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded qt6-quick3d (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded qt6-multimedia (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded qt6-speech (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded python3-certifi (2025.11.12-1 -> 2026.2.25-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded python3-urllib3 (2.5.0-1 -> 2.6.3-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded libuv (1.51.0-1 -> 1.52.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] installed c-ares (1.34.6-1)
+[2026-03-14T14:54:53-0400] [ALPM] installed nodejs (25.8.1-1)
+[2026-03-14T14:54:53-0400] [ALPM] upgraded python3-chardet (5.2.0-2 -> 7.0.1-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded yt-dlp (2025.11.12-1 -> 2026.03.03-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded libbluray (1.4.0-1 -> 1.4.1-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded libcdio (2.2.0-1 -> 2.3.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded glslang (16.0.0-1 -> 16.2.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded libplacebo (7.351.0-2 -> 7.360.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded mpv (0.40.0-6 -> 0.41.0-2)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded knotifications6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kjobwidgets6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kwallet6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kded6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded aspell (0.60.8.1-3 -> 0.60.8.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded sonnet6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded ktextwidgets6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kio6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded plasma-activities (6.5.3-5 -> 6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kpackage6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kcmutils6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kdeclarative6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded qt6-websockets (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded qcoro-qt6 (0.12.0-1 -> 0.13.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kaccounts-integration (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded akonadi (25.08.3-2 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] installed zint (2.16.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded zxing-cpp (2.3.0-1 -> 3.0.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded prison6 (6.20.0-2 -> 6.23.0-2)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kcontacts6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded ktexttemplate (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded attica (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kirigami6 (6.20.0-2 -> 6.23.1-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded syndication6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded knewstuff6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded grantleetheme (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kmime (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded akonadi-mime (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded syntax-highlighting6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded ktextaddons (1:1.8.0-1 -> 1:2.0.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded akonadi-contacts (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded alsa-ucm-conf (1.2.14-1 -> 1.2.15.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded dialog (2:1.3_20251001-1 -> 2:1.3_20260107-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded alsa-utils (1.2.14-1 -> 1.2.15.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded exiv2 (0.28.7-1 -> 0.28.8-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded poppler (25.11.0-1 -> 26.03.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kfilemetadata6 (6.20.0-2 -> 6.23.0-2)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kparts6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kpty6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded unrar (7.2.2-1 -> 7.2.4-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded lzop (1.04-3 -> 1.04-4)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded ark (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded ksvg (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kdecoration (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded aurorae (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded xapian-core (1.4.30-1 -> 1.4.31-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kidletime6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded baloo6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded baloo-widgets (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded bluez-qt6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded kwayland (1:6.5.3-2 -> 1:6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded libplasma (6.5.3-3 -> 6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded bluedevil (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded libfontenc (1.1.8-1 -> 1.1.9-1)
+[2026-03-14T14:54:54-0400] [ALPM] upgraded noto-fonts (1:2025.11.01-1 -> 1:2026.03.01-1)
+[2026-03-14T14:54:55-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2026-03-14T14:54:55-0400] [ALPM] upgraded frameworkintegration6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded breeze (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded breeze-gtk (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded cdrdao (1.2.5-2 -> 1.2.6-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded cdrtools (3.02a09-3 -> 3.02a09-4)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded cmark (0.31.1-1 -> 0.31.2-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded cpupower (6.17.5-1 -> 6.18.6-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded qt6-serialport (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded qt6-positioning (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:55-0400] [ALPM] upgraded qt6-webchannel (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded qt6-webengine (6.10.1-1 -> 6.10.2-2)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded qt6-webview (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded croeso (2.5-2 -> 2.9-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded libnl (3.11.0-1 -> 3.12.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded net-snmp (5.9.4-4 -> 5.9.5.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded libavif (1.3.0-1 -> 1.4.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded sane (1.4.0-2 -> 1.4.0-3)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded qpdf (12.2.0-1 -> 12.3.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded libcupsfilters (2.1.1-12 -> 2.1.1-17)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded cups (1:2.4.14-1 -> 1:2.4.16-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded dmidecode (3.6-1 -> 3.7-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded dnsutils (9.20.16-1 -> 9.20.20-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded kuserfeedback6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded kdesu6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded kde-cli-tools (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded kio-admin (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded dolphin (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded ktexteditor6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded dolphin-plugins (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded dracut (108-1 -> 110-3)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded kstatusnotifieritem (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded python3-psutil (7.1.3-1 -> 7.2.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded drkonqi (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:56-0400] [ALPM] upgraded ed (1.22.2-1 -> 1.22.5-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded kirigami-addons (1.10.0-1 -> 1.12.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded qqc2-desktop-style6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded elisa (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded epson-inkjet-printer-escpr (1.8.6-1 -> 1.8.7-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded fakeroot (1.37.1.2-1 -> 1.37.2-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded kpeople6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded libmbim (1.32.0-2 -> 1.34.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded libqmi (1.36.0-2 -> 1.38.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded libpcap (1.10.5-1 -> 1.10.6-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded modemmanager-qt6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded pcsclite (2.4.0-1 -> 2.4.1-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded qt6-connectivity (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded pulseaudio-qt (1.7.0-1 -> 1.8.1-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded fuse3 (3.17.4-1 -> 3.18.1-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded ldns (1.8.4-1 -> 1.9.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded openssh (10.2p1-1 -> 10.2p1-2)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded kdeconnect-kde (1:25.08.3-2 -> 1:25.12.3-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded purpose6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded falkon (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded ffmpegthumbs (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded file (5.46-1 -> 5.47-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded libxmlb (0.3.24-1 -> 0.3.25-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded protobuf (33.1-1 -> 33.5-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded protobuf-c (1.5.2-9 -> 1.5.2-14)
+[2026-03-14T14:54:57-0400] [ALPM] installed libmnl (1.0.5-1)
+[2026-03-14T14:54:57-0400] [ALPM] warning: directory permissions differ on /usr/share/polkit-1/rules.d/, filesystem: 755  package: 700
+[2026-03-14T14:54:57-0400] [ALPM] upgraded fwupd (2.0.17-1 -> 2.0.20-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded gawk (5.3.2-1 -> 5.4.0-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded gc (8.2.10-1 -> 8.2.12-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded guile (3.0.10-2 -> 3.0.11-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded gdb (16.3-2 -> 17.1-1)
+[2026-03-14T14:54:57-0400] [ALPM] upgraded gettext (0.26-2 -> 1.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded git (2.52.0-1 -> 2.53.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded glew (2.2.0-3 -> 2.3.1-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded gpsd (3.27-1 -> 3.27.5-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libkdcraw6 (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kimageformats6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded gwenview (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded haruna (1.6.0-1 -> 1.7.1-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded hwdetect (2025.07.06-1 -> 2026.03.04-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded hwinfo (25.0-1 -> 25.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded iasl (20250404-1 -> 20251212-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded iproute2 (6.17.0-1 -> 6.19.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded isoimagewriter (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded iwd (3.10-1 -> 3.11-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded knotifyconfig6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libkcddb (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded k3b (1:25.08.3-1 -> 1:25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kactivitymanagerd (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kamoso (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded python3-pytz (2025.2-1 -> 2026.1.post1-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded python3-babel (2.17.0-1 -> 2.18.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kapidox (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kate (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kcharselect (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kde-gtk-config (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kdegraphics-mobipocket (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libkexiv6 (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kdegraphics-thumbnailers (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kholidays6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kunitconversion6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libksysguard (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded plasma5support (6.5.3-3 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded threadweaver6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded krunner6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded plasma-activities-stats (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kpipewire (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded openresolv (3.17.0-1 -> 3.17.4-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libsodium (1.0.20-1 -> 1.0.21-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded networkmanager (1.54.2-1 -> 1.56.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded qt6-tools (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded networkmanager-qt6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kquickcharts6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded qt6-virtualkeyboard (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded layer-shell-qt (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded libkscreen (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kscreenlocker (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded kglobalacceld (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded wireplumber (0.5.12-1 -> 0.5.13-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded knighttime (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:58-0400] [ALPM] upgraded xorg-fonts-alias (1.0.5-1 -> 1.0.6-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kwin (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded qt6-sensors (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kwin-x11 (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded milou (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded libqalculate (5.8.2-1 -> 5.9.0-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded qt6-location (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] warning: directory permissions differ on /var/lib/sddm/, filesystem: 750  package: 755
+[2026-03-14T14:54:59-0400] [ALPM] upgraded sddm (1:0.21.0-2 -> 1:0.21.0-3)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded sddm-kcm (1:6.5.3-2 -> 1:6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kdnssd6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded libmtp (1.1.22-1 -> 1.1.23-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded libssh (0.11.3-1 -> 0.11.4-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kio-extras (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kdoctools6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded khelpcenter (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded plasma-workspace (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kdeplasma-addons (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kdesdk-thumbnailers (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kdialog (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded keditbookmarks (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:54:59-0400] [ALPM] upgraded kfind (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libktorrent (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kget (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kgpg (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded systemsettings (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded vulkan-tools (1.4.334-1 -> 1.4.345-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded xorg-utils (8.4-1 -> 8.4-2)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded procps-ng (4.0.5-1 -> 4.0.6-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kinfocenter (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kjournald (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kmenuedit (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libkdegames (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kmines (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libkomparediff2 (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kompare (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded konsole (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded konversation (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kpat (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kplotting6 (6.20.0-2 -> 6.23.0-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kpmcore (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded opencv (4.12.0-2 -> 4.13.0-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kquickimageeditor (0.6.0-1 -> 0.6.0-2)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kscreen (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded ksshaskpass (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded ksystemstats (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kunifiedpush (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kvantum-qt6 (1.1.5-1 -> 1.1.6-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded socat (1.8.0.3-1 -> 1.8.1.1-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kwallet-pam (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded kwalletmanager (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded less (685-1 -> 692-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libatomic_ops (7.8.4-1 -> 7.10.0-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libgsf (1.14.53-2 -> 1.14.55-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libnotify (0.8.7-1 -> 0.8.8-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded libquotient (0.9.5-1 -> 0.9.6.1-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded python3-wcwidth (0.2.14-1 -> 0.6.0-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded python3-cython (3.2.1-1 -> 3.2.4-1)
+[2026-03-14T14:55:00-0400] [ALPM] upgraded translate-toolkit (3.17.0-1 -> 3.19.3-1)
+[2026-03-14T14:55:01-0400] [ALPM] upgraded postgresql-libs (1:17.7-1 -> 1:18.3-1)
+[2026-03-14T14:55:01-0400] [ALPM] upgraded vigra (1.12.2-3 -> 1.12.3-1)
+[2026-03-14T14:55:01-0400] [ALPM] installed boost (1.89.0-1)
+[2026-03-14T14:55:02-0400] [ALPM] upgraded libreoffice (25.8.3.2-1 -> 26.2.1.2-2)
+[2026-03-14T14:55:02-0400] [ALPM] upgraded liburcu (0.15.5-1 -> 0.15.6-1)
+[2026-03-14T14:55:02-0400] [ALPM] upgraded libwebsockets (4.4.1-1 -> 4.5.4-1)
+[2026-03-14T14:55:02-0400] [ALPM] warning: directory permissions differ on /boot/, filesystem: 700  package: 755
+[2026-03-14T14:55:02-0400] [ALPM] warning: directory permissions differ on /boot/limine/, filesystem: 700  package: 755
+[2026-03-14T14:55:02-0400] [ALPM] upgraded limine (10.3.2-1 -> 10.8.3-1)
+[2026-03-14T14:55:04-0400] [ALPM] upgraded linux-firmware (20251125-1 -> 20260221-1)
+[2026-03-14T14:55:04-0400] [ALPM] warning: directory permissions differ on /boot/, filesystem: 700  package: 755
+[2026-03-14T14:55:04-0400] [ALPM] upgraded linux (6.17.9-1 -> 6.18.10-1)
+[2026-03-14T14:55:04-0400] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2026-03-14T14:55:06-0400] [ALPM] upgraded linux-headers (6.17.9-1 -> 6.18.10-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded m4 (1.4.20-1 -> 1.4.21-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded man-pages (6.16-1 -> 6.17-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded markdownpart (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded mdadm (4.4-1 -> 4.5-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded micro (2.0.14-2 -> 2.0.15-1)
+[2026-03-14T14:55:06-0400] [ALPM] upgraded ttf-raleway (4.101-3 -> 4.101-4)
+[2026-03-14T14:55:07-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2026-03-14T14:55:07-0400] [ALPM] upgraded midna-themes (8.2-1 -> 9.0-2)
+[2026-03-14T14:55:07-0400] [ALPM] upgraded nano (8.7-1 -> 8.7.1-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded neochat (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded openvpn (2.6.16-1 -> 2.7.0-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded networkmanager-openvpn (1.12.3-1 -> 1.12.5-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded ntp (4.2.8.18-5 -> 4.2.8.18-6)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded ocean-sound-theme (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded okular (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded pacman-mirrorlist (20251023-1 -> 20260226-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded pacman-contrib (1.13.0-2 -> 1.13.1-2)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded partitionmanager (1:25.08.3-1 -> 1:25.12.3-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded partitionmanager-debug (1:25.08.3-1 -> 1:25.12.3-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded polkit-kde-agent-1 (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded powerdevil (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded ttf-hack (3.003-4 -> 3.003-5)
+[2026-03-14T14:55:08-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2026-03-14T14:55:08-0400] [ALPM] upgraded xdg-desktop-portal-kde (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-integration (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-desktop (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-disks (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-firewall (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-nm (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-pa (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:08-0400] [ALPM] upgraded plasma-systemmonitor (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded plasma-workspace-wallpapers (6.5.3-2 -> 6.6.2-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded powerline (2.8.4-1 -> 2.8.4-2)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded prebootloader (20130206-6 -> 20130206-7)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded print-manager (1:6.5.3-2 -> 1:6.6.2-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded progsreiserfs (0.3.0.5-13 -> 0.3.0.5-14)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded qt-sudo (2.2.0-1 -> 2.3.0-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded qt6-imageformats (6.10.1-1 -> 6.10.2-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded rsync (3.4.1-3 -> 3.4.1-4)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded seafile (9.0.15-1 -> 9.0.16-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded seafile-client (9.0.15-1 -> 9.0.16-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded sof-firmware (2025.05.1-1 -> 2025.12.2-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded spectacle (2:6.5.3-2 -> 2:6.6.2-2)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded squashfs-tools (4.7.4-1 -> 4.7.5-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded sweeper (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded tomoyo-tools (2.6.1.20210910-27 -> 2.6.1.20210910-28)
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET] 
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET]  * To enable TOMOYO Linux, append 'security=tomoyo TOMOYO_trigger=/sbin/init' to the kernel
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET]    boot options and initialize policy with this command:
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET]      /usr/lib/tomoyo/init_policy
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET] 
+[2026-03-14T14:55:09-0400] [ALPM] upgraded usb_modeswitch (2.6.2-1 -> 2.6.2-2)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded vim (9.1.1924-1 -> 9.2.0072-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded wqy-microhei (0.2.0_beta-9 -> 0.2.0_beta-10)
+[2026-03-14T14:55:09-0400] [ALPM-SCRIPTLET] Updating font cache... done.
+[2026-03-14T14:55:09-0400] [ALPM] upgraded xfsprogs (6.17.0-1 -> 6.18.0-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded xorg-apps (7.20-2 -> 7.20-4)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded xorg-xauth (1.1.4-1 -> 1.1.5-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded yakuake (25.08.3-1 -> 25.12.3-1)
+[2026-03-14T14:55:09-0400] [ALPM] upgraded yaml-cpp (0.8.0-3 -> 0.9.0-1)
+[2026-03-14T14:55:09-0400] [ALPM] transaction completed
+[2026-03-14T14:55:10-0400] [ALPM] running '99-limine.hook'...
+[2026-03-14T14:55:10-0400] [ALPM] running '99-linux.hook'...
+[2026-03-14T14:55:10-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.18.10-1
+[2026-03-14T14:55:16-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2026-03-14T14:55:26-0400] [ALPM] running 'fc-cache-install.hook'...
+[2026-03-14T14:55:26-0400] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2026-03-14T14:55:26-0400] [ALPM] running 'systemd-tmpfiles.hook'...
+[2026-03-14T14:55:26-0400] [ALPM] running 'texinfo-install.hook'...
+[2026-03-14T14:55:28-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T14:55:28-0400] [ALPM] running 'update-mime-database.hook'...
+[2026-03-14T15:11:32-0400] [PACMAN] Running 'pacman -S keepassxc google-chrome oxygen'
+[2026-03-14T15:11:45-0400] [ALPM] transaction started
+[2026-03-14T15:11:45-0400] [ALPM] installed qt5-base (5.15.18-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed qt5-declarative (5.15.18-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed qt5-x11extras (5.15.18-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed qt5-svg (5.15.18-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed qt5-wayland (5.15.18-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed keepassxc (2.7.12-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed at-spi2-core (2.58.3-1)
+[2026-03-14T15:11:45-0400] [ALPM] installed gtk-update-icon-cache (3.24.51-2)
+[2026-03-14T15:11:45-0400] [ALPM] installed gtk3 (3.24.51-2)
+[2026-03-14T15:11:45-0400] [ALPM] installed widevine (148.0.7730.2-1)
+[2026-03-14T15:11:46-0400] [ALPM] installed google-chrome (148.0.7730.2-1)
+[2026-03-14T15:11:46-0400] [ALPM] installed oxygen (6.6.2-1)
+[2026-03-14T15:11:46-0400] [ALPM] transaction completed
+[2026-03-14T15:11:46-0400] [ALPM] running 'glib-compile-schemes.hook'...
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.locale” has path “/system/locale/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy” has path “/system/proxy/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.http” has path “/system/proxy/http/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.https” has path “/system/proxy/https/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.ftp” has path “/system/proxy/ftp/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.socks” has path “/system/proxy/socks/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-14T15:11:46-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-14T15:11:46-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T15:11:46-0400] [ALPM] running 'update-mime-database.hook'...
+[2026-03-14T18:03:44-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-14T18:03:44-0400] [PACMAN] synchronizing package lists
+[2026-03-14T18:03:44-0400] [PACMAN] starting full system upgrade
+[2026-03-14T18:03:50-0400] [PACMAN] Running 'pacman -S kteatime'
+[2026-03-14T18:03:51-0400] [ALPM] transaction started
+[2026-03-14T18:03:51-0400] [ALPM] installed kteatime (25.12.3-1)
+[2026-03-14T18:03:51-0400] [ALPM] transaction completed
+[2026-03-14T18:03:51-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-14T18:03:51-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T18:35:58-0400] [PACMAN] Running '/usr/bin/pacman -U /home/mparillo/pdfjs-legacy/pdfjs-legacy-5.5.207-1-x86_64.pkg.tar.zst'
+[2026-03-14T18:35:59-0400] [ALPM] transaction started
+[2026-03-14T18:35:59-0400] [ALPM] installed pdfjs-legacy (5.5.207-1)
+[2026-03-14T18:35:59-0400] [ALPM] transaction completed
+[2026-03-14T18:37:38-0400] [PACMAN] Running '/usr/bin/pacman -S --asdeps pyqt6-python3 pyqt6-webengine'
+[2026-03-14T18:37:42-0400] [ALPM] transaction started
+[2026-03-14T18:37:42-0400] [ALPM] installed pyqt6-sip (13.11.1-1)
+[2026-03-14T18:37:42-0400] [ALPM] installed pyqt6-python3 (6.10.2-2)
+[2026-03-14T18:37:42-0400] [ALPM] installed pyqt6-webengine (6.10.0-1)
+[2026-03-14T18:37:42-0400] [ALPM] transaction completed
+[2026-03-14T18:37:49-0400] [PACMAN] Running '/usr/bin/pacman -S --asdeps asciidoc python3-setuptools'
+[2026-03-14T18:37:54-0400] [ALPM] transaction started
+[2026-03-14T18:37:54-0400] [ALPM] installed asciidoc (10.2.1-1)
+[2026-03-14T18:37:54-0400] [ALPM] installed python3-appdirs (1.4.4-5)
+[2026-03-14T18:37:54-0400] [ALPM] installed python3-pyparsing (3.3.2-1)
+[2026-03-14T18:37:54-0400] [ALPM] installed python3-packaging (26.0-1)
+[2026-03-14T18:37:54-0400] [ALPM] installed python3-setuptools (82.0.0-1)
+[2026-03-14T18:37:54-0400] [ALPM] transaction completed
+[2026-03-14T18:38:03-0400] [PACMAN] Running '/usr/bin/pacman -U /home/mparillo/qutebrowser/qutebrowser-3.6.3-1-x86_64.pkg.tar.zst'
+[2026-03-14T18:38:04-0400] [ALPM] transaction started
+[2026-03-14T18:38:04-0400] [ALPM] installed qutebrowser (3.6.3-1)
+[2026-03-14T18:38:04-0400] [ALPM] transaction completed
+[2026-03-14T18:38:04-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-14T18:38:04-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-14T18:46:49-0400] [PACMAN] Running 'pacman -S konqueror'
+[2026-03-14T18:46:51-0400] [ALPM] transaction started
+[2026-03-14T18:46:51-0400] [ALPM] installed konqueror (25.12.3-1)
+[2026-03-14T18:46:51-0400] [ALPM] transaction completed
+[2026-03-14T18:46:51-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-14T18:46:51-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-15T16:19:10-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-15T16:19:10-0400] [PACMAN] synchronizing package lists
+[2026-03-15T16:19:11-0400] [PACMAN] starting full system upgrade
+[2026-03-15T16:19:37-0400] [ALPM] transaction started
+[2026-03-15T16:19:37-0400] [ALPM] upgraded libldap (2.6.12-2 -> 2.6.13-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded python3-gobject3 (3.56.0-1 -> 3.56.1-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded attica (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kcoreaddons6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kconfig6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kdbusaddons6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded ki18n6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kidletime6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded solid6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded karchive6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kcodecs6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded giflib (5.2.2-1 -> 6.1.2-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kfilemetadata6 (6.23.0-2 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kwindowsystem6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kcrash6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kservice6 (6.23.1-2 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kwidgetsaddons6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kitemviews6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kauth6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kguiaddons6 (6.23.1-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kcolorscheme (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:37-0400] [ALPM] upgraded kconfigwidgets6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded breeze-icons (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kiconthemes6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kglobalaccel6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kxmlgui6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kbookmarks6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kcompletion6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded pipewire (1.6.0-1 -> 1.6.1-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded yt-dlp (2026.03.03-1 -> 2026.03.13-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded knotifications6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kjobwidgets6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kwallet6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded kded6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded sonnet6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:38-0400] [ALPM] upgraded ktextwidgets6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kio6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded baloo6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded bluez-qt6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kpackage6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kirigami6 (6.23.1-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded syndication6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded knewstuff6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded frameworkintegration6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kapidox (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kcmutils6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kcontacts6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kdeclarative6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kpty6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kdesu6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kdnssd6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kdoctools6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kdsoap (2.2.0-1 -> 2.3.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kholidays6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kimageformats6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kitemmodels6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded knotifyconfig6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kparts6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kpeople6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kplotting6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kquickcharts6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded threadweaver6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded ksvg (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded krunner6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kstatusnotifieritem (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded syntax-highlighting6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded ktexteditor6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded ktexttemplate (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kunitconversion6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] upgraded kuserfeedback6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:39-0400] [ALPM] warning: directory permissions differ on /boot/, filesystem: 700  package: 755
+[2026-03-15T16:19:39-0400] [ALPM] warning: directory permissions differ on /boot/limine/, filesystem: 700  package: 755
+[2026-03-15T16:19:39-0400] [ALPM] upgraded limine (10.8.3-1 -> 10.8.5-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded linux-firmware (20260221-1 -> 20260309-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded modemmanager-qt6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded networkmanager-qt6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded prison6 (6.23.0-2 -> 6.24.0-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded qqc2-desktop-style6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded purpose6 (6.23.0-1 -> 6.24.0-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded python3-setuptools (82.0.0-1 -> 82.0.1-1)
+[2026-03-15T16:19:41-0400] [ALPM] upgraded vim (9.2.0072-1 -> 9.2.0154-1)
+[2026-03-15T16:19:41-0400] [ALPM] transaction completed
+[2026-03-15T16:19:41-0400] [ALPM] running '99-limine.hook'...
+[2026-03-15T16:19:42-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-15T16:19:42-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-15T16:19:42-0400] [ALPM] running 'update-mime-database.hook'...
+[2026-03-16T07:19:12-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-16T07:19:12-0400] [PACMAN] synchronizing package lists
+[2026-03-16T07:19:12-0400] [PACMAN] starting full system upgrade
+[2026-03-16T18:42:01-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-16T18:42:01-0400] [PACMAN] synchronizing package lists
+[2026-03-16T18:42:01-0400] [PACMAN] starting full system upgrade
+[2026-03-17T07:15:19-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-17T07:15:19-0400] [PACMAN] synchronizing package lists
+[2026-03-17T07:15:19-0400] [PACMAN] starting full system upgrade
+[2026-03-17T21:06:27-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-17T21:06:27-0400] [PACMAN] synchronizing package lists
+[2026-03-17T21:06:28-0400] [PACMAN] starting full system upgrade
+[2026-03-17T21:06:59-0400] [ALPM] transaction started
+[2026-03-17T21:06:59-0400] [ALPM] upgraded mesa (26.0.1-1 -> 26.0.2-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded harfbuzz (13.0.1-1 -> 13.1.1-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kdecoration (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded plasma-activities (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded curl (8.18.0-1 -> 8.19.0-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded aurorae (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kwayland (1:6.6.2-1 -> 1:6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded libplasma (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded bluedevil (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded breeze (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded breeze-gtk (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded drkonqi (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] warning: directory permissions differ on /usr/share/polkit-1/rules.d/, filesystem: 755  package: 700
+[2026-03-17T21:06:59-0400] [ALPM] upgraded fwupd (2.0.20-1 -> 2.1.1-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kactivitymanagerd (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kde-cli-tools (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kde-gtk-config (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded libksysguard (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded plasma5support (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded plasma-activities-stats (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kpipewire (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded layer-shell-qt (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded libkscreen (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kscreenlocker (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded kglobalacceld (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:06:59-0400] [ALPM] upgraded knighttime (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kwin (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kwin-x11 (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded milou (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded sddm-kcm (1:6.6.2-1 -> 1:6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded plasma-workspace (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kdeplasma-addons (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded systemsettings (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kinfocenter (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kmenuedit (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kquickimageeditor (0.6.0-2 -> 0.6.1-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kscreen (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded ksshaskpass (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded ksystemstats (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded kwallet-pam (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded ocean-sound-theme (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded oxygen (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded polkit-kde-agent-1 (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded powerdevil (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded xdg-desktop-portal-kde (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:00-0400] [ALPM] upgraded plasma-integration (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-desktop (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-disks (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-firewall (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-nm (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-pa (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-systemmonitor (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded plasma-workspace-wallpapers (6.6.2-1 -> 6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded print-manager (1:6.6.2-1 -> 1:6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] upgraded spectacle (2:6.6.2-2 -> 2:6.6.3-1)
+[2026-03-17T21:07:01-0400] [ALPM] transaction completed
+[2026-03-17T21:07:01-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-17T21:07:01-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-17T21:07:01-0400] [ALPM] running 'update-mime-database.hook'...
+[2026-03-18T04:51:45-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-18T04:51:45-0400] [PACMAN] synchronizing package lists
+[2026-03-18T04:51:45-0400] [PACMAN] starting full system upgrade
+[2026-03-20T07:33:14-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-20T07:33:14-0400] [PACMAN] synchronizing package lists
+[2026-03-20T07:33:15-0400] [PACMAN] starting full system upgrade
+[2026-03-20T07:33:17-0400] [ALPM] transaction started
+[2026-03-20T07:33:17-0400] [ALPM] upgraded device-mapper (2.03.38-1 -> 2.03.39-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded accountsservice (25.34.76-1 -> 26.12.8-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded at-spi2-core (2.58.3-1 -> 2.58.4-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded cpupower (6.18.6-1 -> 6.19.8-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded libpciaccess (0.18.1-1 -> 0.19-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded vulkan-loader (1.4.345-1 -> 1.4.346-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded vulkan-headers (1.4.345-1 -> 1.4.346-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded vulkan-validationlayers (1.4.345-1 -> 1.4.346-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded libsrtp (1:2.7.0-1 -> 1:2.8.0-1)
+[2026-03-20T07:33:17-0400] [ALPM] upgraded libplacebo (7.360.0-1 -> 7.360.1-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded python3-chardet (7.0.1-1 -> 7.1.0-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded lvm2 (2.03.38-1 -> 2.03.39-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded dolphin (25.12.3-1 -> 25.12.3-2)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded groff (1.24.0-1 -> 1.24.1-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded gsettings-desktop-schemas (49.1-2 -> 50.0-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded iwd (3.11-1 -> 3.12-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded ktextaddons (1:2.0.0-1 -> 1:2.0.1-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded libwebsockets (4.5.4-1 -> 4.5.5-1)
+[2026-03-20T07:33:18-0400] [ALPM] upgraded vulkan-tools (1.4.345-1 -> 1.4.346-1)
+[2026-03-20T07:33:18-0400] [ALPM] transaction completed
+[2026-03-20T07:33:18-0400] [ALPM] running '99-linux.hook'...
+[2026-03-20T07:33:18-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.18.10-1
+[2026-03-20T07:33:24-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2026-03-20T07:33:35-0400] [ALPM] running 'glib-compile-schemes.hook'...
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.locale” has path “/system/locale/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy” has path “/system/proxy/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.http” has path “/system/proxy/http/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.https” has path “/system/proxy/https/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.ftp” has path “/system/proxy/ftp/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM-SCRIPTLET] Warning: Schema “org.gnome.system.proxy.socks” has path “/system/proxy/socks/”.  Paths starting with “/apps/”, “/desktop/” or “/system/” are deprecated.
+[2026-03-20T07:33:35-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-20T07:33:35-0400] [ALPM] running 'texinfo-install.hook'...
+[2026-03-20T07:33:35-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-20T20:30:51-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-20T20:30:51-0400] [PACMAN] synchronizing package lists
+[2026-03-20T20:30:51-0400] [PACMAN] starting full system upgrade
+[2026-03-21T07:34:40-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-21T07:34:40-0400] [PACMAN] synchronizing package lists
+[2026-03-21T07:34:40-0400] [PACMAN] starting full system upgrade
+[2026-03-22T06:56:29-0400] [PACMAN] Running 'pacman -Syu'
+[2026-03-22T06:56:29-0400] [PACMAN] synchronizing package lists
+[2026-03-22T06:56:30-0400] [PACMAN] starting full system upgrade
+[2026-03-22T06:56:32-0400] [ALPM] transaction started
+[2026-03-22T06:56:32-0400] [ALPM] upgraded botan (3.10.0-1 -> 3.11.0-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded dhcpcd (10.3.0-3 -> 10.3.1-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded dracut (110-3 -> 110-4)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded ghostscript (1:10.06.0-1 -> 1:10.07.0-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded groff (1.24.1-1 -> 1.24.1-2)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded openexr (3.4.6-1 -> 3.4.7-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded imagemagick (7.1.2.16-1 -> 7.1.2.17-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded keepassxc (2.7.12-1 -> 2.7.12-2)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded mdadm (4.5-1 -> 4.6-1)
+[2026-03-22T06:56:32-0400] [ALPM] upgraded ndctl (83-1 -> 84-1)
+[2026-03-22T06:56:33-0400] [ALPM] upgraded pipewire (1.6.1-1 -> 1.6.2-1)
+[2026-03-22T06:56:33-0400] [ALPM] upgraded qca-qt6 (2.3.10-4 -> 2.3.10-5)
+[2026-03-22T06:56:33-0400] [ALPM] upgraded seafile (9.0.16-1 -> 9.0.17-1)
+[2026-03-22T06:56:33-0400] [ALPM] upgraded seafile-client (9.0.16-1 -> 9.0.17-1)
+[2026-03-22T06:56:33-0400] [ALPM] upgraded yt-dlp (2026.03.13-1 -> 2026.03.17-1)
+[2026-03-22T06:56:33-0400] [ALPM] transaction completed
+[2026-03-22T06:56:33-0400] [ALPM] running '99-dracut-install.hook'...
+[2026-03-22T06:56:33-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.18.10-1
+[2026-03-22T06:56:39-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2026-03-22T06:56:50-0400] [ALPM] running '99-dracut-next-install.hook'...
+[2026-03-22T06:56:50-0400] [ALPM-SCRIPTLET] call to execv failed (No such file or directory)
+[2026-03-22T06:56:50-0400] [ALPM] running '99-linux.hook'...
+[2026-03-22T06:56:50-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-6.18.10-1
+[2026-03-22T06:56:56-0400] [ALPM-SCRIPTLET] :: Building initramfs for linux-fallback
+[2026-03-22T06:57:06-0400] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2026-03-22T06:57:06-0400] [ALPM] running 'texinfo-install.hook'...
+[2026-03-22T06:57:06-0400] [ALPM] running 'update-desktop-database.hook'...
+[2026-03-22T06:57:06-0400] [ALPM] running 'update-mime-database.hook'...
+
+
+----------------------------------------------------------------------------------------------------------
+cat /var/log/installation.log
+----------------------------------------------------------------------------------------------------------
+
+18:15:27 [6]: Calamares::Settings::Settings(const QString&, bool)
+    Using Calamares settings file at "/usr/share/calamares/settings.conf" 
+    .. Required settings.conf key oem-setup is missing. 
+18:15:27 [6]: void Logger::setupLogfile()
+    Using log file: "/root/.cache/calamares/session.log" 
+18:15:27 [6]: void CalamaresApplication::init()
+    Calamares version: 3.4.1.20251127-bc7aade2 
+    .. Using Qt version: 6.10.1 
+    .. Build type: Debug 
+    .. Using PyBind11 
+    .. Using settings: "/usr/share/calamares/settings.conf" 
+    .. Using log file: "/root/.cache/calamares/session.log" 
+    .. Languages: QList("ast", "bg", "ca", "cs", "da", "de", "en", "es", "es_AR", "fi", "fr", "hi_IN", "hr", "hu", "id_ID", "it", "ja", "nl_NL", "pl", "pt_BR", "pt_PT", "ro_RO", "ru", "sl", "sr_RS", "sv", "tr_TR") 
+18:15:27 [6]: bool Calamares::initQmlModulesDir()
+    Using Calamares QML directory "/usr/share/calamares/qml" 
+18:15:27 [6]: Calamares::Branding::Branding(const QString&, QObject*, qreal)
+    Using Calamares branding file at "/usr/share/calamares/branding/kaos_branding/branding.desc" 
+18:15:27 [6]: Calamares::Branding::Branding(const QString&, QObject*, qreal)
+    Loaded branding component "kaos_branding" 
+    .. No translation for "tz_" "en_US" using default (en) 
+    .. Loaded QRC translation "calamares_" "en_US" 
+    .. STARTUP: initSettings, initQmlPath, initBranding done 
+    .. STARTUP: initModuleManager: module init started 
+18:15:27 [6]: void Calamares::ModuleManager::doInit()
+    Found 46 modules 
+18:15:27 [6]: void CalamaresApplication::initView()
+    STARTUP: initModuleManager: all modules init done 
+18:15:27 [6]: void CalamaresApplication::initView()
+    STARTUP: initJobQueue done 
+18:15:27 [6]: CalamaresWindow::CalamaresWindow(QWidget*)
+    Available desktop QSize(1876, 1080) minimum size QSize(1024, 520) 
+    .. Proposed window size: 1024 630 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&)
+    Looking for QML for "calamares-sidebar" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/calamares-sidebar.qml" 
+18:15:28 [2]: WARNING (Qt): file:///usr/share/calamares/branding/kaos_branding/calamares-sidebar.qml:25:5: TypeError: Cannot read property 'width' of null
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&)
+    Looking for QML for "calamares-navigation" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/calamares-navigation.qml" 
+18:15:28 [2]: WARNING (Qt): file:///usr/share/calamares/branding/kaos_branding/calamares-navigation.qml:22:5: TypeError: Cannot read property 'height' of null
+18:15:28 [6]: void CalamaresApplication::initView()
+    STARTUP: CalamaresWindow created; loadModules started 
+18:15:28 [6]: void Config::initLanguages()
+    Trying to match locale "en_US" 
+18:15:28 [6]: void Config::initLanguages()
+    Trying to match locale QLocale::system()/* English, Latin, United States */ 
+18:15:28 [6]: void Config::setLocaleIndex(int)
+    Index 6 Selected locale "en" 
+    .. Loading "calamares-kaos_branding_en" from "/usr/share/calamares/branding/kaos_branding/lang" 
+    .. Branding using locale: "en" 
+    .. No translation for "tz_" "en" using default (en) 
+    .. Loaded QRC translation "calamares_" "en" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "welcomeq@welcomeq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/welcomeq@welcomeq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/welcomeq.qml" 
+    .. Looking at QML file ":/welcomeq@welcomeq.qml" 
+    .. Looking at QML file ":/welcomeq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "welcomeq@welcomeq" loading "qrc:/welcomeq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "welcomeq@welcomeq" loading complete. 
+18:15:28 [6]: QStringList loadLocales(const QString&)
+    Loading locales from "/etc/locale.gen" 
+    ..  Read 416 lines 
+    ..  After filtering 227 lines 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "localeq@localeq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "localeq@localeq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/localeq@localeq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/localeq.qml" 
+    .. Looking at QML file ":/localeq@localeq.qml" 
+    .. Looking at QML file ":/localeq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "localeq@localeq" loading "qrc:/localeq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "localeq@localeq" loading complete. 
+18:15:28 [6]: KeyboardModelsModel::KeyboardModelsModel(QObject*)
+    Loaded 183 keyboard models 
+18:15:28 [6]: KeyboardGroupsSwitchersModel::KeyboardGroupsSwitchersModel(QObject*)
+    Loaded 45 keyboard groups 
+18:15:28 [6]: void Config::getCurrentKeyboardLayoutXkb(QString&, QString&, QString&)
+    QList("pc", "us", "inet(evdev)\"") 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "keyboardq@keyboardq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "keyboardq@keyboardq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/keyboardq@keyboardq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/keyboardq.qml" 
+    .. Looking at QML file ":/keyboardq@keyboardq.qml" 
+    .. Looking at QML file ":/keyboardq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "keyboardq@keyboardq" loading "qrc:/keyboardq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "keyboardq@keyboardq" loading complete. 
+18:15:28 [6]: virtual void Config::setConfigurationMap(const QVariantMap&)
+    Using module ID "packagechooserq@packagechooserq" 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "packagechooserq@packagechooserq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "packagechooserq@packagechooserq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq@packagechooserq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq.qml" 
+    .. Looking at QML file ":/packagechooserq@packagechooserq.qml" 
+    .. Looking at QML file ":/packagechooserq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "packagechooserq@packagechooserq" loading "qrc:/packagechooserq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "packagechooserq@packagechooserq" loading complete. 
+18:15:28 [6]: virtual void Config::setConfigurationMap(const QVariantMap&)
+    Using module ID "packagechooserq@audio" 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "packagechooserq@audio" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "packagechooserq@audio" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq@audio.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq.qml" 
+    .. Looking at QML file ":/packagechooserq@audio.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "packagechooserq@audio" loading "qrc:/packagechooserq@audio.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "packagechooserq@audio" loading complete. 
+18:15:28 [6]: Calamares::Partition::InternalManager::InternalManager()
+    KPMCore backend starting .. 
+18:15:28 [6]: DEBUG (Qt): Loaded backend plugin:  "pmsfdiskbackendplugin"
+    .. Backend @0x35444960 "pmsfdiskbackendplugin" "1" 
+18:15:28 [2]: virtual void PartitionViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Partition-module setting *defaultPartitionTableType* is unset, will use gpt for efi or msdos for bios 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "partition@partition" loading complete. 
+18:15:28 [6]: virtual void Config::setConfigurationMap(const QVariantMap&)
+    Using module ID "packagechooserq@bootchoice" 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "packagechooserq@bootchoice" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "packagechooserq@bootchoice" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq@bootchoice.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/packagechooserq.qml" 
+    .. Looking at QML file ":/packagechooserq@bootchoice.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "packagechooserq@bootchoice" loading "qrc:/packagechooserq@bootchoice.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "packagechooserq@bootchoice" loading complete. 
+    .. libpwquality setting "minlen=0" 
+    .. libpwquality setting "minclass=0" 
+    .. maxLength set to 25 
+    .. minLength set to 8 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "usersq@usersq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "usersq@usersq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/usersq@usersq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/usersq.qml" 
+    .. Looking at QML file ":/usersq@usersq.qml" 
+    .. Looking at QML file ":/usersq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "usersq@usersq" loading "qrc:/usersq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "usersq@usersq" loading complete. 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "summaryq@summaryq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "summaryq@summaryq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/summaryq@summaryq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/summaryq.qml" 
+    .. Looking at QML file ":/summaryq@summaryq.qml" 
+    .. Looking at QML file ":/summaryq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "summaryq@summaryq" loading "qrc:/summaryq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "summaryq@summaryq" loading complete. 
+18:15:28 [6]: void Calamares::ModuleManager::loadModules()
+    Module "partition@partition" already loaded. 
+18:15:28 [6]: Calamares::SlideshowQML::SlideshowQML(QWidget*)
+    QML import paths: 
+     "/usr/share/calamares/qml" 
+     "/usr/bin" 
+     "qrc:/qt-project.org/imports" 
+     "qrc:/qt/qml" 
+     "/usr/lib/qt6/qml" 
+18:15:28 [6]: Calamares::SlideshowQML::SlideshowQML(QWidget*)
+    QML load on startup, API 2. 
+18:15:28 [6]: virtual void Calamares::CppJobModule::loadSelf()
+    CppJobModule "zfs@zfs" loading complete. 
+18:15:28 [6]: virtual void Calamares::CppJobModule::loadSelf()
+    CppJobModule "machineid@machineid" loading complete. 
+18:15:28 [6]: void Calamares::ModuleManager::loadModules()
+    Module "localeq@localeq" already loaded. 
+18:15:28 [6]: void Calamares::ModuleManager::loadModules()
+    Module "keyboardq@keyboardq" already loaded. 
+18:15:28 [6]: virtual void Calamares::CppJobModule::loadSelf()
+    CppJobModule "luksbootkeyfile@luksbootkeyfile" loading complete. 
+18:15:28 [6]: virtual void Calamares::CppJobModule::loadSelf()
+    CppJobModule "luksopenswaphookcfg@luksopenswaphookcfg" loading complete. 
+18:15:28 [6]: virtual void Calamares::CppJobModule::loadSelf()
+    CppJobModule "dracutlukscfg@dracutlukscfg" loading complete. 
+18:15:28 [6]: void Calamares::ModuleManager::loadModules()
+    Module "usersq@usersq" already loaded. 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: No config file for "userkf5" found anywhere at 
+     "/home/live/src/modules/userkf5/userkf5.conf" 
+     "/etc/calamares/modules/userkf5.conf" 
+     "/usr/share/calamares/modules/userkf5.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: No config file for "driver_cleanup" found anywhere at 
+     "/home/live/src/modules/driver_cleanup/driver_cleanup.conf" 
+     "/etc/calamares/modules/driver_cleanup.conf" 
+     "/usr/share/calamares/modules/driver_cleanup.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: No config file for "nonfree_drivers" found anywhere at 
+     "/home/live/src/modules/nonfree_drivers/nonfree_drivers.conf" 
+     "/etc/calamares/modules/nonfree_drivers.conf" 
+     "/usr/share/calamares/modules/nonfree_drivers.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: No config file for "package_removal" found anywhere at 
+     "/home/live/src/modules/package_removal/package_removal.conf" 
+     "/etc/calamares/modules/package_removal.conf" 
+     "/usr/share/calamares/modules/package_removal.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: Found empty module configuration "/usr/share/calamares/modules/limine.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: Found empty module configuration "/usr/share/calamares/modules/refind.conf" 
+18:15:28 [2]: void Calamares::Module::loadConfigurationFile(const QString&)
+    WARNING: No config file for "gummi_entries" found anywhere at 
+     "/home/live/src/modules/gummi_entries/gummi_entries.conf" 
+     "/etc/calamares/modules/gummi_entries.conf" 
+     "/usr/share/calamares/modules/gummi_entries.conf" 
+18:15:28 [2]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    WARNING: Bad QML search mode set for "finishedq@finishedq" 
+18:15:28 [6]: QString Calamares::searchQmlFile(QmlSearch, const QString&, const ModuleSystem::InstanceKey&)
+    Looking for QML for "finishedq@finishedq" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/finishedq@finishedq.qml" 
+    .. Looking at QML file "/usr/share/calamares/branding/kaos_branding/finishedq.qml" 
+    .. Looking at QML file ":/finishedq@finishedq.qml" 
+    .. Looking at QML file ":/finishedq.qml" 
+18:15:28 [6]: virtual void Calamares::QmlViewStep::setConfigurationMap(const QVariantMap&)
+    QmlViewStep "finishedq@finishedq" loading "qrc:/finishedq.qml" 
+18:15:28 [6]: virtual void Calamares::ViewModule::loadSelf()
+    ViewModule "finishedq@finishedq" loading complete. 
+18:15:28 [6]: void Calamares::SlideshowQML::loadQmlV2Complete()
+    QML component complete, API 2 
+    .. Loading "/usr/share/calamares/branding/kaos_branding/show.qml" 
+18:15:28 [6]: void CalamaresApplication::initViewSteps()
+    STARTUP: loadModules for all modules done 
+18:15:28 [6]: void Calamares::ModuleManager::checkRequirements()
+    Checking module requirements .. 
+18:15:28 [6]: void CalamaresApplication::initViewSteps()
+    STARTUP: Window now visible and ProgressTreeView populated 
+    .. 11 view steps loaded. 
+18:15:28 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/packagechooserq@bootchoice.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/packagechooserq@bootchoice.qml" creating object 
+18:15:28 [2]: WARNING (Qt): qrc:/packagechooserq@bootchoice.qml:19:5: TypeError: Cannot read property 'height' of null
+18:15:28 [2]: WARNING (Qt): qrc:/packagechooserq@bootchoice.qml:18:5: TypeError: Cannot read property 'width' of null
+18:15:28 [6]: bool GeneralRequirements::checkHasPower()
+    A battery exists, checking for mains power. 
+18:15:28 [6]: void applyXkb(const BasicLayoutInfo&, AdditionalLayoutInfo&)
+    xkbmap selection changed to:  "us" - "" 
+18:15:28 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/finishedq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/finishedq.qml" creating object 
+18:15:28 [2]: WARNING (Qt): qrc:/finishedq.qml:27:5: TypeError: Cannot read property 'height' of null
+18:15:28 [2]: WARNING (Qt): qrc:/finishedq.qml:26:5: TypeError: Cannot read property 'width' of null
+18:15:28 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/summaryq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/summaryq.qml" creating object 
+18:15:28 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/welcomeq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/welcomeq.qml" creating object 
+18:15:28 [2]: WARNING (Qt): qrc:/welcomeq.qml:22:5: TypeError: Cannot read property 'height' of null
+18:15:28 [2]: WARNING (Qt): qrc:/welcomeq.qml:21:5: TypeError: Cannot read property 'width' of null
+18:15:28 [8]: INFO (Qt): OpenType support missing for "Noto Sans", script 11
+18:15:28 [6]: QStringList Calamares::GeoIP::getElementTexts(const QByteArray&, const QString&)
+    GeoIP found 1 elements 
+18:15:29 [6]: Calamares::RequirementsList GeneralRequirements::checkRequirements()
+    GeneralRequirements output: 
+     storage :   11274289152 
+     enoughStorage :   true 
+     RAM :   1073741824 
+     enoughRam :   true 
+     hasPower :   true 
+     hasInternet :   true 
+     isRoot :   true 
+18:15:29 [6]: void Calamares::RequirementsChecker::addCheckedRequirements(Calamares::Module*)
+    Got 6 requirement results from "welcomeq" 
+18:15:29 [2]: WARNING (Qt): qrc:/welcomeq.qml:52:9: QML Requirements (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Requirements.qml:21:5
+18:15:29 [2]: WARNING (Qt): qrc:/welcomeq.qml:52:9: QML Requirements (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Requirements.qml:21:5
+18:15:29 [2]: WARNING (Qt): qrc:/welcomeq.qml:52:9: QML Requirements (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Requirements.qml:21:5
+18:15:29 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onActivate()" is missing. 
+18:15:29 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/localeq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/localeq.qml" creating object 
+18:15:29 [2]: WARNING (Qt): qrc:/localeq.qml:22:5: TypeError: Cannot read property 'height' of null
+18:15:29 [2]: WARNING (Qt): qrc:/localeq.qml:21:5: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/Map.qml:180:13: QML Shortcut: Shortcut: Only binding to one of multiple key bindings associated with 16. Use 'sequences: [ <key> ]' to bind to all of them.
+18:15:29 [2]: WARNING (Qt): qrc:/Map.qml:257:9: QML QQuickText (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Map.qml:264:13
+18:15:29 [2]: WARNING (Qt): qrc:/Map.qml:257:9: QML QQuickText (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Map.qml:264:13
+18:15:29 [2]: WARNING (Qt): qrc:/Map.qml:257:9: QML QQuickText (parent or ancestor of PlasmaDesktopTheme): Binding loop detected for property "backgroundColor":
+qrc:/Map.qml:264:13
+18:15:29 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/packagechooserq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/packagechooserq.qml" creating object 
+18:15:29 [6]: DEBUG (Qt): calligra
+18:15:29 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/packagechooserq@audio.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/packagechooserq@audio.qml" creating object 
+18:15:29 [6]: DEBUG (Qt): pipewire
+18:15:29 [6]: setGeoIP(Config*, const QVariantMap&)::<lambda()>
+    GeoIP result for welcome= "US" 
+18:15:29 [6]: void setCountry(Config*, const QString&, Calamares::GeoIP::Handler*)
+    Unusable country code "US" 
+    .. Obtained from "https://ipapi.co/xml"  ( 2 "country" ) 
+18:15:29 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/keyboardq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/keyboardq.qml" creating object 
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [2]: WARNING (Qt): qrc:/keyboardq.qml:205:21: TypeError: Cannot read property 'width' of null
+18:15:29 [6]: QPair<Calamares::Network::RequestStatus, QNetworkReply*> synchronousRun(QNetworkAccessManager*, const QUrl&, const Calamares::Network::RequestOptions&)
+    HTTP error QNetworkReply::SslHandshakeFailedError on request for QUrl("https://geoip.kde.org/v1/ubiquity") 
+18:15:29 [6]: DEBUG (Qt): Connected!!
+18:15:29 [6]: DEBUG (Qt): getting temp failed for  "/dev/nvme0n1" :  No such file or directory
+18:15:29 [6]: DEBUG (Qt): getting powered on time failed for  "/dev/nvme0n1" :  No such file or directory
+18:15:29 [6]: DEBUG (Qt): getting power cycles failed for  "/dev/nvme0n1" :  No such file or directory
+18:15:29 [6]: DEBUG (Qt): smartctl initialization failed for  "/dev/sda" :  No such file or directory
+18:15:29 [6]: DEBUG (Qt): error during smart output parsing for  "/dev/sda" :  No such file or directory
+18:15:29 [6]: void Calamares::QmlViewStep::loadComplete()
+    QML component "qrc:/usersq.qml" QQmlComponent::Ready 
+    .. QML component complete "qrc:/usersq.qml" creating object 
+18:15:29 [6]: QList<Device*> PartUtils::getDevices(DeviceType)
+    Removing unsuitable devices: 2 candidates. 
+    .. Running QList("blkid", "/dev/nvme0n1") 
+18:15:29 [2]: WARNING (Qt): qrc:/usersq.qml:25:5: TypeError: Cannot read property 'height' of null
+18:15:29 [2]: WARNING (Qt): qrc:/usersq.qml:24:5: TypeError: Cannot read property 'width' of null
+    .. Finished. Exit code: 0 output:
+/dev/nvme0n1: PTUUID="ed5e098c-ecf2-4cd5-aaa8-0dc91130e9d5" PTTYPE="gpt"
+    .. Running QList("blkid", "/dev/nvme0n1p1") 
+    .. Finished. Exit code: 0 output:
+/dev/nvme0n1p1: UUID="0A11-0EEC" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="11306def-6324-465a-bb5e-efd75c20d2fb"
+    .. Running QList("blkid", "/dev/nvme0n1p2") 
+    .. Finished. Exit code: 0 output:
+/dev/nvme0n1p2: UUID="f5b41502-7769-4f80-92f6-dbb45ba6b720" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="ff054e2e-4c96-41b4-9f29-5bf18a17d309"
+    .. Running QList("blkid", "") 
+    .. Target cmd: QList("blkid", "") Exit code: 2 (no output) 
+    .. Running QList("blkid", "/dev/sda") 
+    .. Finished. Exit code: 0 output:
+/dev/sda: BLOCK_SIZE="2048" UUID="2025-11-27-12-58-38-00" LABEL="KAOS_20251127" TYPE="iso9660" PTUUID="47ad7f2e" PTTYPE="dos"
+    .. Removing device with iso9660 filesystem (probably a CD) on it "/dev/sda" 
+    .. there are 1 devices left. 
+18:15:29 [6]: void PartitionCoreModule::doInit()
+    LIST OF DETECTED DEVICES: 
+    .. node	capacity	name	prettyName 
+    .. "/dev/nvme0n1" 512110190592 DevName$9f846f15 DevNamePretty$7a5bfbc8 
+    .. 1 devices detected. 
+18:15:29 [2]: WARNING (Qt): QGeoTileFetcherOsm: all providers resolved
+18:15:29 [2]: WARNING (Qt): QGeoTileFetcherOsm: all providers resolved
+18:15:29 [6]: void Calamares::RequirementsChecker::reportProgress()
+    Remaining modules: 1 
+     "partition" 
+18:15:30 [6]: OsproberEntryList PartUtils::runOsprober(DeviceModel*)
+    os-prober gave no output. 
+18:15:30 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+18:15:30 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+18:15:30 [6]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    system is EFI and new EFI system partition has been found. 
+18:15:30 [6]: void Calamares::RequirementsChecker::addCheckedRequirements(Calamares::Module*)
+    Got 1 requirement results from "partition" 
+18:15:30 [2]: void ChoicePage::updateActionDescriptionsTr()
+    WARNING: Invalid osprober count, labels and buttons not updated. 
+18:15:30 [6]: bool ChoicePage::calculateNextEnabled() const
+    No partitioning choice has been made yet 
+18:15:30 [6]: void ChoicePage::updateDeviceStatePreview()
+    Updating partitioning state widgets. 
+18:15:30 [6]: void ChoicePage::setupActions()
+    Setting up actions for "/dev/nvme0n1" with 0 entries. 
+    ..  Can not resize "/dev/nvme0n1p1" , filesystem "fat32" does not support resize. 
+    ..  Checking if "/dev/nvme0n1p1" can be replaced. 
+    ..  NO, insufficient storage 
+     Required  storage B: 11811160064 "(10.5GiB)" 
+     Available storage B: 1073741824 "(1GiB)" 
+    ..  Partition "/dev/nvme0n1p2" authorized for resize + autopartition install. 
+    .. contains resizable "/dev/nvme0n1p2" 
+    ..  Checking if "/dev/nvme0n1p2" can be replaced. 
+    ..  Partition "/dev/nvme0n1p2" authorized for replace install. 
+    .. contains replaceable "/dev/nvme0n1p2" 
+    ..  Can not resize "/dev/nvme0n1" , filesystem "unknown" does not support resize. 
+    ..  Checking if "/dev/nvme0n1" can be replaced. 
+    ..  NO, insufficient storage 
+     Required  storage B: 11811160064 "(10.5GiB)" 
+     Available storage B: 1383936 "(0GiB)" 
+18:15:30 [6]: void ChoicePage::updateActionDescriptionsTr()
+    Setting texts for 0 osprober entries 
+18:15:30 [6]: void ChoicePage::continueApplyDeviceChoice()
+    Previous device -1 new device 0 
+18:15:30 [6]: void ChoicePage::applyActionChoice(InstallChoice)
+    InstallChoice Config::NoChoice "none" 
+18:15:30 [6]: bool ChoicePage::calculateNextEnabled() const
+    No partitioning choice has been made yet 
+18:15:30 [6]: void ChoicePage::updateActionChoicePreview(InstallChoice)
+    Updating partitioning preview widgets. 
+18:15:30 [6]: bool ChoicePage::calculateNextEnabled() const
+    No partitioning choice has been made yet 
+18:15:30 [6]: bool ChoicePage::calculateNextEnabled() const
+    No partitioning choice has been made yet 
+18:15:30 [6]: void Calamares::RequirementsChecker::finished()
+    All requirements have been checked. 
+18:15:30 [6]: void Calamares::RequirementsModel::describe() const
+    Requirements model has 7 items 
+    .. requirement 0 "storage" satisfied? true mandatory? true 
+    .. requirement 1 "ram" satisfied? true mandatory? true 
+    .. requirement 2 "power" satisfied? true mandatory? false 
+    .. requirement 3 "internet" satisfied? true mandatory? false 
+    .. requirement 4 "root" satisfied? true mandatory? true 
+    .. requirement 5 "screen" satisfied? true mandatory? false 
+    .. requirement 6 "partitions" satisfied? true mandatory? true 
+18:15:34 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onLeave()" is missing. 
+18:15:34 [6]: static LocaleConfiguration LocaleConfiguration::fromLanguageAndLocation(const QString&, const QStringList&, const QString&)
+    Mapping "en" in "US" to locale. 
+    .. Got best match for "en" as "en_ZW.UTF-8" 
+    .. Got best match for "en_US" as "en_US.UTF-8" 
+14:15:34 [6]: static LocaleConfiguration LocaleConfiguration::fromLanguageAndLocation(const QString&, const QStringList&, const QString&)
+    Mapping "en" in "US" to locale. 
+    .. Got best match for "en" as "en_ZW.UTF-8" 
+    .. Got best match for "en_US" as "en_US.UTF-8" 
+14:15:45 [6]: void Config::guessLocaleKeyboardLayout()
+    Got locale language "en_US.UTF-8" 
+    .. looking for locale part "US" 
+    .. matched "us" 
+14:15:45 [6]: void guessLayout(const QStringList&, KeyboardLayoutModel*, KeyboardVariantsModel*)
+    Next level: "en" 
+14:15:47 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onActivate()" is missing. 
+14:15:55 [6]: DEBUG (Qt): calligra
+14:15:55 [6]: DEBUG (Qt): libreoffice
+14:15:58 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onActivate()" is missing. 
+14:16:04 [6]: void ChoicePage::applyActionChoice(InstallChoice)
+    InstallChoice Config::Erase "erase" 
+14:16:04 [6]: PartitionTable* CreatePartitionTableJob::createTable()
+    CreatePartitionTableJob::createTable trying to make table for device "/dev/nvme0n1" 
+14:16:04 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:04 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:04 [2]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    WARNING: system is EFI but no EFI system partitions found. 
+14:16:04 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:04 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:04 [6]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    system is EFI and new EFI system partition has been found. 
+14:16:04 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:04 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:04 [6]: void PartitionCoreModule::dumpQueue() const
+    # Queue: 
+    .. ## Device: "/dev/nvme0n1" 
+    .. - CreatePartitionTableJob 
+    .. - CreatePartitionJob 
+    .. - SetPartFlagsJob 
+    .. - CreatePartitionJob 
+14:16:04 [6]: void ChoicePage::updateActionChoicePreview(InstallChoice)
+    Updating partitioning preview widgets. 
+14:16:08 [6]: void ChoicePage::applyActionChoice(InstallChoice)
+    InstallChoice Config::Erase "erase" 
+14:16:08 [6]: void ChoicePage::updateActionChoicePreview(InstallChoice)
+    Updating partitioning preview widgets. 
+14:16:08 [6]: DEBUG (Qt): getting temp failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:08 [6]: DEBUG (Qt): getting powered on time failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:08 [6]: DEBUG (Qt): getting power cycles failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [6]: PartitionTable* CreatePartitionTableJob::createTable()
+    CreatePartitionTableJob::createTable trying to make table for device "/dev/nvme0n1" 
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [2]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    WARNING: system is EFI but no EFI system partitions found. 
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [6]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    system is EFI and new EFI system partition has been found. 
+14:16:08 [6]: quint64 swapSuggestion(quint64, Config::SwapChoice)
+    Suggested swap size: 16 GiB 
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:08 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:08 [6]: void PartitionCoreModule::dumpQueue() const
+    # Queue: 
+    .. ## Device: "/dev/nvme0n1" 
+    .. - CreatePartitionTableJob 
+    .. - CreatePartitionJob 
+    .. - SetPartFlagsJob 
+    .. - CreatePartitionJob 
+    .. - CreatePartitionJob 
+14:16:12 [6]: void ChoicePage::applyActionChoice(InstallChoice)
+    InstallChoice Config::Erase "erase" 
+14:16:12 [6]: void ChoicePage::updateActionChoicePreview(InstallChoice)
+    Updating partitioning preview widgets. 
+14:16:13 [6]: DEBUG (Qt): getting temp failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:13 [6]: DEBUG (Qt): getting powered on time failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:13 [6]: DEBUG (Qt): getting power cycles failed for  "/dev/nvme0n1" :  No such file or directory
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [6]: PartitionTable* CreatePartitionTableJob::createTable()
+    CreatePartitionTableJob::createTable trying to make table for device "/dev/nvme0n1" 
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [2]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    WARNING: system is EFI but no EFI system partitions found. 
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [6]: void PartitionCoreModule::scanForEfiSystemPartitions()
+    system is EFI and new EFI system partition has been found. 
+14:16:13 [6]: quint64 swapSuggestion(quint64, Config::SwapChoice)
+    Suggested swap size: 16 GiB 
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [2]: WARNING (Qt): beginResetModel called on BootLoaderModel(0x35457830) without calling endResetModel first
+14:16:13 [2]: WARNING (Qt): endResetModel called on BootLoaderModel(0x35457830) without calling beginResetModel first
+14:16:13 [6]: void PartitionCoreModule::dumpQueue() const
+    # Queue: 
+    .. ## Device: "/dev/nvme0n1" 
+    .. - CreatePartitionTableJob 
+    .. - CreatePartitionJob 
+    .. - SetPartFlagsJob 
+    .. - CreatePartitionJob 
+    .. - CreatePartitionJob 
+14:16:31 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onActivate()" is missing. 
+14:16:31 [6]: DEBUG (Qt): systemd-boot
+14:16:38 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onActivate()" is missing. 
+14:16:48 [6]: DEBUG (Qt): Invalid
+14:17:09 [2]: WARNING (Qt): QObject::setParent: Cannot set parent, new parent is in a different thread
+14:17:09 [6]: virtual QString PartitionViewStep::prettyStatus() const
+    Summary for Partition 1 Config::Erase 
+14:17:09 [6]: QStringList findEssentialLVs(const QList<PartitionCoreModule::DeviceInfo*>&)
+    Checking LVM use on 1 devices 
+14:17:09 [6]: QVariantList FillGlobalStorageJob::createPartitionList() const
+    Building partition information map 
+    .. partitions on "/dev/nvme0n1" 
+    ..  mapping for "" "unallocated" 
+     partlabel :   "" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "" 
+     fs: :   "unknown" 
+     fsName :   "unknown" 
+     filesystem-uuid (uuid) :   "FSUUID$3063bf38" 
+     claimed :   "false" 
+    ..  mapping for "" "New Partition" 
+     partlabel :   "KaOS" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "/boot" 
+     fs: :   "fat32" 
+     fsName :   "fat32" 
+     filesystem-uuid (uuid) :   "FSUUID$3063bf38" 
+     claimed :   "true" 
+    ..  mapping for "" "New Partition" 
+     partlabel :   "root" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "/" 
+     fs: :   "ext4" 
+     fsName :   "ext4" 
+     filesystem-uuid (uuid) :   "FSUUID$3063bf38" 
+     claimed :   "true" 
+    ..  mapping for "" "New Partition" 
+     partlabel :   "" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "" 
+     fs: :   "linuxswap" 
+     fsName :   "linuxswap" 
+     filesystem-uuid (uuid) :   "FSUUID$3063bf38" 
+     claimed :   "true" 
+14:17:26 [6]: void Calamares::callQmlFunction(QQuickItem*, const char*)
+    QML "onLeave()" is missing. 
+14:17:26 [6]: DEBUG (Qt): Slideshow) activated
+14:17:26 [6]: QStringList findEssentialLVs(const QList<PartitionCoreModule::DeviceInfo*>&)
+    Checking LVM use on 1 devices 
+14:17:26 [6]: void Calamares::JobThread::finalize()
+    There are 43 jobs, total weight 40 
+    .. Job 1 "Managing auto-mount settings…" +wt 0.1 tot.wt 0.1 
+    .. Job 2 "Clearing all temporary mounts…" +wt 0.1 tot.wt 0.2 
+    .. Job 3 "Clear mounts for partitioning operations on /dev/nvme0n1" +wt 0.1 tot.wt 0.3 
+    .. Job 4 "Creating new gpt partition table on /dev/nvme0n1…" +wt 0.1 tot.wt 0.4 
+    .. Job 5 "Create new 512MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB) with entries KaOS" +wt 0.1 tot.wt 0.5 
+    .. Job 6 "Set flags on 512MiB fat32 partition" +wt 0.1 tot.wt 0.6 
+    .. Job 7 "Create new 470957MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB) with entries root" +wt 0.1 tot.wt 0.7 
+    .. Job 8 "Create new 16915MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB)" +wt 0.1 tot.wt 0.8 
+    .. Job 9 "Set partition information" +wt 0.1 tot.wt 0.9 
+    .. Job 10 "Managing auto-mount settings…" +wt 0.1 tot.wt 1 
+    .. Job 11 "Creating ZFS pools and datasets…" +wt 1 tot.wt 2 
+    .. Job 12 "mount" +wt 1 tot.wt 3 
+    .. Job 13 "unpackfs" +wt 12 tot.wt 15 
+    .. Job 14 "Generate machine-id." +wt 1 tot.wt 16 
+    .. Job 15 "Setting timezone to America/New_York…" +wt 1 tot.wt 17 
+    .. Job 16 "Setting keyboard model to pc105, layout as us-…" +wt 1 tot.wt 18 
+    .. Job 17 "localecfg" +wt 1 tot.wt 19 
+    .. Job 18 "Configuring LUKS key file." +wt 1 tot.wt 20 
+    .. Job 19 "Configuring encrypted swap." +wt 1 tot.wt 21 
+    .. Job 20 "Skipping writing LUKS configuration for Dracut: \"/\" partition is not encrypted" +wt 1 tot.wt 22 
+    .. Job 21 "fstab" +wt 1 tot.wt 23 
+    .. Job 22 "zfshostid" +wt 1 tot.wt 24 
+    .. Job 23 "dracut" +wt 1 tot.wt 25 
+    .. Job 24 "Configuring <pre>sudo</pre> users…" +wt 0.166667 tot.wt 25.1667 
+    .. Job 25 "Preparing groups…" +wt 0.166667 tot.wt 25.3333 
+    .. Job 26 "Create user mparillo" +wt 0.166667 tot.wt 25.5 
+    .. Job 27 "Set password for user mparillo" +wt 0.166667 tot.wt 25.6667 
+    .. Job 28 "Set password for user root" +wt 0.166667 tot.wt 25.8333 
+    .. Job 29 "Set hostname marco-latitude5420" +wt 0.166667 tot.wt 26 
+    .. Job 30 "networkcfg" +wt 1 tot.wt 27 
+    .. Job 31 "grubconf" +wt 1 tot.wt 28 
+    .. Job 32 "kdm_sddm" +wt 1 tot.wt 29 
+    .. Job 33 "userkf5" +wt 1 tot.wt 30 
+    .. Job 34 "driver_cleanup" +wt 1 tot.wt 31 
+    .. Job 35 "nonfree_drivers" +wt 1 tot.wt 32 
+    .. Job 36 "package_removal" +wt 1 tot.wt 33 
+    .. Job 37 "services" +wt 1 tot.wt 34 
+    .. Job 38 "limine" +wt 1 tot.wt 35 
+    .. Job 39 "systemd-boot" +wt 1 tot.wt 36 
+    .. Job 40 "refind" +wt 1 tot.wt 37 
+    .. Job 41 "grub" +wt 1 tot.wt 38 
+    .. Job 42 "gummi_entries" +wt 1 tot.wt 39 
+    .. Job 43 "umount" +wt 1 tot.wt 40 
+14:17:26 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Managing auto-mount settings…" ( 1 / 43 ) 
+14:17:26 [6]: virtual Calamares::JobResult AutoMountManagementJob::exec()
+    Set automount to disable 
+14:17:26 [6]: void Calamares::Partition::querySolidAutoMount(QDBusConnection&, AutoMountInfo&)
+    Solid not available: "Not connected to D-Bus server" 
+14:17:26 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Clearing all temporary mounts…" ( 2 / 43 ) 
+14:17:26 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Clear mounts for partitioning operations on /dev/nvme0n1" ( 3 / 43 ) 
+14:17:26 [6]: QStringList getPartitionsForDevice(const QString&)
+    Reading from "/proc/partitions" looking for "nvme0n1" 
+14:17:26 [6]: virtual Calamares::JobResult ClearMountsJob::exec()
+    ClearMountsJob finished. Here's what was done: 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+14:17:26 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Creating new gpt partition table on /dev/nvme0n1…" ( 4 / 43 ) 
+14:17:26 [6]: virtual Calamares::JobResult CreatePartitionTableJob::exec()
+    Creating new partition table of type "gpt" , uncommitted partitions: 
+    .. "unallocated" 
+    .. "New Partition" 
+    .. "New Partition" 
+    .. "New Partition" 
+    .. Running QList("lsblk") 
+    .. Finished. Exit code: 0 output:
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0  20.2M  1 loop 
+loop1         7:1    0 500.7M  1 loop 
+loop2         7:2    0   3.2G  1 loop 
+sda           8:0    1  28.9G  0 disk 
+|-sda1        8:1    1   3.8G  0 part /bootmnt
+`-sda2        8:2    1    64M  0 part 
+nvme0n1     259:0    0 476.9G  0 disk 
+|-nvme0n1p1 259:1    0     1G  0 part 
+`-nvme0n1p2 259:2    0 475.9G  0 part
+    .. lsblk output:
+ NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0  20.2M  1 loop 
+loop1         7:1    0 500.7M  1 loop 
+loop2         7:2    0   3.2G  1 loop 
+sda           8:0    1  28.9G  0 disk 
+|-sda1        8:1    1   3.8G  0 part /bootmnt
+`-sda2        8:2    1    64M  0 part 
+nvme0n1     259:0    0 476.9G  0 disk 
+|-nvme0n1p1 259:1    0     1G  0 part 
+`-nvme0n1p2 259:2    0 475.9G  0 part
+    .. Running QList("mount") 
+    .. Finished. Exit code: 0 output:
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sys on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+dev on /dev type devtmpfs (rw,nosuid,relatime,size=7850580k,nr_inodes=1962645,mode=755,inode64)
+run on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755,inode64)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+union on / type aufs (rw,relatime,si=aa457d6c0fb9ad5e)
+/dev/sda1 on /bootmnt type iso9660 (ro,relatime,nojoliet,check=s,map=n,blocksize=2048,iocharset=utf8)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,favordynmods,memory_recursiveprot)
+none on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=33,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,nosuid,nodev,relatime,pagesize=2M)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,relatime,inode64)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=1574644k,nr_inodes=393661,mode=700,uid=1000,gid=100,inode64)
+portal on /run/user/1000/doc type fuse.portal (rw,nosuid,nodev,relatime,user_id=1000,group_id=100)
+    .. mount output:
+ proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sys on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+dev on /dev type devtmpfs (rw,nosuid,relatime,size=7850580k,nr_inodes=1962645,mode=755,inode64)
+run on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755,inode64)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+union on / type aufs (rw,relatime,si=aa457d6c0fb9ad5e)
+/dev/sda1 on /bootmnt type iso9660 (ro,relatime,nojoliet,check=s,map=n,blocksize=2048,iocharset=utf8)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,favordynmods,memory_recursiveprot)
+none on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=33,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,nosuid,nodev,relatime,pagesize=2M)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,relatime,inode64)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=1574644k,nr_inodes=393661,mode=700,uid=1000,gid=100,inode64)
+portal on /run/user/1000/doc type fuse.portal (rw,nosuid,nodev,relatime,user_id=1000,group_id=100)
+14:17:27 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Create new 512MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB) with entries KaOS" ( 5 / 43 ) 
+14:17:28 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Set flags on partition /dev/nvme0n1p1" ( 6 / 43 ) 
+14:17:28 [6]: virtual Calamares::JobResult SetPartFlagsJob::exec()
+    Setting flags on "/dev/nvme0n1" partition "/dev/nvme0n1p1" 
+     "boot" 
+14:17:28 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Create new 470957MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB) with entries root" ( 7 / 43 ) 
+14:17:31 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Create new 16915MiB partition on /dev/nvme0n1 (BC711 NVMe SK hynix 512GB)" ( 8 / 43 ) 
+14:17:32 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Set partition information" ( 9 / 43 ) 
+14:17:32 [6]: QVariantList FillGlobalStorageJob::createPartitionList() const
+    Building partition information map 
+    .. partitions on "/dev/nvme0n1" 
+    ..  mapping for "" "unallocated" 
+     partlabel :   "" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "" 
+     fs: :   "unknown" 
+     fsName :   "unknown" 
+     filesystem-uuid (uuid) :   "FSUUID$3063bf38" 
+     claimed :   "false" 
+    ..  mapping for "/dev/nvme0n1p1" "/dev/nvme0n1p1" 
+     partlabel :   "KaOS" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "/boot" 
+     fs: :   "fat32" 
+     fsName :   "fat32" 
+     filesystem-uuid (uuid) :   "FSUUID$d035082f" 
+     claimed :   "true" 
+    ..  mapping for "/dev/nvme0n1p2" "/dev/nvme0n1p2" 
+     partlabel :   "root" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "/" 
+     fs: :   "ext4" 
+     fsName :   "ext4" 
+     filesystem-uuid (uuid) :   "FSUUID$21848c84" 
+     claimed :   "true" 
+    ..  mapping for "/dev/nvme0n1p3" "/dev/nvme0n1p3" 
+     partlabel :   "" 
+     partition-uuid (partuuid) :   "PartUUID$6e6eb629" 
+     parttype :   "" 
+     partattrs :   "0" 
+     mountPoint: :   "" 
+     fs: :   "linuxswap" 
+     fsName :   "linuxswap" 
+     filesystem-uuid (uuid) :   "FSUUID$d15d1b0" 
+     claimed :   "true" 
+14:17:32 [6]: virtual Calamares::JobResult FillGlobalStorageJob::exec()
+    Saving partition information map to GlobalStorage["partitions"] 
+14:17:32 [6]: virtual Calamares::JobResult FillGlobalStorageJob::exec()
+    FillGlobalStorageJob writing empty bootLoader value 
+14:17:32 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Managing auto-mount settings…" ( 10 / 43 ) 
+14:17:32 [6]: virtual Calamares::JobResult AutoMountManagementJob::exec()
+    Restore automount settings 
+14:17:32 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Creating ZFS pools and datasets…" ( 11 / 43 ) 
+14:17:32 [6]: virtual void Calamares::JobThread::run()
+    Starting job "mount" ( 12 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+    .. Running QList("swapon", "/dev/nvme0n1p3") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "ext4", "-o", "defaults", "/dev/nvme0n1p2", "/tmp/calamares-root-7ppom7_k/") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "vfat", "-o", "defaults,umask=0077", "/dev/nvme0n1p1", "/tmp/calamares-root-7ppom7_k/boot") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-o", "bind", "/dev", "/tmp/calamares-root-7ppom7_k/dev") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "proc", "-o", "defaults", "proc", "/tmp/calamares-root-7ppom7_k/proc") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "tmpfs", "-o", "defaults", "tmpfs", "/tmp/calamares-root-7ppom7_k/run") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-o", "bind", "/run/udev", "/tmp/calamares-root-7ppom7_k/run/udev") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "sysfs", "-o", "defaults", "sys", "/tmp/calamares-root-7ppom7_k/sys") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+WARNING: [PYTHON JOB]: "[Errno 2] No such file or directory: 'chcon'" 
+    .. Running QList("mount", "-t", "efivarfs", "-o", "defaults", "efivarfs", "/tmp/calamares-root-7ppom7_k/sys/firmware/efi/efivars") 
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+14:17:32 [6]: virtual void Calamares::JobThread::run()
+    Starting job "unpackfs" ( 13 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+    .. Running QList("mount", "-t", "squashfs", "-o", "loop", "/bootmnt/kdeos/x86_64/root-image.sqfs", "/tmp/tmpmwo9h39g/root-image") 
+    .. Finished. Exit code: 0 output:
+mount: /tmp/tmpmwo9h39g/root-image: WARNING: source write-protected, mounted read-only.
+    .. Running QList("udevadm", "settle") 
+    .. Running QList("sync") 
+    .. Running QList("unsquashfs", "-l", "/bootmnt/kdeos/x86_64/root-image.sqfs") 
+    .. Running QList("rsync", "-aHAXSr", "--filter=-x trusted.overlay.*", "--exclude", "/proc/", "--exclude", "/sys/", "--exclude", "/dev/", "--exclude", "/run/", "--exclude", "/run/udev/", "--exclude", "/sys/firmware/efi/efivars/", "--progress", "/tmp/tmpmwo9h39g/root-image/", "/tmp/calamares-root-7ppom7_k") 
+14:20:07 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Generate machine-id." ( 14 / 43 ) 
+    .. Running QList("systemd-machine-id-setup", "--root=/tmp/calamares-root-7ppom7_k") 
+    .. Finished. Exit code: 0 output:
+Initializing machine ID from random generator.
+    .. Running QList("ln", "-sf", "/etc/machine-id", "/var/lib/dbus/machine-id") 
+14:20:07 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Setting timezone to America/New_York…" ( 15 / 43 ) 
+    .. Running QList("rm", "-f", "/etc/localtime") 
+    .. Running QList("ln", "-s", "/usr/share/zoneinfo/America/New_York", "/etc/localtime") 
+14:20:07 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Setting keyboard model to pc105, layout as us-…" ( 16 / 43 ) 
+14:20:07 [6]: virtual Calamares::JobResult SetKeyboardLayoutJob::exec()
+    Executing SetKeyboardLayoutJob 
+14:20:07 [6]: bool SetKeyboardLayoutJob::writeVConsoleData(const QString&, const QString&) const
+    Writing vconsole data to "/tmp/calamares-root-7ppom7_k/etc/vconsole.conf" 
+14:20:07 [6]: QString SetKeyboardLayoutJob::findConvertedKeymap(const QString&) const
+    Looking for converted keymap in "/tmp/calamares-root-7ppom7_k/lib/kbd/keymaps/xkb" 
+14:20:07 [6]: QString findLegacyKeymap(const QString&, const QString&, const QString&)
+    Looking for legacy keymap "us" "pc105" "" in QRC 
+    .. Found legacy keymap "us" with score 11 
+    .. Found legacy keymap "us-acentos" with score 11 
+    .. Found legacy keymap "dvorak" with score 11 
+    .. Found legacy keymap "dvorak" with score 11 
+    .. Written KEYMAP= "us" to vconsole.conf 0 
+14:20:07 [6]: bool SetKeyboardLayoutJob::writeX11Data(const QString&) const
+    Writing X11 configuration to "/tmp/calamares-root-7ppom7_k/etc/X11/xorg.conf.d/00-keyboard.conf" 
+    .. Written XkbLayout "us" ; XkbModel "pc105" ; XkbVariant "" to X.org file "/tmp/calamares-root-7ppom7_k/etc/X11/xorg.conf.d/00-keyboard.conf" 0 
+14:20:07 [6]: bool SetKeyboardLayoutJob::writeDefaultKeyboardData(const QString&) const
+    Writing default keyboard data to "/tmp/calamares-root-7ppom7_k/etc/default/keyboard" 
+    .. Written XKBMODEL "pc105" ; XKBLAYOUT "us" ; XKBVARIANT "" to /etc/default/keyboard file "/tmp/calamares-root-7ppom7_k/etc/default/keyboard" 0 
+14:20:07 [6]: virtual void Calamares::JobThread::run()
+    Starting job "localecfg" ( 17 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+[PYTHON JOB]: "Restored backup /tmp/calamares-root-7ppom7_k/etc/locale.gen.bak -> /tmp/calamares-root-7ppom7_k/etc/locale.gen" 
+    .. Running QList("locale-gen") 
+    .. Finished. Exit code: 0 output:
+Generating locales...
+  en_US.UTF-8... done
+Generation complete.
+[PYTHON JOB]: "/tmp/calamares-root-7ppom7_k/etc/locale.gen done" 
+[PYTHON JOB]: "/tmp/calamares-root-7ppom7_k/etc/locale.conf done" 
+[PYTHON JOB]: "/tmp/calamares-root-7ppom7_k/etc/default done" 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Configuring LUKS key file." ( 18 / 43 ) 
+14:20:08 [6]: virtual Calamares::JobResult LuksBootKeyFileJob::exec()
+    There are 0 LUKS partitions 
+    .. Nothing to do for LUKS. 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Configuring encrypted swap." ( 19 / 43 ) 
+14:20:08 [6]: void write_openswap_conf(const QString&, QStringList&, const LOSHInfo&)
+    Will not write an invalid configuration to "/etc/openswap.conf" 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Skipping writing LUKS configuration for Dracut: \"/\" partition is not encrypted" ( 20 / 43 ) 
+14:20:08 [6]: virtual Calamares::JobResult DracutLuksCfgJob::exec()
+    [DRACUTLUKSCFG]: / not encrypted, skipping 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "fstab" ( 21 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "zfshostid" ( 22 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+14:20:08 [2]: Calamares::Python::Object Calamares::Python::GlobalStorageProxy::value(const std::string&) const
+    WARNING: Unknown GS key zfsDatasets 
+14:20:08 [6]: virtual void Calamares::JobThread::run()
+    Starting job "dracut" ( 23 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+    .. Running QList("dracut", "-f", "--hostonly", "--no-hostonly-cmdline", "/boot/initramfs-linux.img", "--no-early-microcode", "--zstd") 
+    .. Finished. Exit code: 0 output:
+dracut[I]: Executing: /usr/bin/dracut -f --hostonly --no-hostonly-cmdline /boot/initramfs-linux.img --no-early-microcode --zstd
+dracut[I]: *** Including module: bash ***
+dracut[I]: *** Including module: systemd ***
+dracut[I]: *** Including module: systemd-ask-password ***
+dracut[I]: *** Including module: systemd-battery-check ***
+dracut[I]: *** Including module: systemd-cryptsetup ***
+dracut[I]: *** Including module: systemd-initrd ***
+dracut[I]: *** Including module: systemd-journald ***
+dracut[I]: *** Including module: systemd-modules-load ***
+dracut[I]: *** Including module: systemd-pcrphase ***
+dracut[I]: *** Including module: systemd-sysctl ***
+dracut[I]: *** Including module: systemd-tmpfiles ***
+dracut[I]: *** Including module: systemd-udevd ***
+dracut[I]: *** Including module: i18n ***
+dracut[I]: *** Including module: systemd-sysusers ***
+dracut[I]: *** Including module: btrfs ***
+dracut[I]: *** Including module: crypt ***
+dracut[I]: *** Including module: dm ***
+dracut[I]: *** Including module: fs-lib ***
+dracut[I]: *** Including module: kernel-modules ***
+dracut[I]: *** Including module: kernel-modules-extra ***
+dracut[I]: *** Including module: lvm ***
+dracut[I]: *** Including module: qemu ***
+dracut[I]: *** Including module: qemu-net ***
+dracut[I]: *** Including module: hwdb ***
+dracut[I]: *** Including module: lunmask ***
+dracut[I]: *** Including module: rootfs-block ***
+dracut[I]: *** Including module: terminfo ***
+dracut[I]: *** Including module: udev-rules ***
+dracut[I]: *** Including module: virtiofs ***
+dracut[I]: *** Including module: dracut-systemd ***
+dracut[I]: *** Including module: initqueue ***
+dracut[I]: *** Including module: usrmount ***
+dracut[I]: *** Including module: base ***
+dracut[I]: *** Including module: shell-interpreter ***
+dracut[I]: *** Including module: shutdown ***
+dracut[I]: *** Including module: zfs ***
+dracut[I]: *** Including modules done ***
+dracut[I]: *** Installing kernel module dependencies ***
+dracut[I]: *** Installing kernel module dependencies done ***
+dracut[I]: *** Resolving executable dependencies ***
+dracut[I]: *** Resolving executable dependencies done ***
+dracut[I]: *** Store current command line parameters ***
+dracut[I]: *** Stripping files ***
+dracut[I]: *** Stripping files done ***
+dracut[I]: *** Creating image file '/boot/initramfs-linux.img' ***
+dracut[I]: *** Hardlinking files ***
+dracut[I]: *** Hardlinking files done ***
+dracut[I]: *** Creating initramfs image file '/boot/initramfs-linux.img' done ***
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Configuring <pre>sudo</pre> users…" ( 24 / 43 ) 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Preparing groups…" ( 25 / 43 ) 
+    .. Running QList("groupadd", "lpadmin") 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Create user mparillo" ( 26 / 43 ) 
+14:20:16 [6]: virtual Calamares::JobResult CreateUserJob::exec()
+    [CREATEUSER]: creating user 
+    .. Running QList("useradd", "-m", "-U", "-s", "/bin/bash", "-c", "Marco A Parillo", "mparillo") 
+    .. Running "usermod" "-aG" "users,lp,video,network,storage,wheel,audio,lpadmin" "mparillo" 
+    .. Running QList("chown", "-R", "mparillo:mparillo", "/home/mparillo") 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Set password for user mparillo" ( 27 / 43 ) 
+    .. Running "usermod" "-p" "$y$j9T$9TnEK0a/yBD7kqcpIIbr/0$lC3ylXuu1owkzyjdWxIZ9/0nMy5FTDwhLJX3DFRpbZA" "mparillo" 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Set password for user root" ( 28 / 43 ) 
+    .. Running "usermod" "-p" "$y$j9T$sEFBMhnWGqOOUZRDgv5JX0$tEu3s5xQcldBRw4zUIOe1r7KRt7vvBuGYZLxl.8OB.9" "root" 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "Set hostname marco-latitude5420" ( 29 / 43 ) 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "networkcfg" ( 30 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "grubconf" ( 31 / 43 ) 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "kdm_sddm" ( 32 / 43 ) 
+14:20:16 [2]: Calamares::Python::Object Calamares::Python::GlobalStorageProxy::value(const std::string&) const
+    WARNING: Unknown GS key autoLoginUser 
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "userkf5" ( 33 / 43 ) 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/Desktop") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.config") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.local/share/applications/") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.local/share/konqueror") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.config/autostart") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.config/plasma-workspace/env") 
+    .. Running QList("/usr/bin/mkdir", "-p", "/home/mparillo/.config/Kvantum") 
+    .. Running QList("chown", "-R", "mparillo:users", "/home/mparillo") 
+    .. Running QList("setcap", "cap_net_raw=ep", "/usr/bin/ping") 
+create common dirs
+setup distribution specific settings
+Pipewire selected
+/dev/nvme0n1p1: UUID="6380-36B2" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="KaOS" PARTUUID="b1a1c10a-1500-4895-9fd8-e0e41c046c85"/dev/nvme0n1p2: UUID="49997db6-d666-4734-9b2e-54226c8e0331" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="root" PARTUUID="052ae6bb-faa9-4748-8ef6-a55b583ea662"/dev/loop1: BLOCK_SIZE="131072" TYPE="squashfs"/dev/nvme0n1p3: LABEL="swap" UUID="158bd5d7-1a4c-43e2-b474-e69b7c7a8197" TYPE="swap" PARTUUID="a0c60b34-12b4-4ab5-95cb-fb44867908fa"/dev/loop2: BLOCK_SIZE="131072" TYPE="squashfs"/dev/loop0: BLOCK_SIZE="131072" TYPE="squashfs"/dev/sda2: SEC_TYPE="msdos" LABEL_FATBOOT="KAOS_EFI" LABEL="KAOS_EFI" UUID="3D75-E36A" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="47ad7f2e-02"/dev/sda1: BLOCK_SIZE="2048" UUID="2025-11-27-12-58-38-00" LABEL="KAOS_20251127" TYPE="iso9660" PTUUID="47ad7f2e" PTTYPE="dos" PARTUUID="47ad7f2e-01"
+KAOS_20251127
+configure users settings done
+14:20:16 [6]: virtual void Calamares::JobThread::run()
+    Starting job "driver_cleanup" ( 34 / 43 ) 
+[PYTHON JOB]: "  Driver: \"i915\"\n" 
+    .. Running QList("pacman", "-R", "--noconfirm", "xf86-video-nouveau") 
+    .. Target cmd: QList("pacman", "-R", "--noconfirm", "xf86-video-nouveau") Exit code: 1 output:
+error: target not found: xf86-video-nouveau
+    .. Running QList("pacman", "-R", "--noconfirm", "xf86-video-amdgpu") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (1)        Old Version  Net Change
+
+xf86-video-amdgpu  25.0.0-1      -0.17 MiB
+
+Total Removed Size:  0.17 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing xf86-video-amdgpu...
+    .. Running QList("pacman", "-R", "--noconfirm", "xf86-video-ati") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (1)     Old Version  Net Change
+
+xf86-video-ati  22.0.0-3      -0.50 MiB
+
+Total Removed Size:  0.50 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing xf86-video-ati...
+    .. Running QList("pacman", "-R", "--noconfirm", "xf86-video-vmware") 
+    .. Target cmd: QList("pacman", "-R", "--noconfirm", "xf86-video-vmware") Exit code: 1 output:
+error: target not found: xf86-video-vmware
+    .. Running QList("pacman", "-Rncs", "--noconfirm", "xf86-input-wacom") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (2)       Old Version  Net Change
+
+wacomtablet       6.5.3-2       -2.95 MiB
+xf86-input-wacom  1.2.4-1       -0.24 MiB
+
+Total Removed Size:  3.19 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing wacomtablet...
+removing xf86-input-wacom...
+:: Running post-transaction hooks...
+(1/1) Updating the desktop file MIME type cache...
+cleaning up video drivers
+video driver removal complete
+cleaning up input drivers
+input driver removal complete
+job_cleanup_drivers
+14:20:17 [6]: virtual void Calamares::JobThread::run()
+    Starting job "nonfree_drivers" ( 35 / 43 ) 
+14:20:17 [2]: Calamares::Python::Object Calamares::Python::GlobalStorageProxy::value(const std::string&) const
+    WARNING: Unknown GS key packagechooser_licenseq 
+None
+License declined
+14:20:17 [6]: virtual void Calamares::JobThread::run()
+    Starting job "package_removal" ( 36 / 43 ) 
+    .. Running QList("pacman", "-Rns", "--noconfirm", "calamares", "calamares-debug", "console-setup") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (3)      Old Version  Net Change 
+
+calamares        3.4.0-10      -10.80 MiB
+calamares-debug  3.4.0-10     -138.09 MiB
+console-setup    1.244-1        -0.14 MiB
+
+Total Removed Size:  149.03 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing console-setup...
+removing calamares-debug...
+removing calamares...
+:: Running post-transaction hooks...
+(1/1) Updating the desktop file MIME type cache...
+    .. Running QList("pacman", "-Rns", "--noconfirm", "welcome") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (1)  Old Version  Net Change
+
+welcome      8.2-1         -3.05 MiB
+
+Total Removed Size:  3.05 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing welcome...
+:: Running post-transaction hooks...
+(1/1) Updating the desktop file MIME type cache...
+    .. Running QList("pacman", "-Rns", "--noconfirm", "hardware-detection") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (4)         Old Version     Net Change
+
+khd-nvidia          2:580.105.08-3    0.00 MiB
+khd-nvidia-390xx    390.157-46        0.00 MiB
+khd-nvidia-470xx    470.256.02-24     0.00 MiB
+hardware-detection  20250813-1       -0.06 MiB
+
+Total Removed Size:  0.06 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing hardware-detection...
+removing khd-nvidia-470xx...
+removing khd-nvidia-390xx...
+removing khd-nvidia...
+    .. Running QList("pacman", "-R", "--noconfirm", "init-live") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (1)  Old Version  Net Change
+
+init-live    2024.07-1      0.00 MiB
+
+Total Removed Size:  0.00 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing init-live...
+Disabling systemd service
+Removed "/etc/systemd/system/multi-user.target.wants/live.service".
+    .. Running QList("pacman", "-Rncs", "--noconfirm", "grub") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (2)       Old Version  Net Change
+
+grub-theme-midna  3.2-4         -0.64 MiB
+grub              2.12-1       -27.13 MiB
+
+Total Removed Size:  27.77 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Running pre-transaction hooks...
+(1/1) Removing old entries from the info directory file...
+:: Processing package changes...
+removing grub-theme-midna...
+removing grub...
+    .. Running QList("pacman", "-R", "--noconfirm", "virtualbox-guest-utils") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (1)             Old Version  Net Change
+
+virtualbox-guest-utils  7.2.4-1       -4.31 MiB
+
+Total Removed Size:  4.31 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing virtualbox-guest-utils...
+Failed to disable unit, unit vmsvga.service does not exist.
+Failed to disable unit, unit vmsvga.service does not exist.
+Removed "/etc/systemd/system/multi-user.target.wants/vmsvga.service".
+14:20:17 [2]: Calamares::Python::Object Calamares::Python::GlobalStorageProxy::value(const std::string&) const
+    WARNING: Unknown GS key zfsPoolInfo 
+    .. Running QList("pacman", "-Rns", "--noconfirm", "zfs-kmod") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (3)  Old Version  Net Change
+
+zfs          2.3.5-1      -51.44 MiB
+zfs-headers  2.3.5-1       -2.84 MiB
+zfs-kmod     2.3.5-2       -2.39 MiB
+
+Total Removed Size:  56.67 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing zfs-kmod...
+removing zfs-headers...
+removing zfs...
+    .. Running QList("pacman", "-Rns", "--noconfirm", "calligra") 
+    .. Finished. Exit code: 0 output:
+checking dependencies...
+
+Package (5)  Old Version  Net Change 
+
+freetds      1.5.9-1       -14.01 MiB
+gsl          2.8-1         -11.02 MiB
+kdiagram     3.0.1-1        -2.66 MiB
+vc           1.4.5-1        -2.05 MiB
+calligra     25.08.3-1    -105.03 MiB
+
+Total Removed Size:  134.77 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Running pre-transaction hooks...
+(1/1) Removing old entries from the info directory file...
+:: Processing package changes...
+removing calligra...
+removing vc...
+removing kdiagram...
+removing gsl...
+removing freetds...
+:: Running post-transaction hooks...
+(1/2) Updating the desktop file MIME type cache...
+(2/2) Updating the MIME type database...
+Removing installer packages
+Removing live ISO packages
+Removing live start-up packages
+Removing live configuration packages
+Removing grub packages
+Removing guest-utils
+ZFS not in use
+LibreOffice selected
+package removal completed
+14:20:20 [6]: virtual void Calamares::JobThread::run()
+    Starting job "services" ( 37 / 43 ) 
+    .. Running QList("systemctl", "enable", "NetworkManager.service") 
+    .. Running QList("systemctl", "enable", "cups.service") 
+    .. Running QList("systemctl", "enable", "zfs-mount.service") 
+    .. Target cmd: QList("systemctl", "enable", "zfs-mount.service") Exit code: 1 output:
+Failed to enable unit, unit zfs-mount.service does not exist.
+[PYTHON JOB]: "Cannot enable systemd service zfs-mount" 
+[PYTHON JOB]: "systemctl enable call in chroot returned error code 1" 
+    .. Running QList("systemctl", "enable", "zfs-import-cache.service") 
+    .. Target cmd: QList("systemctl", "enable", "zfs-import-cache.service") Exit code: 1 output:
+Failed to enable unit, unit zfs-import-cache.service does not exist.
+[PYTHON JOB]: "Cannot enable systemd service zfs-import-cache" 
+[PYTHON JOB]: "systemctl enable call in chroot returned error code 1" 
+    .. Running QList("systemctl", "enable", "graphical.target") 
+    .. Finished. Exit code: 0 output:
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+* A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+* A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+* A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+* In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+    .. Running QList("systemctl", "enable", "zfs.target") 
+    .. Target cmd: QList("systemctl", "enable", "zfs.target") Exit code: 1 output:
+Failed to enable unit, unit zfs.target does not exist.
+[PYTHON JOB]: "Cannot enable systemd target zfs" 
+[PYTHON JOB]: "systemctl enable call in chroot returned error code 1" 
+    .. Running QList("systemctl", "enable", "zfs-import.target") 
+    .. Target cmd: QList("systemctl", "enable", "zfs-import.target") Exit code: 1 output:
+Failed to enable unit, unit zfs-import.target does not exist.
+[PYTHON JOB]: "Cannot enable systemd target zfs-import" 
+[PYTHON JOB]: "systemctl enable call in chroot returned error code 1" 
+    .. Running QList("systemctl", "disable", "pacman-init.service") 
+    .. Finished. Exit code: 0 output:
+Failed to disable unit, unit pacman-init.service does not exist.
+Failed to disable unit, unit pacman-init.service does not exist.
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+* A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+* A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+* A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+* In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+14:20:20 [6]: virtual void Calamares::JobThread::run()
+    Starting job "limine" ( 38 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+14:20:20 [6]: virtual void Calamares::JobThread::run()
+    Starting job "systemd-boot" ( 39 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+[PYTHON JOB]: "49997db6-d666-4734-9b2e-54226c8e0331" 
+[PYTHON JOB]: "/dev/nvme0n1p1" 
+Warning: The kernel is still using the old partition table.
+The new table will be used at the next reboot or after you
+run partprobe(8) or kpartx(8)
+The operation has completed successfully.
+/tmp/calamares-root-7ppom7_k
+[{'claimed': False, 'device': '', 'features': {}, 'fs': 'unknown', 'fsName': 'unknown', 'mountPoint': '', 'partattrs': 0, 'partlabel': '', 'parttype': '', 'partuuid': '', 'uuid': ''}, {'claimed': True, 'device': '/dev/nvme0n1p1', 'features': {}, 'fs': 'fat32', 'fsName': 'fat32', 'mountPoint': '/boot', 'partattrs': 0, 'partlabel': 'KaOS', 'parttype': '', 'partuuid': '', 'uuid': '6380-36B2'}, {'claimed': True, 'device': '/dev/nvme0n1p2', 'features': {}, 'fs': 'ext4', 'fsName': 'ext4', 'mountPoint': '/', 'partattrs': 0, 'partlabel': 'root', 'parttype': '', 'partuuid': '', 'uuid': '49997db6-d666-4734-9b2e-54226c8e0331'}, {'claimed': True, 'device': '/dev/nvme0n1p3', 'features': {}, 'fs': 'linuxswap', 'fsName': 'linuxswap', 'mountPoint': '', 'partattrs': 0, 'partlabel': '', 'parttype': '', 'partuuid': '', 'uuid': '158bd5d7-1a4c-43e2-b474-e69b7c7a8197'}]
+EFI directory: /boot
+Boot partition: "1"
+Boot device: "/dev/nvme0n1"
+Set 'EF00' flag
+14:20:22 [6]: virtual void Calamares::JobThread::run()
+    Starting job "refind" ( 40 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
+14:20:22 [6]: virtual void Calamares::JobThread::run()
+    Starting job "grub" ( 41 / 43 ) 
+14:20:22 [6]: virtual void Calamares::JobThread::run()
+    Starting job "gummi_entries" ( 42 / 43 ) 
+[]
+[]
+14:20:22 [6]: virtual void Calamares::JobThread::run()
+    Starting job "umount" ( 43 / 43 ) 
+[PYTHON JOB]: Found gettext "en_US" in "/usr/share/locale/en_US" 
