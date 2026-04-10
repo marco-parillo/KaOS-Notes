@@ -21,3 +21,13 @@ updpkgsums
 ```
 sudo bootctl set-timeout 0
 ```
+
+## Disable WiFi Power-saving
+```
+sudo vim /etc/NetworkManager/conf.d/wifi-powersave.conf
+i
+[connection]
+wifi.powersave = 2
+<esc>
+:wq
+```
