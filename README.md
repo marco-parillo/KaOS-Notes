@@ -31,3 +31,9 @@ wifi.powersave = 2
 <esc>
 :wq
 ```
+
+
+## NeoChat Spell-Checking
+```
+sudo pacman -S hunspell-en
+```
